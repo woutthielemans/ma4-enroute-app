@@ -20,30 +20,6 @@
     if (self) {
         // Custom initialization
         self.title = @"Opdrachten";
-        NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/api/assignments";
-        NSURL *url = [NSURL URLWithString:path];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-        operation.responseSerializer = [AFJSONResponseSerializer serializer];
-        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"Loaded JSON");
-            NSArray *loadedData = (NSArray *)responseObject;
-            NSLog(@"Loaded data: %@",loadedData);
-            self.assignments = [NSMutableArray array];
-            
-            for (NSDictionary *dict in loadedData) {
-//                QuietSpot *qspot = [QuietSpotFactory createQuietSpotWithTitle:[dict objectForKey:@"title"] Subtitle:[dict objectForKey:@"subtitle"] Longitude:[dict objectForKey:@"longitude"] andLatitude:[dict objectForKey:@"latitude"]];
-//                [self.assignments addObject:qspot];
-//                [self.mapView updateWithSpots:self.qspots];
-//                NSLog(@"[MapVC] longitude: %@ and latitude: %@", [dict objectForKey:@"longitude"], [dict objectForKey:@"latitude"]);
-//                NSLog(@"[MapVC] Updated qspots with title:%@, subtitle: %@, longitude: %f and latitude: %f", qspot.title, qspot.subtitle, qspot.coordinate.longitude, qspot.coordinate.latitude);
-            }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error loading JSON");
-            UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"error accessing api" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [alerView show];
-        }];
-        [operation start];
     }
     return self;
 }
@@ -51,6 +27,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/api/assignments";
+    NSURL *url = [NSURL URLWithString:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *loadedData = (NSArray *)responseObject;
+        self.assignments = [NSMutableArray array];
+        
+        for (NSDictionary *dict in loadedData) {
+            int identifier = [[dict objectForKey:@"id"] intValue];
+            int type = [[dict objectForKey:@"type"] intValue];
+            Assignment *assignment = [AssignmentFactory createAssignmentWithIdentifier:identifier Type:type Title:[dict objectForKey:@"title"] Illustration1Path:[dict objectForKey:@"illustration1"] Illustration2Path:[dict objectForKey:@"illustration2"] Illustration3Path:[dict objectForKey:@"illustration3"] Text1:[dict objectForKey:@"text1"] Text2:[dict objectForKey:@"text2"] AndText3:[dict objectForKey:@"text3"]];
+            [self.assignments addObject: assignment];
+            [self.tableView reloadData];
+        }
+        for (Assignment *a in self.assignments) {
+            NSLog(@"[AssignmentsTVC] Assignment #%i: %@",a.identifier,a.title);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error loading JSON");
+        UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"error accessing api for assignments" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alerView show];
+    }];
+    [operation start];
+    
+    [self.tableView registerClass:[AssignmentTableViewCell class] forCellReuseIdentifier:@"AssignmentCell"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -71,26 +75,30 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.assignments.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AssignmentCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    Assignment *acell = [self.assignments objectAtIndex:indexPath.row];
+    NSLog(@"%@",acell);
     
+    cell.textLabel.text = acell.title;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

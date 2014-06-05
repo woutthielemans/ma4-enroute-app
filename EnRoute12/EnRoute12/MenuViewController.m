@@ -45,6 +45,8 @@
 - (void)menuItem2Tapped:(id)sender
 {
     NSLog(@"[MenuView] 'Opdrachten' tapped!");
+    AssignmentsTableViewController *assignmentsTVC = [[AssignmentsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self.navigationController pushViewController:assignmentsTVC animated:YES];
 }
 
 - (void)menuItem3Tapped:(id)sender

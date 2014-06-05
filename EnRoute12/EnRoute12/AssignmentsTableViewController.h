@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AFNetworking.h>
+#import "Assignment.h"
+#import "AssignmentFactory.h"
+#import "AssignmentTableViewCell.h"
 
 @interface AssignmentsTableViewController : UITableViewController
 
