@@ -100,6 +100,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Assignment *assigment = [self.assignments objectAtIndex:indexPath.row];
+    
+    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:assigment];
+    [self.navigationController pushViewController:assignmentVC animated:YES];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

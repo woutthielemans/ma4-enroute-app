@@ -37,6 +37,8 @@
 		5C8327BA193E7E16007D7B5D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327B7193E7E16007D7B5D /* MapViewController.m */; };
 		5C8327BB193E7E16007D7B5D /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327B9193E7E16007D7B5D /* MapView.m */; };
 		5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D019406D7800870A8A /* AssignmentTableViewCell.m */; };
+		5C8367D51940A38000870A8A /* AssignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D41940A38000870A8A /* AssignmentViewController.m */; };
+		5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D71940A3DC00870A8A /* AssignmentView.m */; };
 		5CE67E79194061A200F9FFCF /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E78194061A200F9FFCF /* Assignment.m */; };
 		5CE67E7C194061B300F9FFCF /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */; };
 		CD5CB696C8C0479BA7BB2FBD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD583BBDF2AA479688F58AF0 /* libPods.a */; };
@@ -103,6 +105,10 @@
 		5C8327B9193E7E16007D7B5D /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		5C8367CF19406D7800870A8A /* AssignmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentTableViewCell.h; sourceTree = "<group>"; };
 		5C8367D019406D7800870A8A /* AssignmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentTableViewCell.m; sourceTree = "<group>"; };
+		5C8367D31940A38000870A8A /* AssignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentViewController.h; sourceTree = "<group>"; };
+		5C8367D41940A38000870A8A /* AssignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentViewController.m; sourceTree = "<group>"; };
+		5C8367D61940A3DC00870A8A /* AssignmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentView.h; sourceTree = "<group>"; };
+		5C8367D71940A3DC00870A8A /* AssignmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentView.m; sourceTree = "<group>"; };
 		5CE67E77194061A200F9FFCF /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
 		5CE67E78194061A200F9FFCF /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
 		5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentFactory.h; sourceTree = "<group>"; };
@@ -317,6 +323,10 @@
 				5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */,
 				5C8367CF19406D7800870A8A /* AssignmentTableViewCell.h */,
 				5C8367D019406D7800870A8A /* AssignmentTableViewCell.m */,
+				5C8367D31940A38000870A8A /* AssignmentViewController.h */,
+				5C8367D41940A38000870A8A /* AssignmentViewController.m */,
+				5C8367D61940A3DC00870A8A /* AssignmentView.h */,
+				5C8367D71940A3DC00870A8A /* AssignmentView.m */,
 			);
 			name = Assignment;
 			sourceTree = "<group>";
@@ -451,7 +461,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */,
 				5C381912193E4C3900C39FBC /* AssignmentsTableViewController.m in Sources */,
+				5C8367D51940A38000870A8A /* AssignmentViewController.m in Sources */,
 				5C8327AE193E7DF9007D7B5D /* QuietSpotFactory.m in Sources */,
 				5C38188B193CA2C000C39FBC /* AppDelegate.m in Sources */,
 				5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */,

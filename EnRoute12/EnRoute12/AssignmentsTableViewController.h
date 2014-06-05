@@ -11,6 +11,7 @@
 #import "Assignment.h"
 #import "AssignmentFactory.h"
 #import "AssignmentTableViewCell.h"
+#import "AssignmentViewController.h"
 
 @interface AssignmentsTableViewController : UITableViewController
 
