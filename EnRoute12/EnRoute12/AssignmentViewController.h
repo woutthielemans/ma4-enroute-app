@@ -10,10 +10,12 @@
 #import "AssignmentView.h"
 #import "Assignment.h"
 
-@interface AssignmentViewController : UIViewController
+@interface AssignmentViewController : UIViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) Assignment *assignment;
+@property (strong, nonatomic) AssignmentView *asView;
 
 - (id)initWithAssignment:(Assignment *)assignment;
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
 
 @end

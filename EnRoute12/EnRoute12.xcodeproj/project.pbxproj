@@ -22,12 +22,6 @@
 		5C3818AA193D189B00C39FBC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818A9193D189B00C39FBC /* MapKit.framework */; };
 		5C3818AC193D18AA00C39FBC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818AB193D18AA00C39FBC /* CoreLocation.framework */; };
 		5C3818AE193D18BB00C39FBC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818AD193D18BB00C39FBC /* AVFoundation.framework */; };
-		5C38190B193E4A3800C39FBC /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C38190A193E4A3800C39FBC /* MenuViewController.m */; };
-		5C38190E193E4A6F00C39FBC /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C38190D193E4A6F00C39FBC /* MenuView.m */; };
-		5C381912193E4C3900C39FBC /* AssignmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C381911193E4C3900C39FBC /* AssignmentsTableViewController.m */; };
-		5C832792193E6F9C007D7B5D /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C832790193E6F9C007D7B5D /* MenuItem.m */; };
-		5C832793193E6F9C007D7B5D /* MenuItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C832791193E6F9C007D7B5D /* MenuItemFactory.m */; };
-		5C832796193E7CE3007D7B5D /* NotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C832795193E7CE3007D7B5D /* NotificationsTableViewController.m */; };
 		5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */; };
 		5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A6193E7DEE007D7B5D /* VolumeCheckerView.m */; };
 		5C8327AD193E7DF9007D7B5D /* QuietSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327AA193E7DF9007D7B5D /* QuietSpot.m */; };
@@ -39,6 +33,8 @@
 		5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D019406D7800870A8A /* AssignmentTableViewCell.m */; };
 		5C8367D51940A38000870A8A /* AssignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D41940A38000870A8A /* AssignmentViewController.m */; };
 		5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D71940A3DC00870A8A /* AssignmentView.m */; };
+		5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D21943D13D00C715D1 /* MainMenuViewController.m */; };
+		5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D51943D1C100C715D1 /* MainMenuView.m */; };
 		5CE67E79194061A200F9FFCF /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E78194061A200F9FFCF /* Assignment.m */; };
 		5CE67E7C194061B300F9FFCF /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */; };
 		CD5CB696C8C0479BA7BB2FBD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD583BBDF2AA479688F58AF0 /* libPods.a */; };
@@ -74,18 +70,6 @@
 		5C3818A9193D189B00C39FBC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5C3818AB193D18AA00C39FBC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5C3818AD193D18BB00C39FBC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		5C381909193E4A3800C39FBC /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		5C38190A193E4A3800C39FBC /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		5C38190C193E4A6F00C39FBC /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
-		5C38190D193E4A6F00C39FBC /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
-		5C381910193E4C3900C39FBC /* AssignmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentsTableViewController.h; sourceTree = "<group>"; };
-		5C381911193E4C3900C39FBC /* AssignmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentsTableViewController.m; sourceTree = "<group>"; };
-		5C83278E193E6F9C007D7B5D /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
-		5C83278F193E6F9C007D7B5D /* MenuItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItemFactory.h; sourceTree = "<group>"; };
-		5C832790193E6F9C007D7B5D /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItem.m; sourceTree = "<group>"; };
-		5C832791193E6F9C007D7B5D /* MenuItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItemFactory.m; sourceTree = "<group>"; };
-		5C832794193E7CE3007D7B5D /* NotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsTableViewController.h; sourceTree = "<group>"; };
-		5C832795193E7CE3007D7B5D /* NotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsTableViewController.m; sourceTree = "<group>"; };
 		5C8327A3193E7DEE007D7B5D /* VolumeCheckerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerViewController.h; sourceTree = "<group>"; };
 		5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeCheckerViewController.m; sourceTree = "<group>"; };
 		5C8327A5193E7DEE007D7B5D /* VolumeCheckerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerView.h; sourceTree = "<group>"; };
@@ -109,6 +93,10 @@
 		5C8367D41940A38000870A8A /* AssignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentViewController.m; sourceTree = "<group>"; };
 		5C8367D61940A3DC00870A8A /* AssignmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentView.h; sourceTree = "<group>"; };
 		5C8367D71940A3DC00870A8A /* AssignmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentView.m; sourceTree = "<group>"; };
+		5CA501D11943D13D00C715D1 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		5CA501D21943D13D00C715D1 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		5CA501D41943D1C100C715D1 /* MainMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuView.h; sourceTree = "<group>"; };
+		5CA501D51943D1C100C715D1 /* MainMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
 		5CE67E77194061A200F9FFCF /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
 		5CE67E78194061A200F9FFCF /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
 		5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentFactory.h; sourceTree = "<group>"; };
@@ -187,10 +175,9 @@
 				5C38188A193CA2C000C39FBC /* AppDelegate.m */,
 				5C38188C193CA2C000C39FBC /* Images.xcassets */,
 				5C381881193CA2C000C39FBC /* Supporting Files */,
-				5C38190F193E4A7400C39FBC /* Menu */,
 				5C381913193E4C4000C39FBC /* Assigments */,
-				5C832797193E7CEE007D7B5D /* Notifications */,
 				5C83279E193E7D19007D7B5D /* Map */,
+				5CA501D71943D1C600C715D1 /* Main Menu (home) */,
 			);
 			path = EnRoute12;
 			sourceTree = "<group>";
@@ -224,39 +211,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5C38190F193E4A7400C39FBC /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				5C381909193E4A3800C39FBC /* MenuViewController.h */,
-				5C38190A193E4A3800C39FBC /* MenuViewController.m */,
-				5C38190C193E4A6F00C39FBC /* MenuView.h */,
-				5C38190D193E4A6F00C39FBC /* MenuView.m */,
-				5C83278E193E6F9C007D7B5D /* MenuItem.h */,
-				5C832790193E6F9C007D7B5D /* MenuItem.m */,
-				5C83278F193E6F9C007D7B5D /* MenuItemFactory.h */,
-				5C832791193E6F9C007D7B5D /* MenuItemFactory.m */,
-			);
-			name = Menu;
-			sourceTree = "<group>";
-		};
 		5C381913193E4C4000C39FBC /* Assigments */ = {
 			isa = PBXGroup;
 			children = (
-				5C381910193E4C3900C39FBC /* AssignmentsTableViewController.h */,
-				5C381911193E4C3900C39FBC /* AssignmentsTableViewController.m */,
 				5C8327BD193E7E3D007D7B5D /* Volume app */,
 				5C8367D219406D8800870A8A /* Assignment */,
 			);
 			name = Assigments;
-			sourceTree = "<group>";
-		};
-		5C832797193E7CEE007D7B5D /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				5C832794193E7CE3007D7B5D /* NotificationsTableViewController.h */,
-				5C832795193E7CE3007D7B5D /* NotificationsTableViewController.m */,
-			);
-			name = Notifications;
 			sourceTree = "<group>";
 		};
 		5C83279E193E7D19007D7B5D /* Map */ = {
@@ -329,6 +290,17 @@
 				5C8367D71940A3DC00870A8A /* AssignmentView.m */,
 			);
 			name = Assignment;
+			sourceTree = "<group>";
+		};
+		5CA501D71943D1C600C715D1 /* Main Menu (home) */ = {
+			isa = PBXGroup;
+			children = (
+				5CA501D11943D13D00C715D1 /* MainMenuViewController.h */,
+				5CA501D21943D13D00C715D1 /* MainMenuViewController.m */,
+				5CA501D41943D1C100C715D1 /* MainMenuView.h */,
+				5CA501D51943D1C100C715D1 /* MainMenuView.m */,
+			);
+			name = "Main Menu (home)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,21 +434,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */,
-				5C381912193E4C3900C39FBC /* AssignmentsTableViewController.m in Sources */,
 				5C8367D51940A38000870A8A /* AssignmentViewController.m in Sources */,
 				5C8327AE193E7DF9007D7B5D /* QuietSpotFactory.m in Sources */,
+				5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */,
 				5C38188B193CA2C000C39FBC /* AppDelegate.m in Sources */,
 				5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */,
-				5C38190E193E4A6F00C39FBC /* MenuView.m in Sources */,
 				5CE67E79194061A200F9FFCF /* Assignment.m in Sources */,
-				5C832793193E6F9C007D7B5D /* MenuItemFactory.m in Sources */,
 				5C8327B4193E7E03007D7B5D /* AddQuietSpotViewController.m in Sources */,
-				5C832792193E6F9C007D7B5D /* MenuItem.m in Sources */,
 				5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */,
-				5C38190B193E4A3800C39FBC /* MenuViewController.m in Sources */,
-				5C832796193E7CE3007D7B5D /* NotificationsTableViewController.m in Sources */,
 				5C381887193CA2C000C39FBC /* main.m in Sources */,
 				5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */,
+				5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */,
 				5C8327BA193E7E16007D7B5D /* MapViewController.m in Sources */,
 				5C8327BB193E7E16007D7B5D /* MapView.m in Sources */,
 				5C8327AD193E7DF9007D7B5D /* QuietSpot.m in Sources */,

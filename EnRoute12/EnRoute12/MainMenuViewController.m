@@ -1,53 +1,39 @@
 //
-//  AssignmentViewController.m
+//  MainMenuViewController.m
 //  EnRoute12
 //
-//  Created by Wout Thielemans on 05/06/14.
+//  Created by Wout Thielemans on 08/06/14.
 //  Copyright (c) 2014 devine. All rights reserved.
 //
 
-#import "AssignmentViewController.h"
+#import "MainMenuViewController.h"
 
-@interface AssignmentViewController ()
+@interface MainMenuViewController ()
 
 @end
 
-@implementation AssignmentViewController
+@implementation MainMenuViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = [NSString stringWithFormat:@"%@",self.assignment.title];
-        self.asView.scrollView.delegate = self;
     }
     return self;
-}
-
-- (id)initWithAssignment:(Assignment *)assignment
-{
-    self.assignment = assignment;
-    return [self initWithNibName:nil bundle:nil];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)loadView
 {
     CGRect bounds = [UIScreen mainScreen].bounds;
-    self.asView = [[AssignmentView alloc] initWithFrame:bounds andAssignment:self.assignment];
-    self.view = self.asView;
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    int page = scrollView.contentOffset.x/scrollView.frame.size.width;
-    self.asView.pageControl.currentPage = page;
+    self.view = [[MainMenuView alloc] initWithFrame:bounds];
 }
 
 - (void)didReceiveMemoryWarning

@@ -15,7 +15,25 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor blackColor];
+    
+        if(assignment.illustration2){
+            
+            self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
+            [self addSubview:self.scrollView];
+            
+            
+            self.scrollView.pagingEnabled = YES;
+            self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
+            self.pageControl.numberOfPages = 3;
+            CGSize sizeOfPageControl = [self.pageControl sizeForNumberOfPages:self.pageControl.numberOfPages];
+            self.pageControl.frame = CGRectMake(0, 0, sizeOfPageControl.width, sizeOfPageControl.height);
+            self.pageControl.center = CGPointMake(self.frame.size.width/2, self.frame.size.height - (sizeOfPageControl.height/2));
+            [self addSubview:self.pageControl];
+            
+        }else{
+            
+        }
     }
     return self;
 }

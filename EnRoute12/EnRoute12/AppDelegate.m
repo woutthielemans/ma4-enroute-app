@@ -14,8 +14,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.menuVC = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
-    self.navController = [[UINavigationController alloc] initWithRootViewController:self.menuVC];
+    self.mainMenuVC = [[MainMenuViewController alloc] initWithNibName:nil bundle:nil];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.mainMenuVC];
     self.window.rootViewController = self.navController;
     
     self.window.backgroundColor = [UIColor whiteColor];

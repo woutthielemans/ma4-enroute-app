@@ -17,14 +17,17 @@
     assignment.type = type;
     assignment.title = title;
     NSURL *ill1url = [NSURL URLWithString:[NSString stringWithFormat:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/illustrations/%@",illustration1path]];
+    NSLog(@"[AssignmentFactory] Illustration path 1: %@",ill1url);
     NSData *data1 = [NSData dataWithContentsOfURL: ill1url];
     UIImage *ill1 = [UIImage imageWithData: data1];
     assignment.illustration1 = ill1;
     NSURL *ill2url = [NSURL URLWithString:[NSString stringWithFormat:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/illustrations/%@",illustration2path]];
+    NSLog(@"[AssignmentFactory] Illustration path 2: %@",ill2url);
     NSData *data2 = [NSData dataWithContentsOfURL: ill2url];
     UIImage *ill2 = [UIImage imageWithData: data2];
     assignment.illustration2 = ill2;
     NSURL *ill3url = [NSURL URLWithString:[NSString stringWithFormat:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/illustrations/%@",illustration3path]];
+    NSLog(@"[AssignmentFactory] Illustration path 3: %@",ill3url);
     NSData *data3 = [NSData dataWithContentsOfURL: ill3url];
     UIImage *ill3 = [UIImage imageWithData: data3];
     assignment.illustration1 = ill3;
