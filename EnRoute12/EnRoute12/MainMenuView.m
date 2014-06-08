@@ -24,38 +24,40 @@
         
         // button: de stille stad
         UIImage *stilbg = [UIImage imageNamed:@"hmi_destillestad"];
-        UIButton *btnStil = [UIButton buttonWithType:UIButtonTypeCustom];
-        btnStil.frame = CGRectMake(logoImageView.frame.origin.x + logoImageView.frame.size.width + 20, 40, stilbg.size.width, stilbg.size.height);
-        [btnStil setBackgroundImage:stilbg forState:UIControlStateNormal];
-        [self addSubview:btnStil];
+        self.btnStil = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.btnStil.frame = CGRectMake(logoImageView.frame.origin.x + logoImageView.frame.size.width + 20, 40, stilbg.size.width, stilbg.size.height);
+        [self.btnStil setBackgroundImage:stilbg forState:UIControlStateNormal];
+        [self addSubview:self.btnStil];
         
         // button: de vriendelijke stad
         UIImage *vriendbg = [UIImage imageNamed:@"hmi_devriendelijkestad"];
-        UIButton *btnVriend = [UIButton buttonWithType:UIButtonTypeCustom];
-        btnVriend.frame = CGRectMake(logoImageView.frame.origin.x, logoImageView.frame.origin.y + logoImageView.frame.size.height + 20, vriendbg.size.width, vriendbg.size.height);
-        [btnVriend setBackgroundImage:vriendbg forState:UIControlStateNormal];
-        [self addSubview:btnVriend];
+        self.btnVriend = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.btnVriend.frame = CGRectMake(logoImageView.frame.origin.x, logoImageView.frame.origin.y + logoImageView.frame.size.height + 20, vriendbg.size.width, vriendbg.size.height);
+        [self.btnVriend setBackgroundImage:vriendbg forState:UIControlStateNormal];
+        [self addSubview:self.btnVriend];
         
         // button: de groene stad
         UIImage *groenbg = [UIImage imageNamed:@"hmi_degroenestad"];
-        UIButton *btnGroen = [UIButton buttonWithType:UIButtonTypeCustom];
-        btnGroen.frame = CGRectMake(btnStil.frame.origin.x, btnStil.frame.origin.y + btnStil.frame.size.height + 20, groenbg.size.width, groenbg.size.height);
-        [btnGroen setBackgroundImage:groenbg forState:UIControlStateNormal];
-        [self addSubview:btnGroen];
+        self.btnGroen = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.btnGroen.frame = CGRectMake(self.btnStil.frame.origin.x, self.btnStil.frame.origin.y + self.btnStil.frame.size.height + 20, groenbg.size.width, groenbg.size.height);
+        [self.btnGroen setBackgroundImage:groenbg forState:UIControlStateNormal];
+        [self addSubview:self.btnGroen];
         
         // button: de kaart
         UIImage *kaartbg = [UIImage imageNamed:@"hmi_dekaart"];
-        UIButton *btnKaart = [UIButton buttonWithType:UIButtonTypeCustom];
-        btnKaart.frame = CGRectMake(logoImageView.frame.origin.x, btnVriend.frame.origin.y + btnVriend.frame.size.height + 20, kaartbg.size.width, kaartbg.size.height);
-        [btnKaart setBackgroundImage:kaartbg forState:UIControlStateNormal];
-        [self addSubview:btnKaart];
+        self.btnKaart = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.btnKaart.frame = CGRectMake(logoImageView.frame.origin.x, self.btnVriend.frame.origin.y + self.btnVriend.frame.size.height + 20, kaartbg.size.width, kaartbg.size.height);
+        [self.btnKaart setBackgroundImage:kaartbg forState:UIControlStateNormal];
+        [self addSubview:self.btnKaart];
         
         // button: kleine opdrachten
         UIImage *opdrachtbg = [UIImage imageNamed:@"hmi_kleineopdrachten"];
-        UIButton *btnOpdracht = [UIButton buttonWithType:UIButtonTypeCustom];
-        btnOpdracht.frame = CGRectMake(btnGroen.frame.origin.x, btnGroen.frame.origin.y + btnGroen.frame.size.height + 20, opdrachtbg.size.width, opdrachtbg.size.height);
-        [btnOpdracht setBackgroundImage:opdrachtbg forState:UIControlStateNormal];
-        [self addSubview:btnOpdracht];
+        self.btnOpdracht = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.btnOpdracht.frame = CGRectMake(self.btnGroen.frame.origin.x, self.btnGroen.frame.origin.y + self.btnGroen.frame.size.height + 20, opdrachtbg.size.width, opdrachtbg.size.height);
+        [self.btnOpdracht setBackgroundImage:opdrachtbg forState:UIControlStateNormal];
+        [self addSubview:self.btnOpdracht];
+        
+        // 1    TODO: alle menuitems in array -> overlopen met delay -> scale + opacity animeren
         
     }
     return self;

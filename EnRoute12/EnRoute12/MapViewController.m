@@ -19,7 +19,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Quiet spots";
     }
     return self;
 }
@@ -28,10 +27,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
+    self.navigationItem.leftBarButtonItem = [self getBackButton];
+    self.navigationItem.rightBarButtonItem = [self getMenuButton];
     
     NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/api/spots";
     NSURL *url = [NSURL URLWithString:path];
@@ -57,6 +59,39 @@
         [alerView show];
     }];
     [operation start];
+}
+
+- (UIBarButtonItem *) getBackButton
+{
+    NSLog(@"[MapVC] Get back button");
+    self.btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.backarrowmap = [UIImage imageNamed:@"backarrowmap"];
+    [self.btnBack setFrame:CGRectMake(20,20,self.backarrowmap.size.width,self.backarrowmap.size.height)];
+    [self.btnBack setImage:self.backarrowmap forState:UIControlStateNormal];
+    [self.btnBack addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnBack];
+    return backBarButton;
+}
+
+- (void)backButtonTapped
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (UIBarButtonItem *) getMenuButton
+{
+    self.btnMenu = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.menubuttonmap = [UIImage imageNamed:@"menubuttonmap"];
+    [self.btnMenu setFrame:CGRectMake(self.mapView.frame.size.width - 20,20,self.menubuttonmap.size.width,self.menubuttonmap.size.height)];
+    [self.btnMenu setImage:self.menubuttonmap forState:UIControlStateNormal];
+    [self.btnMenu addTarget:self action:@selector(menuButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *menuBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnMenu];
+    return menuBarButton;
+}
+
+- (void)menuButtonTapped
+{
+    NSLog(@"[MapVC] Menu button was tapped");
 }
 
 - (void)loadView

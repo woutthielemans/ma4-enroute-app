@@ -27,13 +27,22 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    
+    [self.mainMenuView.btnKaart addTarget:self action:@selector(kaartTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)loadView
 {
     CGRect bounds = [UIScreen mainScreen].bounds;
-    self.view = [[MainMenuView alloc] initWithFrame:bounds];
+    self.mainMenuView = [[MainMenuView alloc] initWithFrame:bounds];
+    self.view = self.mainMenuView;
+}
+
+- (void)kaartTapped:(id)sender
+{
+    MapViewController *mapVC = [[MapViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:mapVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

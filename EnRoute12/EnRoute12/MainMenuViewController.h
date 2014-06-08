@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MainMenuView.h"
+#import "MapViewController.h"
 
 @interface MainMenuViewController : UIViewController
 

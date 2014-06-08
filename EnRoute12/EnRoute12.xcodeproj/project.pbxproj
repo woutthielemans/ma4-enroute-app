@@ -37,6 +37,7 @@
 		5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D51943D1C100C715D1 /* MainMenuView.m */; };
 		5CE67E79194061A200F9FFCF /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E78194061A200F9FFCF /* Assignment.m */; };
 		5CE67E7C194061B300F9FFCF /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */; };
+		5CFE53F719448E34004D2E0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFE53F619448E34004D2E0B /* QuartzCore.framework */; };
 		CD5CB696C8C0479BA7BB2FBD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD583BBDF2AA479688F58AF0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		5CE67E78194061A200F9FFCF /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
 		5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentFactory.h; sourceTree = "<group>"; };
 		5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentFactory.m; sourceTree = "<group>"; };
+		5CFE53F619448E34004D2E0B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD583BBDF2AA479688F58AF0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1779BDD98284E45ADA1FB6C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CFE53F719448E34004D2E0B /* QuartzCore.framework in Frameworks */,
 				5C3818AE193D18BB00C39FBC /* AVFoundation.framework in Frameworks */,
 				5C3818AC193D18AA00C39FBC /* CoreLocation.framework in Frameworks */,
 				5C3818AA193D189B00C39FBC /* MapKit.framework in Frameworks */,
@@ -156,6 +159,7 @@
 		5C381879193CA2C000C39FBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CFE53F619448E34004D2E0B /* QuartzCore.framework */,
 				5C3818AD193D18BB00C39FBC /* AVFoundation.framework */,
 				5C3818AB193D18AA00C39FBC /* CoreLocation.framework */,
 				5C3818A9193D189B00C39FBC /* MapKit.framework */,
