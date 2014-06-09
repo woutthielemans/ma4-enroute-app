@@ -20,6 +20,13 @@
     if (self) {
         // Custom initialization
         self.title = @"Listen";
+        [[self navigationController] setNavigationBarHidden:NO animated:NO];
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                      forBarMetrics:UIBarMetricsDefault];
+        self.navigationController.navigationBar.shadowImage = [UIImage new];
+        self.navigationController.navigationBar.translucent = YES;
+        self.navigationItem.leftBarButtonItem = [self getBackButton];
+        self.navigationItem.rightBarButtonItem = [self getMenuButton];
     }
     return self;
 }
@@ -92,7 +99,9 @@
     }else{
         NSLog(@"Quite quiet! Timer running: %f", [self.audioRecorder averagePowerForChannel:0]);
         if(!self.acceptTimer){
-            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target: self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
+//            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target: self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
+            // TEST VALUE!
+            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target: self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
         }
     }
 }
@@ -128,19 +137,61 @@
     NSLog(@"[VolumeCheckerVC] Did save spot");
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *params = @{@"spot[title]": addQuietSpotViewController.addQuietSpotView.txtTitle,
-                             @"spot[subtitle]": addQuietSpotViewController.addQuietSpotView.txtSubtitle,
-                             @"spot[lon]": addQuietSpotViewController.userlongitude,
-                             @"spot[lat]": addQuietSpotViewController.userlatitude};
-    [manager POST:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/uploadspot.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    NSString *title = [NSString stringWithFormat:@"%@",addQuietSpotViewController.addQuietSpotView.txtTitle.text];
+    NSString *subtitle = [NSString stringWithFormat:@"%@",addQuietSpotViewController.addQuietSpotView.txtSubtitle.text];
+    float userlongitude = addQuietSpotViewController.userlongitude.floatValue;
+    float userlatitude = addQuietSpotViewController.userlatitude.floatValue;
+    
+    NSArray *params = [NSArray arrayWithObjects:title,subtitle,userlongitude,userlatitude, nil];
+    [manager POST:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/uploadspot.php" parameters:params
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        NSLog(@"[VolumeCheckerVC] Posting JSON succes!");
         NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+    }
+          failure:
+     ^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+     }];
     
     [addQuietSpotViewController dismissViewControllerAnimated:NO completion:^{}];
     MapViewController *mapVC = [[MapViewController alloc] init];
     [self.navigationController pushViewController:mapVC animated:YES];
+}
+
+- (UIBarButtonItem *) getBackButton
+{
+    NSLog(@"[MapVC] Get back button");
+    self.btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.backarrow = [UIImage imageNamed:@"backarrow"];
+    [self.btnBack setFrame:CGRectMake(20,20,self.backarrow.size.width,self.backarrow.size.height)];
+    [self.btnBack setImage:self.backarrow forState:UIControlStateNormal];
+    [self.btnBack addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnBack];
+    return backBarButton;
+}
+
+- (void)backButtonTapped
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (UIBarButtonItem *) getMenuButton
+{
+    self.btnMenu = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.menubutton = [UIImage imageNamed:@"menubutton"];
+    [self.btnMenu setFrame:CGRectMake(self.view.frame.size.width - 20,20,self.menubutton.size.width,self.menubutton.size.height)];
+    [self.btnMenu setImage:self.menubutton forState:UIControlStateNormal];
+    [self.btnMenu addTarget:self action:@selector(menuButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *menuBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnMenu];
+    return menuBarButton;
+}
+
+- (void)menuButtonTapped
+{
+    NSLog(@"[MapVC] Menu button was tapped");
 }
 
 - (void)uploadSpot

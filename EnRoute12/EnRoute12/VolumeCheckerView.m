@@ -15,6 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor whiteColor];
         self.btnListen = [UIButton buttonWithType:UIButtonTypeSystem];
         [self.btnListen setTitle:@"Listen" forState:UIControlStateNormal];
         self.btnListen.frame = CGRectMake(0, 0, 200, 44);

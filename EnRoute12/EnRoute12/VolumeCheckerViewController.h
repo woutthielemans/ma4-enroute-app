@@ -17,12 +17,16 @@
 #import "MapViewController.h"
 #import "AddQuietSpotView.h"
 
-@interface VolumeCheckerViewController : UIViewController <AddQuietSpotViewDelegate>
+@interface VolumeCheckerViewController : UIViewController <AddQuietSpotViewDelegate, NSCoding>
 
 @property (strong, nonatomic) VolumeCheckerView *volumeCheckerView;
 @property (strong, nonatomic) AVAudioRecorder *audioRecorder;
 @property (strong, nonatomic) NSTimer *levelTimer;
 @property (strong, nonatomic) NSTimer *acceptTimer;
+@property (strong, nonatomic) UIButton *btnBack;
+@property (strong, nonatomic) UIButton *btnMenu;
+@property (strong, nonatomic) UIImage *backarrow;
+@property (strong, nonatomic) UIImage *menubutton;
 
 - (void)levelTimerCallback:(NSTimer *)timer;
 

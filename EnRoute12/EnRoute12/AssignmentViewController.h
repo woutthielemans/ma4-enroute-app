@@ -10,7 +10,7 @@
 #import "AssignmentView.h"
 #import "Assignment.h"
 #import "CameraViewController.h"
-#import "VolumeCheckerView.h"
+#import "VolumeCheckerViewController.h"
 
 @interface AssignmentViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 

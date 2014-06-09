@@ -43,6 +43,10 @@
     self.navigationItem.rightBarButtonItem = [self getMenuButton];
     
     [self.asView.gphotobutton addTarget:self action:@selector(showCamera:) forControlEvents:UIControlEventTouchUpInside];
+    [self.asView.gcheckbutton addTarget:self action:@selector(checkTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.asView.glistenbutton addTarget:self action:@selector(listenTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.asView.volumebutton addTarget:self action:@selector(volumeTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (UIBarButtonItem *) getBackButton
@@ -145,6 +149,23 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+- (void)checkTapped:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)listenTapped:(id)sender
+{
+    NSLog(@"[AssignmentVC] Standard assignment listen tapped - type should not exist for standard a's, returning to TVC");
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)volumeTapped:(id)sender
+{
+    VolumeCheckerViewController *volumeCheckerVC  =[[VolumeCheckerViewController alloc] initWithNibName:nil bundle:nil];
+    [self presentViewController:volumeCheckerVC animated:YES completion:^{}];
 }
 
 - (void)loadView
