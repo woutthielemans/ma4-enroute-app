@@ -38,6 +38,12 @@
 		5CE67E79194061A200F9FFCF /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E78194061A200F9FFCF /* Assignment.m */; };
 		5CE67E7C194061B300F9FFCF /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */; };
 		5CFE53F719448E34004D2E0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFE53F619448E34004D2E0B /* QuartzCore.framework */; };
+		5CFE540D19452A59004D2E0B /* AssignmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */; };
+		5CFE541119453AC7004D2E0B /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE541019453AC7004D2E0B /* Camera.m */; };
+		5CFE541419453B0C004D2E0B /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE541319453B0C004D2E0B /* NotificationsViewController.m */; };
+		5CFE541719453B1A004D2E0B /* NotificationsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE541619453B1A004D2E0B /* NotificationsView.m */; };
+		5CFE541A19453B29004D2E0B /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE541919453B29004D2E0B /* Notification.m */; };
+		5CFE541D19453B33004D2E0B /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE541C19453B33004D2E0B /* NotificationFactory.m */; };
 		CD5CB696C8C0479BA7BB2FBD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD583BBDF2AA479688F58AF0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +109,18 @@
 		5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentFactory.h; sourceTree = "<group>"; };
 		5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentFactory.m; sourceTree = "<group>"; };
 		5CFE53F619448E34004D2E0B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5CFE540B19452A59004D2E0B /* AssignmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentsTableViewController.h; sourceTree = "<group>"; };
+		5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentsTableViewController.m; sourceTree = "<group>"; };
+		5CFE540F19453AC7004D2E0B /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		5CFE541019453AC7004D2E0B /* Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		5CFE541219453B0C004D2E0B /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		5CFE541319453B0C004D2E0B /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
+		5CFE541519453B1A004D2E0B /* NotificationsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsView.h; sourceTree = "<group>"; };
+		5CFE541619453B1A004D2E0B /* NotificationsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsView.m; sourceTree = "<group>"; };
+		5CFE541819453B29004D2E0B /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		5CFE541919453B29004D2E0B /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
+		5CFE541B19453B33004D2E0B /* NotificationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationFactory.h; sourceTree = "<group>"; };
+		5CFE541C19453B33004D2E0B /* NotificationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationFactory.m; sourceTree = "<group>"; };
 		AD583BBDF2AA479688F58AF0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1779BDD98284E45ADA1FB6C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,9 +197,43 @@
 				5C38188A193CA2C000C39FBC /* AppDelegate.m */,
 				5C38188C193CA2C000C39FBC /* Images.xcassets */,
 				5C381881193CA2C000C39FBC /* Supporting Files */,
-				5C381913193E4C4000C39FBC /* Assigments */,
-				5C83279E193E7D19007D7B5D /* Map */,
 				5CA501D71943D1C600C715D1 /* Main Menu (home) */,
+				5CA501D11943D13D00C715D1 /* MainMenuViewController.h */,
+				5CA501D21943D13D00C715D1 /* MainMenuViewController.m */,
+				5CA501D41943D1C100C715D1 /* MainMenuView.h */,
+				5CA501D51943D1C100C715D1 /* MainMenuView.m */,
+				5C381913193E4C4000C39FBC /* Assigments */,
+				5CFE540B19452A59004D2E0B /* AssignmentsTableViewController.h */,
+				5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */,
+				5C8367D219406D8800870A8A /* Assignment */,
+				5CE67E77194061A200F9FFCF /* Assignment.h */,
+				5CE67E78194061A200F9FFCF /* Assignment.m */,
+				5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */,
+				5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */,
+				5C8367CF19406D7800870A8A /* AssignmentTableViewCell.h */,
+				5C8367D019406D7800870A8A /* AssignmentTableViewCell.m */,
+				5C8367D31940A38000870A8A /* AssignmentViewController.h */,
+				5C8367D41940A38000870A8A /* AssignmentViewController.m */,
+				5C8367D61940A3DC00870A8A /* AssignmentView.h */,
+				5C8367D71940A3DC00870A8A /* AssignmentView.m */,
+				5C8327BD193E7E3D007D7B5D /* Volume app */,
+				5C8327A2193E7DA4007D7B5D /* Quiet Spots */,
+				5C8327A0193E7D87007D7B5D /* Add Quiet Spot */,
+				5C83279F193E7D7C007D7B5D /* VolumeChecker */,
+				5C83279E193E7D19007D7B5D /* Map */,
+				5C8327B6193E7E16007D7B5D /* MapViewController.h */,
+				5C8327B7193E7E16007D7B5D /* MapViewController.m */,
+				5C8327B8193E7E16007D7B5D /* MapView.h */,
+				5C8327B9193E7E16007D7B5D /* MapView.m */,
+				5CFE540E19453AAD004D2E0B /* Camera */,
+				5CFE541219453B0C004D2E0B /* NotificationsViewController.h */,
+				5CFE541319453B0C004D2E0B /* NotificationsViewController.m */,
+				5CFE541519453B1A004D2E0B /* NotificationsView.h */,
+				5CFE541619453B1A004D2E0B /* NotificationsView.m */,
+				5CFE541819453B29004D2E0B /* Notification.h */,
+				5CFE541919453B29004D2E0B /* Notification.m */,
+				5CFE541B19453B33004D2E0B /* NotificationFactory.h */,
+				5CFE541C19453B33004D2E0B /* NotificationFactory.m */,
 			);
 			path = EnRoute12;
 			sourceTree = "<group>";
@@ -218,8 +270,6 @@
 		5C381913193E4C4000C39FBC /* Assigments */ = {
 			isa = PBXGroup;
 			children = (
-				5C8327BD193E7E3D007D7B5D /* Volume app */,
-				5C8367D219406D8800870A8A /* Assignment */,
 			);
 			name = Assigments;
 			sourceTree = "<group>";
@@ -227,10 +277,6 @@
 		5C83279E193E7D19007D7B5D /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				5C8327B6193E7E16007D7B5D /* MapViewController.h */,
-				5C8327B7193E7E16007D7B5D /* MapViewController.m */,
-				5C8327B8193E7E16007D7B5D /* MapView.h */,
-				5C8327B9193E7E16007D7B5D /* MapView.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -272,9 +318,6 @@
 		5C8327BD193E7E3D007D7B5D /* Volume app */ = {
 			isa = PBXGroup;
 			children = (
-				5C8327A2193E7DA4007D7B5D /* Quiet Spots */,
-				5C8327A0193E7D87007D7B5D /* Add Quiet Spot */,
-				5C83279F193E7D7C007D7B5D /* VolumeChecker */,
 			);
 			name = "Volume app";
 			sourceTree = "<group>";
@@ -282,16 +325,6 @@
 		5C8367D219406D8800870A8A /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				5CE67E77194061A200F9FFCF /* Assignment.h */,
-				5CE67E78194061A200F9FFCF /* Assignment.m */,
-				5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */,
-				5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */,
-				5C8367CF19406D7800870A8A /* AssignmentTableViewCell.h */,
-				5C8367D019406D7800870A8A /* AssignmentTableViewCell.m */,
-				5C8367D31940A38000870A8A /* AssignmentViewController.h */,
-				5C8367D41940A38000870A8A /* AssignmentViewController.m */,
-				5C8367D61940A3DC00870A8A /* AssignmentView.h */,
-				5C8367D71940A3DC00870A8A /* AssignmentView.m */,
 			);
 			name = Assignment;
 			sourceTree = "<group>";
@@ -299,12 +332,17 @@
 		5CA501D71943D1C600C715D1 /* Main Menu (home) */ = {
 			isa = PBXGroup;
 			children = (
-				5CA501D11943D13D00C715D1 /* MainMenuViewController.h */,
-				5CA501D21943D13D00C715D1 /* MainMenuViewController.m */,
-				5CA501D41943D1C100C715D1 /* MainMenuView.h */,
-				5CA501D51943D1C100C715D1 /* MainMenuView.m */,
 			);
 			name = "Main Menu (home)";
+			sourceTree = "<group>";
+		};
+		5CFE540E19453AAD004D2E0B /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE540F19453AC7004D2E0B /* Camera.h */,
+				5CFE541019453AC7004D2E0B /* Camera.m */,
+			);
+			name = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,10 +475,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CFE540D19452A59004D2E0B /* AssignmentsTableViewController.m in Sources */,
 				5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */,
 				5C8367D51940A38000870A8A /* AssignmentViewController.m in Sources */,
 				5C8327AE193E7DF9007D7B5D /* QuietSpotFactory.m in Sources */,
+				5CFE541A19453B29004D2E0B /* Notification.m in Sources */,
+				5CFE541D19453B33004D2E0B /* NotificationFactory.m in Sources */,
 				5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */,
+				5CFE541419453B0C004D2E0B /* NotificationsViewController.m in Sources */,
 				5C38188B193CA2C000C39FBC /* AppDelegate.m in Sources */,
 				5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */,
 				5CE67E79194061A200F9FFCF /* Assignment.m in Sources */,
@@ -452,6 +494,8 @@
 				5C8327BA193E7E16007D7B5D /* MapViewController.m in Sources */,
 				5C8327BB193E7E16007D7B5D /* MapView.m in Sources */,
 				5C8327AD193E7DF9007D7B5D /* QuietSpot.m in Sources */,
+				5CFE541719453B1A004D2E0B /* NotificationsView.m in Sources */,
+				5CFE541119453AC7004D2E0B /* Camera.m in Sources */,
 				5C8327B5193E7E03007D7B5D /* AddQuietSpotView.m in Sources */,
 				5CE67E7C194061B300F9FFCF /* AssignmentFactory.m in Sources */,
 			);

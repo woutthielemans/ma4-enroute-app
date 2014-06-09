@@ -11,8 +11,9 @@
 
 @interface AssignmentView : UIView
 
-@property (strong, nonatomic) UIScrollView *scrollView;
-@property (strong, nonatomic) UIPageControl *pageControl;
+@property (strong, nonatomic) UIImage *illustration;
+@property (strong, nonatomic) NSString *text;
+@property (strong, nonatomic) UIButton *button;
 
 - (id)initWithFrame:(CGRect)frame andAssignment:(Assignment *)assignment;
 

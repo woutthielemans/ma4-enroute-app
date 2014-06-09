@@ -11,6 +11,6 @@
 
 @interface AssignmentFactory : NSObject
 
-+ (Assignment *)createAssignmentWithIdentifier:(int)identifier Type:(int)type Title:(NSString *)title Illustration1Path:(NSString *)illustration1path Illustration2Path:(NSString *)illustration2path Illustration3Path:(NSString *)illustration3path Text1:(NSString *)text1 Text2:(NSString *)text2 AndText3:(NSString *)text3;
++ (Assignment *)createAssignmentWithIdentifier:(int)identifier Type:(int)type CategoryId:(int)categoryid  Title:(NSString *)title IllustrationPath:(NSString *)illustrationpath AndText:(NSString *)text;
 
 @end

@@ -28,7 +28,15 @@
 {
     [super viewDidLoad];
     
-    NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/api/assignments";
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationItem.leftBarButtonItem = [self getBackButton];
+    self.navigationItem.rightBarButtonItem = [self getMenuButton];
+    
+    NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/api/standardassignments";
     NSURL *url = [NSURL URLWithString:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -40,13 +48,14 @@
         for (NSDictionary *dict in loadedData) {
             int identifier = [[dict objectForKey:@"id"] intValue];
             int type = [[dict objectForKey:@"type"] intValue];
-            Assignment *assignment = [AssignmentFactory createAssignmentWithIdentifier:identifier Type:type Title:[dict objectForKey:@"title"] Illustration1Path:[dict objectForKey:@"illustration1"] Illustration2Path:[dict objectForKey:@"illustration2"] Illustration3Path:[dict objectForKey:@"illustration3"] Text1:[dict objectForKey:@"text1"] Text2:[dict objectForKey:@"text2"] AndText3:[dict objectForKey:@"text3"]];
-            [self.assignments addObject: assignment];
+            int categoryid = [[dict objectForKey:@"category_id"] intValue];
+            Assignment *sassignment = [AssignmentFactory createAssignmentWithIdentifier:identifier Type:type CategoryId:categoryid Title:[dict objectForKey:@"title"] IllustrationPath:[dict objectForKey:@"illustration"] AndText:[dict objectForKey:@"text"]];
+            [self.assignments addObject: sassignment];
             [self.tableView reloadData];
         }
-        for (Assignment *a in self.assignments) {
-            NSLog(@"[AssignmentsTVC] Assignment #%i: %@",a.identifier,a.title);
-        }
+//        for (Assignment *a in self.assignments) {
+//            NSLog(@"[AssignmentsTVC] Assignment #%i: %@",a.identifier,a.title);
+//        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error loading JSON");
         UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"error accessing api for assignments" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
@@ -62,6 +71,40 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (UIBarButtonItem *) getBackButton
+{
+    NSLog(@"[MapVC] Get back button");
+    self.btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.backarrowmap = [UIImage imageNamed:@"backarrowmap"];
+    [self.btnBack setFrame:CGRectMake(20,20,self.backarrowmap.size.width,self.backarrowmap.size.height)];
+    [self.btnBack setImage:self.backarrowmap forState:UIControlStateNormal];
+    [self.btnBack addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnBack];
+    return backBarButton;
+}
+
+- (void)backButtonTapped
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (UIBarButtonItem *) getMenuButton
+{
+    self.btnMenu = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.menubuttonmap = [UIImage imageNamed:@"menubuttonmap"];
+    [self.btnMenu setFrame:CGRectMake(self.view.frame.size.width - 20,20,self.menubuttonmap.size.width,self.menubuttonmap.size.height)];
+    [self.btnMenu setImage:self.menubuttonmap forState:UIControlStateNormal];
+    [self.btnMenu addTarget:self action:@selector(menuButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *menuBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnMenu];
+    return menuBarButton;
+}
+
+- (void)menuButtonTapped
+{
+    NSLog(@"[MapVC] Menu button was tapped");
+}
+
 
 - (void)didReceiveMemoryWarning
 {

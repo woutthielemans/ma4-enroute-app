@@ -16,5 +16,9 @@
 @interface AssignmentsTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *assignments;
+@property (strong, nonatomic) UIButton *btnBack;
+@property (strong, nonatomic) UIButton *btnMenu;
+@property (strong, nonatomic) UIImage *backarrowmap;
+@property (strong, nonatomic) UIImage *menubuttonmap;
 
 @end

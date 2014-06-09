@@ -26,10 +26,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/api/creativeassignments";
+    NSURL *url = [NSURL URLWithString:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *loadedData = (NSArray *)responseObject;
+        self.cassignments = [NSMutableArray array];
+        
+        for (NSDictionary *dict in loadedData) {
+            int identifier = [[dict objectForKey:@"id"] intValue];
+            int type = [[dict objectForKey:@"type"] intValue];
+            int categoryid = [[dict objectForKey:@"category_id"] intValue];
+            Assignment *cassignment = [AssignmentFactory createAssignmentWithIdentifier:identifier Type:type CategoryId:categoryid Title:[dict objectForKey:@"title"] IllustrationPath:[dict objectForKey:@"illustration"] AndText:[dict objectForKey:@"text"]];
+            [self.cassignments addObject: cassignment];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error loading JSON");
+        UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"error accessing api for assignments" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alerView show];
+    }];
+    [operation start];
+    
     // Do any additional setup after loading the view.
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
-    
+    NotificationsViewController *notificationVC = [[NotificationsViewController alloc] init];
+    [self.mainMenuView.btnStil addTarget:self action:@selector(stilleStadTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainMenuView.btnVriend addTarget:self action:@selector(vriendStadTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainMenuView.btnGroen addTarget:self action:@selector(groeneStadTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.mainMenuView.btnKaart addTarget:self action:@selector(kaartTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainMenuView.btnOpdracht addTarget:self action:@selector(extraOpdrachtenTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)loadView
@@ -39,10 +67,40 @@
     self.view = self.mainMenuView;
 }
 
+- (void)stilleStadTapped:(id)sender
+{
+    int curas = 0;
+    Assignment *stilAssignment = self.cassignments[curas];
+    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:stilAssignment];
+    [self.navigationController pushViewController:assignmentVC animated:YES];
+}
+
+- (void)vriendStadTapped:(id)sender
+{
+    int curas = 2;
+    Assignment *vriendAssignment = self.cassignments[curas];
+    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:vriendAssignment];
+    [self.navigationController pushViewController:assignmentVC animated:YES];
+}
+
+- (void)groeneStadTapped:(id)sender
+{
+    int curas = 3;
+    Assignment *groenAssignment = self.cassignments[curas];
+    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:groenAssignment];
+    [self.navigationController pushViewController:assignmentVC animated:YES];
+}
+
 - (void)kaartTapped:(id)sender
 {
     MapViewController *mapVC = [[MapViewController alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:mapVC animated:YES];
+}
+
+- (void)extraOpdrachtenTapped:(id)sender
+{
+    AssignmentsTableViewController *assignmentTVC = [[AssignmentsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self.navigationController pushViewController:assignmentTVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
