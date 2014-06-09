@@ -12,7 +12,7 @@
 #import "CameraViewController.h"
 #import "VolumeCheckerView.h"
 
-@interface AssignmentViewController : UIViewController
+@interface AssignmentViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) Assignment *assignment;
 @property (strong, nonatomic) AssignmentView *asView;

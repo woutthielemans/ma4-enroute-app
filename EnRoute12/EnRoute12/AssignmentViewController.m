@@ -42,13 +42,7 @@
     self.navigationItem.leftBarButtonItem = [self getBackButton];
     self.navigationItem.rightBarButtonItem = [self getMenuButton];
     
-    [self.asView.gphotobutton addTarget:self action:@selector(gphotobuttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void)gphotobuttonTapped:(id)sender
-{
-    CameraViewController *cameraVC = [[CameraViewController alloc] initWithNibName:nil bundle:nil];
-    [self presentViewController:cameraVC animated:YES completion:^{}];
+    [self.asView.gphotobutton addTarget:self action:@selector(showCamera:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (UIBarButtonItem *) getBackButton
@@ -82,6 +76,75 @@
 - (void)menuButtonTapped
 {
     NSLog(@"[MapVC] Menu button was tapped");
+}
+
+- (void)showCamera:(id)camera{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        NSLog(@"Camera available");
+        NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.mediaTypes = availableMediaTypes;
+    }else{
+        NSLog(@"Camera not available");
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    [self presentViewController:imagePicker animated:YES completion:^{}];
+    imagePicker.delegate = self;
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    //    self.view.scrollView.hidden = YES;
+    UIImage *picture = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.asView.imageView.image = picture;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self uploadPhoto];
+        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(deletePhoto:) userInfo:nil repeats:NO];
+    }];
+}
+
+- (void)deletePhoto:(id)sender
+{
+    self.asView.imageView.image = nil;
+}
+
+-(void)uploadPhoto{
+    NSLog(@"Uploading photo...");
+    UIImage *resizedImage = [self imageWithImage:self.asView.imageView.image scaledToSize:CGSizeMake(self.asView.imageView.image.size.width/2.5, self.asView.imageView.image.size.height/2.5)];
+    NSData *imageData = UIImageJPEGRepresentation(resizedImage, 0.4);
+    NSString *urlString = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/uploadphoto.php";
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *boundary = @"---------------------------14737809831466499882746641449";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    
+    NSMutableData *body = [NSMutableData data];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uploadedfile\"; filename=\"test.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[NSData dataWithData:imageData]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"Image Return String: %@", returnString);
+}
+
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 - (void)loadView

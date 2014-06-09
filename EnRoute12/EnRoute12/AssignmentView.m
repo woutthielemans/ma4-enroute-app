@@ -81,8 +81,11 @@
                 [self.greenbutton setBackgroundImage:photobutton forState:UIControlStateNormal];
                 [self addSubview:self.greenbutton];
             }
+            
         }
         
+        self.imageView = [[UIImageView alloc]initWithFrame:frame];
+        [self addSubview:self.imageView];
         
     }
     return self;

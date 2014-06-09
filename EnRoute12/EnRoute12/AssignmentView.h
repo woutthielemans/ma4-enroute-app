@@ -19,6 +19,8 @@
 @property (strong, nonatomic) UIButton *volumebutton;
 @property (strong, nonatomic) UIButton *quotebutton;
 @property (strong, nonatomic) UIButton *greenbutton;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *loadedPhoto;
 
 - (id)initWithFrame:(CGRect)frame andAssignment:(Assignment *)assignment;
 

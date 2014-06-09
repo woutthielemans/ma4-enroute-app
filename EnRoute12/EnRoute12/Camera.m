@@ -15,26 +15,6 @@
 
 @implementation Camera
 
-//@synthesize captureSession = _captureSession;
-//@synthesize device = _device;
-//@synthesize deviceInput = _deviceInput;
-//@synthesize videoOutput = _videoOutput;
-//@synthesize previewLayer = _previewLayer;
-//@synthesize captureConnection = _captureConnection;
-//@synthesize stillImageOutput = _stillImageOutput;
-//
-//@synthesize cameraControlBackgroundView = _cameraControlBackgroundView;
-//@synthesize takePictureButton = _takePictureButton;
-//
-//@synthesize overlayImageView = _overlayImageView;
-//@synthesize overlayImage = _overlayImage;
-//
-//@synthesize imageData = _imageData;
-//@synthesize image = _image;
-//
-//@synthesize swipeValue = _swipeValue;
-//@synthesize alphaPercentage = _alphaPercentage;
-
 - (id)initWithFrame:(CGRect)frame andOverlayImage:(UIImage *)overlayImage {
     self = [self initWithFrame:frame];
     
