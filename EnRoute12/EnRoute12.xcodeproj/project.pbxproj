@@ -35,6 +35,7 @@
 		5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D71940A3DC00870A8A /* AssignmentView.m */; };
 		5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D21943D13D00C715D1 /* MainMenuViewController.m */; };
 		5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D51943D1C100C715D1 /* MainMenuView.m */; };
+		5CBE77B61945E6030046BCED /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE77B51945E6030046BCED /* CameraViewController.m */; };
 		5CE67E79194061A200F9FFCF /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E78194061A200F9FFCF /* Assignment.m */; };
 		5CE67E7C194061B300F9FFCF /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */; };
 		5CFE53F719448E34004D2E0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFE53F619448E34004D2E0B /* QuartzCore.framework */; };
@@ -104,6 +105,8 @@
 		5CA501D21943D13D00C715D1 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		5CA501D41943D1C100C715D1 /* MainMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuView.h; sourceTree = "<group>"; };
 		5CA501D51943D1C100C715D1 /* MainMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
+		5CBE77B41945E6030046BCED /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		5CBE77B51945E6030046BCED /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		5CE67E77194061A200F9FFCF /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
 		5CE67E78194061A200F9FFCF /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
 		5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentFactory.h; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 		5CFE540E19453AAD004D2E0B /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				5CBE77B41945E6030046BCED /* CameraViewController.h */,
+				5CBE77B51945E6030046BCED /* CameraViewController.m */,
 				5CFE540F19453AC7004D2E0B /* Camera.h */,
 				5CFE541019453AC7004D2E0B /* Camera.m */,
 			);
@@ -484,6 +489,7 @@
 				5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */,
 				5CFE541419453B0C004D2E0B /* NotificationsViewController.m in Sources */,
 				5C38188B193CA2C000C39FBC /* AppDelegate.m in Sources */,
+				5CBE77B61945E6030046BCED /* CameraViewController.m in Sources */,
 				5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */,
 				5CE67E79194061A200F9FFCF /* Assignment.m in Sources */,
 				5C8327B4193E7E03007D7B5D /* AddQuietSpotViewController.m in Sources */,

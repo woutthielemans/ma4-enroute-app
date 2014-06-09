@@ -41,15 +41,23 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationItem.leftBarButtonItem = [self getBackButton];
     self.navigationItem.rightBarButtonItem = [self getMenuButton];
+    
+    [self.asView.gphotobutton addTarget:self action:@selector(gphotobuttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)gphotobuttonTapped:(id)sender
+{
+    CameraViewController *cameraVC = [[CameraViewController alloc] initWithNibName:nil bundle:nil];
+    [self presentViewController:cameraVC animated:YES completion:^{}];
 }
 
 - (UIBarButtonItem *) getBackButton
 {
     NSLog(@"[MapVC] Get back button");
     self.btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.backarrowmap = [UIImage imageNamed:@"backarrowmap"];
-    [self.btnBack setFrame:CGRectMake(20,20,self.backarrowmap.size.width,self.backarrowmap.size.height)];
-    [self.btnBack setImage:self.backarrowmap forState:UIControlStateNormal];
+    self.backarrow = [UIImage imageNamed:@"backarrow"];
+    [self.btnBack setFrame:CGRectMake(20,20,self.backarrow.size.width,self.backarrow.size.height)];
+    [self.btnBack setImage:self.backarrow forState:UIControlStateNormal];
     [self.btnBack addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnBack];
     return backBarButton;
@@ -63,9 +71,9 @@
 - (UIBarButtonItem *) getMenuButton
 {
     self.btnMenu = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.menubuttonmap = [UIImage imageNamed:@"menubuttonmap"];
-    [self.btnMenu setFrame:CGRectMake(self.view.frame.size.width - 20,20,self.menubuttonmap.size.width,self.menubuttonmap.size.height)];
-    [self.btnMenu setImage:self.menubuttonmap forState:UIControlStateNormal];
+    self.menubutton = [UIImage imageNamed:@"menubutton"];
+    [self.btnMenu setFrame:CGRectMake(self.view.frame.size.width - 20,20,self.menubutton.size.width,self.menubutton.size.height)];
+    [self.btnMenu setImage:self.menubutton forState:UIControlStateNormal];
     [self.btnMenu addTarget:self action:@selector(menuButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *menuBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnMenu];
     return menuBarButton;

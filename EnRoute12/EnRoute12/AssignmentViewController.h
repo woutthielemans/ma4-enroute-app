@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "AssignmentView.h"
 #import "Assignment.h"
+#import "CameraViewController.h"
+#import "VolumeCheckerView.h"
 
 @interface AssignmentViewController : UIViewController
 
@@ -16,8 +18,8 @@
 @property (strong, nonatomic) AssignmentView *asView;
 @property (strong, nonatomic) UIButton *btnBack;
 @property (strong, nonatomic) UIButton *btnMenu;
-@property (strong, nonatomic) UIImage *backarrowmap;
-@property (strong, nonatomic) UIImage *menubuttonmap;
+@property (strong, nonatomic) UIImage *backarrow;
+@property (strong, nonatomic) UIImage *menubutton;
 
 - (id)initWithAssignment:(Assignment *)assignment;
 

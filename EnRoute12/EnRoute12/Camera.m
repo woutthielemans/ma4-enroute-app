@@ -54,8 +54,6 @@
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panning:)];
     [self addGestureRecognizer:pan];
     
-//    [pan release]; pan = nil;
-    
     return self;
 }
 
@@ -109,7 +107,6 @@
         NSError *error = nil;
         self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
         self.deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
-        //self.deviceInput = nil;
         
         // Setup input device
         if( self.deviceInput ){
@@ -117,8 +114,6 @@
         }else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Woops..." message:@"I couldn't find any capture device" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
-//            [alert release];
-            alert = nil;
         }
         
         // Setup video output and add to the session
@@ -132,8 +127,6 @@
         }else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Woops..." message:@"I couldn't create an output for the video stream" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
-//            [alert release];
-            alert = nil;
         }
         
         // Setup preview layer to show the video data
@@ -147,12 +140,10 @@
         NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:
                                         AVVideoCodecJPEG, AVVideoCodecKey, nil];
         [self.stillImageOutput setOutputSettings:outputSettings];
-//        [outputSettings release];
-        outputSettings = nil;
         
         [self.captureSession addOutput:self.stillImageOutput];
         
-        self.captureConnection = nil;
+//        self.captureConnection = nil;
         for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
             for (AVCaptureInputPort *port in [connection inputPorts]) {
                 if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
@@ -200,7 +191,6 @@
     self.cameraControlBackgroundView.frame = newRect;
     
     [self addSubview:self.cameraControlBackgroundView];
-//    [image release]; image = nil;
 }
 
 - (void)createTakePhotoImage {
@@ -213,27 +203,6 @@
     [self.takePictureButton setBackgroundImage:takePictureImage forState:UIControlStateNormal];
     [self.takePictureButton addTarget:self action:@selector(takePictureHandler:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.takePictureButton];
-    
-//    [takePictureImage release]; takePictureImage = nil;
 }
-
-//- (void)dealloc {
-//    NSLog(@"[Camera] Dealloc");
-//    [_captureConnection release]; _captureConnection = nil;
-//    [_device release]; _device = nil;
-//    [_deviceInput release]; _deviceInput = nil;
-//    [_videoOutput release]; _videoOutput = nil;
-//    [_previewLayer release]; _previewLayer = nil;
-//    [_captureConnection release]; _captureConnection = nil;
-//    [_stillImageOutput release]; _stillImageOutput = nil;
-//    [_imageData release]; _imageData = nil;
-//    [_image release]; _image = nil;
-//    [_overlayImage release]; _overlayImage = nil;
-//    [_overlayImageView release]; _overlayImageView = nil;
-//    [_cameraControlBackgroundView release]; _cameraControlBackgroundView = nil;
-//    [_takePictureButton release]; _takePictureButton = nil;
-//    
-//    [super dealloc];
-//}
 
 @end

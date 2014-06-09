@@ -13,7 +13,12 @@
 
 @property (strong, nonatomic) UIImage *illustration;
 @property (strong, nonatomic) NSString *text;
-@property (strong, nonatomic) UIButton *button;
+@property (strong, nonatomic) UIButton *gphotobutton;
+@property (strong, nonatomic) UIButton *glistenbutton;
+@property (strong, nonatomic) UIButton *gcheckbutton;
+@property (strong, nonatomic) UIButton *volumebutton;
+@property (strong, nonatomic) UIButton *quotebutton;
+@property (strong, nonatomic) UIButton *greenbutton;
 
 - (id)initWithFrame:(CGRect)frame andAssignment:(Assignment *)assignment;
 
