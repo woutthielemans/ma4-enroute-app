@@ -10,6 +10,8 @@
 
 @interface VolumeCheckerView : UIView
 
-@property (strong, nonatomic) UIButton *btnListen;
+//@property (strong, nonatomic) UIButton *btnListen;
+@property (strong, nonatomic) UILabel *listenLabel;
+@property (strong, nonatomic) UILabel *tapSomewhereLabel;
 
 @end

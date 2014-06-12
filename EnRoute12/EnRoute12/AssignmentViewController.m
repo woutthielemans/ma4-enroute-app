@@ -166,16 +166,15 @@
 {
     self.volumeCheckerVC  =[[VolumeCheckerViewController alloc] initWithNibName:nil bundle:nil];
     self.volumeCheckerVC.delegate = self;
-    [self presentViewController:self.volumeCheckerVC animated:YES completion:^{}];
+    [self.navigationController pushViewController:self.volumeCheckerVC animated:YES];
 }
 
 - (void)spotSavedShowMap
 {
     NSLog(@"[AssignemtVC] Spot saved, show map");
-    [self.volumeCheckerVC dismissViewControllerAnimated:NO completion:^{
-        MapViewController *mapVC = [[MapViewController alloc] init];
-        [self.navigationController pushViewController:mapVC animated:YES];
-    }];
+    [self.navigationController popViewControllerAnimated:NO];
+    MapViewController *mapVC = [[MapViewController alloc] init];
+    [self.navigationController pushViewController:mapVC animated:YES];
 }
 
 - (void)loadView

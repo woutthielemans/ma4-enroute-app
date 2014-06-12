@@ -27,6 +27,15 @@
         self.navigationController.navigationBar.translucent = YES;
         self.navigationItem.leftBarButtonItem = [self getBackButton];
         self.navigationItem.rightBarButtonItem = [self getMenuButton];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(listening)
+                                                     name:@"StartListeningForDBs"
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(stopListening)
+                                                     name:@"StopListeningForDBs"
+                                                   object:nil];
     }
     return self;
 }
@@ -36,11 +45,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.volumeCheckerView.btnListen addTarget:self action:@selector(listening:) forControlEvents:UIControlEventTouchDown];
-    [self.volumeCheckerView.btnListen  addTarget:self action:@selector(stopListening:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.volumeCheckerView.btnListen addTarget:self action:@selector(listening:) forControlEvents:UIControlEventTouchDown];
+//    [self.volumeCheckerView.btnListen  addTarget:self action:@selector(stopListening:) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
-- (void)listening:(id)sender
+- (void)listening/*:(id)sender*/
 {
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -78,7 +88,7 @@
     }];
 }
 
-- (void)stopListening:(id)sender
+- (void)stopListening/*:(id)sender*/
 {
     NSLog(@"[VolumeCheckerVC] Listen button released");
     [self stop];
@@ -99,9 +109,8 @@
     }else{
         NSLog(@"Quite quiet! Timer running: %f", [self.audioRecorder averagePowerForChannel:0]);
         if(!self.acceptTimer){
-//            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target: self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
-            // TEST VALUE!
-            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target: self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
+            // CHANGE VALUE FOR DEV/PROD HERE ! //
+            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target: self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
         }
     }
 }
