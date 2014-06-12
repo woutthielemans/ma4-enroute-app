@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     
-    NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/api/creativeassignments";
+    NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/api/creativeassignments";
     NSURL *url = [NSURL URLWithString:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];

@@ -116,7 +116,7 @@
     NSLog(@"Uploading photo...");
     UIImage *resizedImage = [self imageWithImage:self.asView.imageView.image scaledToSize:CGSizeMake(self.asView.imageView.image.size.width/2.5, self.asView.imageView.image.size.height/2.5)];
     NSData *imageData = UIImageJPEGRepresentation(resizedImage, 0.4);
-    NSString *urlString = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/uploadphoto.php";
+    NSString *urlString = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/uploadphoto.php";
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];
@@ -164,8 +164,18 @@
 
 - (void)volumeTapped:(id)sender
 {
-    VolumeCheckerViewController *volumeCheckerVC  =[[VolumeCheckerViewController alloc] initWithNibName:nil bundle:nil];
-    [self presentViewController:volumeCheckerVC animated:YES completion:^{}];
+    self.volumeCheckerVC  =[[VolumeCheckerViewController alloc] initWithNibName:nil bundle:nil];
+    self.volumeCheckerVC.delegate = self;
+    [self presentViewController:self.volumeCheckerVC animated:YES completion:^{}];
+}
+
+- (void)spotSavedShowMap
+{
+    NSLog(@"[AssignemtVC] Spot saved, show map");
+    [self.volumeCheckerVC dismissViewControllerAnimated:NO completion:^{
+        MapViewController *mapVC = [[MapViewController alloc] init];
+        [self.navigationController pushViewController:mapVC animated:YES];
+    }];
 }
 
 - (void)loadView

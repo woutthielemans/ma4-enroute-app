@@ -107,6 +107,7 @@
 		5CA501D51943D1C100C715D1 /* MainMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
 		5CBE77B41945E6030046BCED /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		5CBE77B51945E6030046BCED /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		5CE090EA19492B4D002F68C7 /* VolumeCheckerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerDelegate.h; sourceTree = "<group>"; };
 		5CE67E77194061A200F9FFCF /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
 		5CE67E78194061A200F9FFCF /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
 		5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentFactory.h; sourceTree = "<group>"; };
@@ -291,6 +292,7 @@
 				5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */,
 				5C8327A5193E7DEE007D7B5D /* VolumeCheckerView.h */,
 				5C8327A6193E7DEE007D7B5D /* VolumeCheckerView.m */,
+				5CE090EA19492B4D002F68C7 /* VolumeCheckerDelegate.h */,
 			);
 			name = VolumeChecker;
 			sourceTree = "<group>";

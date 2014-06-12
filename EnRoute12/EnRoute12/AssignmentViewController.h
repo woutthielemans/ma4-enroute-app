@@ -11,14 +11,16 @@
 #import "Assignment.h"
 #import "CameraViewController.h"
 #import "VolumeCheckerViewController.h"
+#import "VolumeCheckerDelegate.h"
 
-@interface AssignmentViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AssignmentViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, VolumeCheckerDelegate>
 
 @property (strong, nonatomic) Assignment *assignment;
 @property (strong, nonatomic) AssignmentView *asView;
 @property (strong, nonatomic) UIButton *btnBack;
 @property (strong, nonatomic) UIButton *btnMenu;
 @property (strong, nonatomic) UIImage *backarrow;
+@property (strong, nonatomic) VolumeCheckerViewController *volumeCheckerVC;
 @property (strong, nonatomic) UIImage *menubutton;
 
 - (id)initWithAssignment:(Assignment *)assignment;

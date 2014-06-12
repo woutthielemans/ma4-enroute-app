@@ -132,33 +132,65 @@
     self.view = self.volumeCheckerView;
 }
 
+//- (void)addQuietSpotViewController:(AddQuietSpotViewController *)addQuietSpotViewController didSaveSpot:(QuietSpot *)spot
+//{
+//    NSLog(@"[VolumeCheckerVC] Did save spot");
+//    
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+//    
+//    self.ptitle = [NSString stringWithFormat:@"%@",addQuietSpotViewController.addQuietSpotView.txtTitle.text];
+//    self.psubtitle = [NSString stringWithFormat:@"%@",addQuietSpotViewController.addQuietSpotView.txtSubtitle.text];
+//    self.puserlongitude = [NSString stringWithFormat:@"%@",addQuietSpotViewController.userlongitude];
+//    self.puserlatitude = [NSString stringWithFormat:@"%@",addQuietSpotViewController.userlatitude];
+//    
+//    NSDictionary *parameters = @{@"title": self.ptitle, @"subtitle":self.psubtitle, @"lon":self.puserlongitude, @"lat":self.puserlatitude};
+//    NSLog(@"parameters: %@",parameters);
+//    
+//    [manager POST:@"http://10.0.0.5/20132014/MAIV/ENROUTE/upload/api/spots" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            NSLog(@"success: %@",responseObject);
+//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            NSLog(@"Error: %@", error);
+//    }];
+//    
+//    [addQuietSpotViewController dismissViewControllerAnimated:NO completion:^{}];
+//    MapViewController *mapVC = [[MapViewController alloc] init];
+//    [self.navigationController pushViewController:mapVC animated:YES];
+//    
+//}
+
 - (void)addQuietSpotViewController:(AddQuietSpotViewController *)addQuietSpotViewController didSaveSpot:(QuietSpot *)spot
 {
     NSLog(@"[VolumeCheckerVC] Did save spot");
     
+    NSDictionary *params = @{@"title":  [NSString stringWithFormat:@"%@", addQuietSpotViewController.addQuietSpotView.txtTitle.text],
+     @"subtitle":  [NSString stringWithFormat:@"%@", addQuietSpotViewController.addQuietSpotView.txtSubtitle.text],
+     @"lon" : [NSString stringWithFormat:@"%@", addQuietSpotViewController.userlongitude],
+     @"lat" : [NSString stringWithFormat:@"%@", addQuietSpotViewController.userlatitude]};
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
-    NSString *title = [NSString stringWithFormat:@"%@",addQuietSpotViewController.addQuietSpotView.txtTitle.text];
-    NSString *subtitle = [NSString stringWithFormat:@"%@",addQuietSpotViewController.addQuietSpotView.txtSubtitle.text];
-    float userlongitude = addQuietSpotViewController.userlongitude.floatValue;
-    float userlatitude = addQuietSpotViewController.userlatitude.floatValue;
-    
-    NSArray *params = [NSArray arrayWithObjects:title,subtitle,userlongitude,userlatitude, nil];
-    [manager POST:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/upload/uploadspot.php" parameters:params
+    [manager POST:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/api/spots" parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
-        NSLog(@"[VolumeCheckerVC] Posting JSON succes!");
-        NSLog(@"JSON: %@", responseObject);
-    }
+     {
+         NSLog(@"JSON: %@", responseObject);
+         [addQuietSpotViewController dismissViewControllerAnimated:NO completion:^{
+             NSLog(@"addQuietSpotVC dismissed");
+             [self.delegate spotSavedShowMap];
+             // TODO viewcontroller met succes -> show map?
+         }];
+         
+     }
           failure:
      ^(AFHTTPRequestOperation *operation, NSError *error) {
          NSLog(@"Error: %@", error);
+         NSLog(@"RESPONSE STRING %@", operation.responseString);
      }];
-    
-    [addQuietSpotViewController dismissViewControllerAnimated:NO completion:^{}];
-    MapViewController *mapVC = [[MapViewController alloc] init];
-    [self.navigationController pushViewController:mapVC animated:YES];
+
 }
 
 - (UIBarButtonItem *) getBackButton
