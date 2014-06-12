@@ -27,17 +27,27 @@
         self.listenLabel.text = @"Luisteren...";
         self.listenLabel.frame = CGRectMake(0, 0, 100, 44);
         self.listenLabel.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-        self.listenLabel.alpha = 0.f;
-        self.listenLabel.textColor = UIColor colorWithRed:<#(CGFloat)#> green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>
-        [self addSubview:self.listenLabel];
+        self.listenLabel.textColor = [UIColor colorWithRed:0 green:121/255.0f blue:1 alpha:1];
+//        [self addSubview:self.listenLabel];
+        self.listenLabelLayer = [CALayer layer];
+//        self.listenLabelLayer.contents = self.listenLabel;
+//        self.tapSomewhereLabelLayer.opacity = 0;
+        self.listenLabel.layer.opacity = 0;
+        [self.layer addSublayer:self.listenLabelLayer];
+        [self.layer addSublayer:self.listenLabel.layer];
         
         self.tapSomewhereLabel = [[UILabel alloc] init];
         self.tapSomewhereLabel.text = @"tap ergens in het scherm";
         self.tapSomewhereLabel.frame = CGRectMake(0, 0, 200, 44);
         self.tapSomewhereLabel.center = CGPointMake(self.frame.size.width/2, self.frame.size.height*0.3);
         self.tapSomewhereLabel.tag = 30;
-        self.tapSomewhereLabel.alpha = 0.2f;
-        [self addSubview:self.tapSomewhereLabel];
+//        [self addSubview:self.tapSomewhereLabel];
+        self.tapSomewhereLabelLayer = [CALayer layer];
+//        self.tapSomewhereLabelLayer.contents = self.tapSomewhereLabel;
+//        self.tapSomewhereLabelLayer.opacity = 1;
+        self.tapSomewhereLabel.layer.opacity = 1;
+        [self.layer addSublayer:self.tapSomewhereLabelLayer];
+        [self.layer addSublayer:self.tapSomewhereLabel.layer];
         
     }
     return self;
@@ -46,21 +56,30 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"[VolumeCheckerV] Touches began");
-    self.tapSomewhereLabel.alpha = 0.f;
-//    self.btnListen.alpha = 0.2f;
-    self.listenLabel.alpha = 0.2f;
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint p = [touch locationInView:self];
+    self.tapSomewhereLabel.layer.opacity = 0;
+    self.listenLabel.layer.opacity = 1;
+    self.listenLabel.layer.position = p;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"StartListeningForDBs"
                                                         object:nil
                                                       userInfo:nil];
 }
 
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint p = [touch locationInView:self];
+    self.listenLabel.layer.position = p;
+}
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"[VolumeCheckerV] Touches ended");
-    self.tapSomewhereLabel.alpha = 0.2f;
-//    self.btnListen.alpha = 0.f;
-    self.listenLabel.alpha = 0.f;
+    self.tapSomewhereLabel.layer.opacity = 1;
+    self.listenLabel.layer.opacity = 0;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"StopListeningForDBs"
                                                         object:nil

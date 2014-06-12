@@ -12,6 +12,8 @@
 
 //@property (strong, nonatomic) UIButton *btnListen;
 @property (strong, nonatomic) UILabel *listenLabel;
+@property (strong, nonatomic) CALayer *listenLabelLayer;
 @property (strong, nonatomic) UILabel *tapSomewhereLabel;
+@property (strong, nonatomic) CALayer *tapSomewhereLabelLayer;
 
 @end
