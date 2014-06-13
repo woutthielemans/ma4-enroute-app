@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
+#define   DEGREES_TO_RADIANS(degrees)  ((M_PI * degrees)/ 180)
 
 @interface VolumeCheckerView : UIView
 
@@ -15,5 +18,23 @@
 @property (strong, nonatomic) CALayer *listenLabelLayer;
 @property (strong, nonatomic) UILabel *tapSomewhereLabel;
 @property (strong, nonatomic) CALayer *tapSomewhereLabelLayer;
+@property (strong, nonatomic) CAShapeLayer *circleLayer;
+@property (strong, nonatomic) CAShapeLayer *circleEmmit;
+//@property (strong, nonatomic) CAShapeLayer *rotCircleLayer;
+@property (strong, nonatomic) CAShapeLayer *bigrect;
+@property (nonatomic) float loudness;
+@property (nonatomic) float xPos;
+@property (nonatomic) float yPos;
+@property (nonatomic) int circleSize;
+@property (nonatomic) float progress;
+@property (nonatomic) float ticks;
+@property (strong, nonatomic) NSTimer *progressTimer;
+@property (nonatomic) BOOL isTimerRunning;
+@property (strong, nonatomic) CAEmitterLayer *emitter;
+@property (strong, nonatomic) CAEmitterCell *cell;
+
+- (void)drawCircle:(CAShapeLayer*)circle WithLoudness:(float)loudness;
+- (void)startTimer;
+- (void)stopAndResetTimer;
 
 @end

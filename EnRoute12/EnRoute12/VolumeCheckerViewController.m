@@ -97,10 +97,12 @@
 - (void)levelTimerCallback:(NSTimer *)timer
 {
     [self.audioRecorder updateMeters];
+    [self.volumeCheckerView drawCircle:self.volumeCheckerView.circleLayer WithLoudness:([self.audioRecorder averagePowerForChannel:0])];
 //	NSLog(@"Average input: %f Peak input: %f", [self.audioRecorder averagePowerForChannel:0], [self.audioRecorder peakPowerForChannel:0]);
 //    if ([self.audioRecorder averagePowerForChannel:0] > -45) {
     // THIS IS THE TEST VALUE !!!! CHANGE TO -45 FOR LAUNCH
     if ([self.audioRecorder averagePowerForChannel:0] > 0) {
+        [self.volumeCheckerView stopAndResetTimer];
         NSLog(@"Not quiet enough, timer stopped: %f", [self.audioRecorder averagePowerForChannel:0]);
         if(self.acceptTimer){
             [self.acceptTimer invalidate];
@@ -109,8 +111,9 @@
     }else{
         NSLog(@"Quite quiet! Timer running: %f", [self.audioRecorder averagePowerForChannel:0]);
         if(!self.acceptTimer){
+            [self.volumeCheckerView startTimer];
             // CHANGE VALUE FOR DEV/PROD HERE ! //
-            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target: self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
+            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
         }
     }
 }
@@ -129,6 +132,7 @@
     self.acceptTimer = nil;
     [self.levelTimer invalidate];
     self.levelTimer = nil;
+    [self.volumeCheckerView stopAndResetTimer];
     [self.audioRecorder stop];
     self.audioRecorder.meteringEnabled = NO;
     self.audioRecorder = nil;
@@ -140,34 +144,6 @@
     self.volumeCheckerView = [[VolumeCheckerView alloc] initWithFrame:bounds];
     self.view = self.volumeCheckerView;
 }
-
-//- (void)addQuietSpotViewController:(AddQuietSpotViewController *)addQuietSpotViewController didSaveSpot:(QuietSpot *)spot
-//{
-//    NSLog(@"[VolumeCheckerVC] Did save spot");
-//    
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-//    
-//    self.ptitle = [NSString stringWithFormat:@"%@",addQuietSpotViewController.addQuietSpotView.txtTitle.text];
-//    self.psubtitle = [NSString stringWithFormat:@"%@",addQuietSpotViewController.addQuietSpotView.txtSubtitle.text];
-//    self.puserlongitude = [NSString stringWithFormat:@"%@",addQuietSpotViewController.userlongitude];
-//    self.puserlatitude = [NSString stringWithFormat:@"%@",addQuietSpotViewController.userlatitude];
-//    
-//    NSDictionary *parameters = @{@"title": self.ptitle, @"subtitle":self.psubtitle, @"lon":self.puserlongitude, @"lat":self.puserlatitude};
-//    NSLog(@"parameters: %@",parameters);
-//    
-//    [manager POST:@"http://10.0.0.5/20132014/MAIV/ENROUTE/upload/api/spots" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSLog(@"success: %@",responseObject);
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            NSLog(@"Error: %@", error);
-//    }];
-//    
-//    [addQuietSpotViewController dismissViewControllerAnimated:NO completion:^{}];
-//    MapViewController *mapVC = [[MapViewController alloc] init];
-//    [self.navigationController pushViewController:mapVC animated:YES];
-//    
-//}
 
 - (void)addQuietSpotViewController:(AddQuietSpotViewController *)addQuietSpotViewController didSaveSpot:(QuietSpot *)spot
 {

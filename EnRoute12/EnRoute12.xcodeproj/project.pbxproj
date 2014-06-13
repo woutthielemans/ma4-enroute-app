@@ -202,42 +202,12 @@
 				5C38188C193CA2C000C39FBC /* Images.xcassets */,
 				5C381881193CA2C000C39FBC /* Supporting Files */,
 				5CA501D71943D1C600C715D1 /* Main Menu (home) */,
-				5CA501D11943D13D00C715D1 /* MainMenuViewController.h */,
-				5CA501D21943D13D00C715D1 /* MainMenuViewController.m */,
-				5CA501D41943D1C100C715D1 /* MainMenuView.h */,
-				5CA501D51943D1C100C715D1 /* MainMenuView.m */,
 				5C381913193E4C4000C39FBC /* Assigments */,
-				5CFE540B19452A59004D2E0B /* AssignmentsTableViewController.h */,
-				5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */,
 				5C8367D219406D8800870A8A /* Assignment */,
-				5CE67E77194061A200F9FFCF /* Assignment.h */,
-				5CE67E78194061A200F9FFCF /* Assignment.m */,
-				5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */,
-				5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */,
-				5C8367CF19406D7800870A8A /* AssignmentTableViewCell.h */,
-				5C8367D019406D7800870A8A /* AssignmentTableViewCell.m */,
-				5C8367D31940A38000870A8A /* AssignmentViewController.h */,
-				5C8367D41940A38000870A8A /* AssignmentViewController.m */,
-				5C8367D61940A3DC00870A8A /* AssignmentView.h */,
-				5C8367D71940A3DC00870A8A /* AssignmentView.m */,
 				5C8327BD193E7E3D007D7B5D /* Volume app */,
-				5C8327A2193E7DA4007D7B5D /* Quiet Spots */,
-				5C8327A0193E7D87007D7B5D /* Add Quiet Spot */,
-				5C83279F193E7D7C007D7B5D /* VolumeChecker */,
 				5C83279E193E7D19007D7B5D /* Map */,
-				5C8327B6193E7E16007D7B5D /* MapViewController.h */,
-				5C8327B7193E7E16007D7B5D /* MapViewController.m */,
-				5C8327B8193E7E16007D7B5D /* MapView.h */,
-				5C8327B9193E7E16007D7B5D /* MapView.m */,
 				5CFE540E19453AAD004D2E0B /* Camera */,
-				5CFE541219453B0C004D2E0B /* NotificationsViewController.h */,
-				5CFE541319453B0C004D2E0B /* NotificationsViewController.m */,
-				5CFE541519453B1A004D2E0B /* NotificationsView.h */,
-				5CFE541619453B1A004D2E0B /* NotificationsView.m */,
-				5CFE541819453B29004D2E0B /* Notification.h */,
-				5CFE541919453B29004D2E0B /* Notification.m */,
-				5CFE541B19453B33004D2E0B /* NotificationFactory.h */,
-				5CFE541C19453B33004D2E0B /* NotificationFactory.m */,
+				5C39478A194BB16700A47692 /* Notifications */,
 			);
 			path = EnRoute12;
 			sourceTree = "<group>";
@@ -274,13 +244,34 @@
 		5C381913193E4C4000C39FBC /* Assigments */ = {
 			isa = PBXGroup;
 			children = (
+				5CFE540B19452A59004D2E0B /* AssignmentsTableViewController.h */,
+				5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */,
 			);
 			name = Assigments;
+			sourceTree = "<group>";
+		};
+		5C39478A194BB16700A47692 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE541219453B0C004D2E0B /* NotificationsViewController.h */,
+				5CFE541319453B0C004D2E0B /* NotificationsViewController.m */,
+				5CFE541519453B1A004D2E0B /* NotificationsView.h */,
+				5CFE541619453B1A004D2E0B /* NotificationsView.m */,
+				5CFE541819453B29004D2E0B /* Notification.h */,
+				5CFE541919453B29004D2E0B /* Notification.m */,
+				5CFE541B19453B33004D2E0B /* NotificationFactory.h */,
+				5CFE541C19453B33004D2E0B /* NotificationFactory.m */,
+			);
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 		5C83279E193E7D19007D7B5D /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				5C8327B6193E7E16007D7B5D /* MapViewController.h */,
+				5C8327B7193E7E16007D7B5D /* MapViewController.m */,
+				5C8327B8193E7E16007D7B5D /* MapView.h */,
+				5C8327B9193E7E16007D7B5D /* MapView.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -323,6 +314,9 @@
 		5C8327BD193E7E3D007D7B5D /* Volume app */ = {
 			isa = PBXGroup;
 			children = (
+				5C8327A2193E7DA4007D7B5D /* Quiet Spots */,
+				5C8327A0193E7D87007D7B5D /* Add Quiet Spot */,
+				5C83279F193E7D7C007D7B5D /* VolumeChecker */,
 			);
 			name = "Volume app";
 			sourceTree = "<group>";
@@ -330,6 +324,16 @@
 		5C8367D219406D8800870A8A /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				5CE67E77194061A200F9FFCF /* Assignment.h */,
+				5CE67E78194061A200F9FFCF /* Assignment.m */,
+				5CE67E7A194061B300F9FFCF /* AssignmentFactory.h */,
+				5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */,
+				5C8367CF19406D7800870A8A /* AssignmentTableViewCell.h */,
+				5C8367D019406D7800870A8A /* AssignmentTableViewCell.m */,
+				5C8367D31940A38000870A8A /* AssignmentViewController.h */,
+				5C8367D41940A38000870A8A /* AssignmentViewController.m */,
+				5C8367D61940A3DC00870A8A /* AssignmentView.h */,
+				5C8367D71940A3DC00870A8A /* AssignmentView.m */,
 			);
 			name = Assignment;
 			sourceTree = "<group>";
@@ -337,6 +341,10 @@
 		5CA501D71943D1C600C715D1 /* Main Menu (home) */ = {
 			isa = PBXGroup;
 			children = (
+				5CA501D11943D13D00C715D1 /* MainMenuViewController.h */,
+				5CA501D21943D13D00C715D1 /* MainMenuViewController.m */,
+				5CA501D41943D1C100C715D1 /* MainMenuView.h */,
+				5CA501D51943D1C100C715D1 /* MainMenuView.m */,
 			);
 			name = "Main Menu (home)";
 			sourceTree = "<group>";
