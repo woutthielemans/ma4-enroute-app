@@ -19,8 +19,8 @@
 @property (strong, nonatomic) UILabel *tapSomewhereLabel;
 @property (strong, nonatomic) CALayer *tapSomewhereLabelLayer;
 @property (strong, nonatomic) CAShapeLayer *circleLayer;
+@property (strong, nonatomic) CAShapeLayer *mcircleLayer;
 @property (strong, nonatomic) CAShapeLayer *circleEmmit;
-//@property (strong, nonatomic) CAShapeLayer *rotCircleLayer;
 @property (strong, nonatomic) CAShapeLayer *bigrect;
 @property (nonatomic) float loudness;
 @property (nonatomic) float xPos;
@@ -32,6 +32,8 @@
 @property (nonatomic) BOOL isTimerRunning;
 @property (strong, nonatomic) CAEmitterLayer *emitter;
 @property (strong, nonatomic) CAEmitterCell *cell;
+@property (strong, nonatomic) CAEmitterLayer *memitter;
+@property (strong, nonatomic) CAEmitterCell *mcell;
 
 - (void)drawCircle:(CAShapeLayer*)circle WithLoudness:(float)loudness;
 - (void)startTimer;

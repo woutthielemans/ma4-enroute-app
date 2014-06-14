@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "emitCellGreen.png"
+      "filename" : "emitCellWhite.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "emitCellGreen@2x.png"
+      "filename" : "emitCellWhite@2x.png"
     }
   ],
   "info" : {

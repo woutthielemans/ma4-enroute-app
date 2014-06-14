@@ -47,6 +47,7 @@
         self.emitter.emitterCells = @[self.cell];
         self.emitter.opacity = 0;
         
+        self.mcircleLayer.mask = self.bigrect;
     }
     return self;
 }
@@ -90,8 +91,10 @@
     NSLog(@"[VolumeCheckerV] Touches ended");
     self.tapSomewhereLabel.layer.opacity = 0.2f;
     [self.circleLayer removeFromSuperlayer];
+    [self.mcircleLayer removeFromSuperlayer];
     [self.bigrect removeFromSuperlayer];
     [self.emitter removeFromSuperlayer];
+    self.bigrect.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.frame.size.width, 0)].CGPath;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"StopListeningForDBs"
                                                         object:nil
@@ -101,6 +104,7 @@
 - (void)drawCircle:(CAShapeLayer*)circle WithLoudness:(float)loudness
 {
     [self.circleLayer removeFromSuperlayer];
+    [self.mcircleLayer removeFromSuperlayer];
     [self.bigrect removeFromSuperlayer];
     
     self.loudness = loudness;
@@ -108,49 +112,28 @@
     
     self.cell.velocity  = (50*self.circleSize)/75;
     self.cell.lifetime  = (1*self.circleSize)/100;
-    
     self.cell.birthRate  = (50*self.circleSize)/75;
     
     NSLog(@"[VolumeCheckerV] LOUDNESS = %f",self.loudness);
     NSLog(@"[VolumeCheckerV] CIRCLESIZE = %i",self.circleSize);
     
     self.circleLayer = [CAShapeLayer layer];
-    self.circleLayer.bounds = CGRectMake(self.circleLayer.position.x, self.circleLayer.position.y, self.circleSize, self.circleSize);
+    self.circleLayer.bounds = CGRectMake(self.circleLayer.position.x+1.5, self.circleLayer.position.y+1.5, self.circleSize+5, self.circleSize+5);
     self.circleLayer.fillColor = [UIColor clearColor].CGColor;
-    self.circleLayer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.circleLayer.position.x, self.circleLayer.position.y, self.circleSize, self.circleSize)].CGPath;
+    self.circleLayer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.circleLayer.position.x+1.5, self.circleLayer.position.y+1.5, self.circleSize+5, self.circleSize+5)].CGPath;
+    self.circleLayer.position = CGPointMake(self.xPos, self.yPos);
     if(self.isTimerRunning == YES)
     {
         self.circleLayer.strokeColor = [UIColor colorWithRed:171/255.0f green:221/255.0f blue:198/255.0f alpha:1].CGColor;
         self.circleLayer.lineWidth = 5.0f;
+        [self.mcircleLayer removeFromSuperlayer];
+        [self.layer addSublayer:self.circleLayer];
+        [self drawRectMask];
     }else{
         self.circleLayer.strokeColor = [UIColor lightGrayColor].CGColor;
         self.circleLayer.lineWidth = 1.0f;
+        [self.layer addSublayer:self.circleLayer];
     }
-    self.circleLayer.position = CGPointMake(self.xPos, self.yPos);
-    [self.layer addSublayer:self.circleLayer];
-    
-//    self.circleLayerFill = [CAShapeLayer layer];
-//    self.circleLayerFill.bounds = CGRectMake(self.circleLayerFill.position.x, self.circleLayerFill.position.y, self.circleSize, self.circleSize);
-//    self.circleLayerFill.fillColor = [UIColor colorWithRed:171/255.0f green:221/255.0f blue:198/255.0f alpha:.5].CGColor;
-//    self.circleLayerFill.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.circleLayerFill.position.x, self.circleLayerFill.position.y, self.circleSize, self.circleSize)].CGPath;
-//    self.circleLayerFill.strokeColor = [UIColor clearColor].CGColor;
-//    self.circleLayerFill.lineWidth = 0.f;
-//    self.circleLayerFill.position = CGPointMake(self.xPos, self.yPos);
-//    [self.layer addSublayer:self.circleLayerFill];
-    
-//    self.rotCircleLayer = [CAShapeLayer layer];
-//    self.rotCircleLayer.bounds = CGRectMake(0, 0, 10, 10);
-//    self.rotCircleLayer.fillColor = [UIColor greenColor].CGColor;
-//    self.rotCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 10, 10)].CGPath;
-//    self.rotCircleLayer.strokeColor = [UIColor clearColor].CGColor;
-//    self.rotCircleLayer.lineWidth = 0.f;
-//    self.rotCircleLayer.position = CGPointMake(self.xPos+self.circleLayer.frame.size.width/2, self.yPos+self.circleLayer.frame.size.height/2);
-////    self.rotCircleLayer.anchorPoint = self.circleLayer.position;
-//    self.rotCircleLayer.opacity = 0.3;
-//    [self.layer addSublayer:self.rotCircleLayer];
-    
-    self.bigrect = [CAShapeLayer layer];
-    self.bigrect.bounds = CGRectMake(0, self.frame.size.height, self.frame.size.width, (self.progress)*self.frame.size.height);
 }
 
 - (void)startTimer
@@ -172,16 +155,30 @@
     NSLog(@"[VolumeCheckerView] Timer updated progress: %f and ticks: %f",self.progress,self.ticks);
     self.progress = (self.ticks*0.72)/500;
     self.ticks++;
-//    CGPoint center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-//    CGPoint rotationPoint = CGPointMake(self.circleLayer.position.x-center.x, self.circleLayer.position.y);
-    //rotate circle
-//    CATransform3D rottransform = CATransform3DIdentity;
-//    self.rotCircleLayer.transform = rottransform;
-//    rottransform = CATransform3DTranslate(rottransform, rotationPoint.x-center.x, rotationPoint.y-center.y, 0.0);
-//    rottransform = CATransform3DRotate(rottransform, 6, 0.0, 0.0, -1.0);
-//    rottransform = CATransform3DTranslate(rottransform, center.x-rotationPoint.x, center.y-rotationPoint.y, 0.0);
-//    CATransform3D current = self.rotCircleLayer.transform;
-//    self.rotCircleLayer.transform = CATransform3DRotate(current, DEGREES_TO_RADIANS(20), 0, 1.0, 0);
+}
+
+- (void)drawRectMask
+{
+    [self.bigrect removeFromSuperlayer];
+    [self.emitter removeFromSuperlayer];
+    [self.circleLayer removeFromSuperlayer];
+    [self.mcircleLayer removeFromSuperlayer];
+    self.bigrect = [CAShapeLayer layer];
+    self.bigrect.bounds = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height*(self.progress*1.75));
+    self.bigrect.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height*(self.progress*1.75))].CGPath;
+    self.bigrect.fillColor = [UIColor colorWithRed:171/255.0f green:221/255.0f blue:198/255.0f alpha:1].CGColor;
+    self.bigrect.position = CGPointMake(0 + self.bigrect.frame.size.width/2, self.frame.size.height - self.bigrect.frame.size.height/2);
+    [self.layer addSublayer:self.bigrect];
+    [self.layer addSublayer:self.emitter];
+    [self.layer  addSublayer:self.circleLayer];
+    self.mcircleLayer = [CAShapeLayer layer];
+    self.mcircleLayer.bounds = CGRectMake(self.circleLayer.position.x, self.circleLayer.position.y, self.circleSize, self.circleSize);
+    self.mcircleLayer.fillColor = [UIColor clearColor].CGColor;
+    self.mcircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.circleLayer.position.x, self.circleLayer.position.y, self.circleSize, self.circleSize)].CGPath;
+    self.mcircleLayer.strokeColor = [UIColor whiteColor].CGColor;
+    self.mcircleLayer.lineWidth = 2.0f;
+    self.mcircleLayer.position = CGPointMake(self.xPos, self.yPos);
+    [self.layer addSublayer:self.mcircleLayer];
 }
 
 - (void)stopAndResetTimer
@@ -192,6 +189,7 @@
     self.ticks = 0;
     self.progress = 0;
     self.isTimerRunning = NO;
+    self.bigrect.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.frame.size.width, 0)].CGPath;
 }
 
 /*

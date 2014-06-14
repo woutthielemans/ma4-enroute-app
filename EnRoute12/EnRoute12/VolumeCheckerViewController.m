@@ -113,7 +113,7 @@
         if(!self.acceptTimer){
             [self.volumeCheckerView startTimer];
             // CHANGE VALUE FOR DEV/PROD HERE ! //
-            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
+            self.acceptTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(acceptSpot:) userInfo: nil repeats:NO];
         }
     }
 }
