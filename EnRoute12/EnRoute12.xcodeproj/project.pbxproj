@@ -22,6 +22,7 @@
 		5C3818AA193D189B00C39FBC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818A9193D189B00C39FBC /* MapKit.framework */; };
 		5C3818AC193D18AA00C39FBC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818AB193D18AA00C39FBC /* CoreLocation.framework */; };
 		5C3818AE193D18BB00C39FBC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818AD193D18BB00C39FBC /* AVFoundation.framework */; };
+		5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C39478C194C97EC00A47692 /* BudaSpot.m */; };
 		5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */; };
 		5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A6193E7DEE007D7B5D /* VolumeCheckerView.m */; };
 		5C8327AD193E7DF9007D7B5D /* QuietSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327AA193E7DF9007D7B5D /* QuietSpot.m */; };
@@ -78,6 +79,8 @@
 		5C3818A9193D189B00C39FBC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5C3818AB193D18AA00C39FBC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5C3818AD193D18BB00C39FBC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5C39478B194C97EC00A47692 /* BudaSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudaSpot.h; sourceTree = "<group>"; };
+		5C39478C194C97EC00A47692 /* BudaSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudaSpot.m; sourceTree = "<group>"; };
 		5C8327A3193E7DEE007D7B5D /* VolumeCheckerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerViewController.h; sourceTree = "<group>"; };
 		5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeCheckerViewController.m; sourceTree = "<group>"; };
 		5C8327A5193E7DEE007D7B5D /* VolumeCheckerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerView.h; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 				5C8327B7193E7E16007D7B5D /* MapViewController.m */,
 				5C8327B8193E7E16007D7B5D /* MapView.h */,
 				5C8327B9193E7E16007D7B5D /* MapView.m */,
+				5C39478B194C97EC00A47692 /* BudaSpot.h */,
+				5C39478C194C97EC00A47692 /* BudaSpot.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */,
 				5C381887193CA2C000C39FBC /* main.m in Sources */,
 				5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */,
+				5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */,
 				5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */,
 				5C8327BA193E7E16007D7B5D /* MapViewController.m in Sources */,
 				5C8327BB193E7E16007D7B5D /* MapView.m in Sources */,
