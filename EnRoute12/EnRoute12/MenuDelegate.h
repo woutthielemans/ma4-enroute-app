@@ -11,5 +11,8 @@
 @protocol MenuDelegate <NSObject>
 
 - (void)menuDidQuit;
+- (void)buttonMenuWasTapped;
+- (void)buttonMapWasTapped;
+- (void)buttonNotificationsWasTapped;
 
 @end

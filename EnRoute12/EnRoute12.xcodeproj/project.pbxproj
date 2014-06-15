@@ -115,6 +115,8 @@
 		5C39478E194CA6D500A47692 /* MapDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapDelegate.h; sourceTree = "<group>"; };
 		5C39478F194CA77F00A47692 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		5C394790194CA77F00A47692 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		5C731E8C194DF62E0044DC4B /* AssignmentsTVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssignmentsTVCDelegate.h; sourceTree = "<group>"; };
+		5C731E8D194E006E0044DC4B /* MainMenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuDelegate.h; sourceTree = "<group>"; };
 		5C8327A3193E7DEE007D7B5D /* VolumeCheckerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerViewController.h; sourceTree = "<group>"; };
 		5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeCheckerViewController.m; sourceTree = "<group>"; };
 		5C8327A5193E7DEE007D7B5D /* VolumeCheckerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerView.h; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			children = (
 				5CFE540B19452A59004D2E0B /* AssignmentsTableViewController.h */,
 				5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */,
+				5C731E8C194DF62E0044DC4B /* AssignmentsTVCDelegate.h */,
 			);
 			name = "Assigments Tableview";
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				5CA501D21943D13D00C715D1 /* MainMenuViewController.m */,
 				5CA501D41943D1C100C715D1 /* MainMenuView.h */,
 				5CA501D51943D1C100C715D1 /* MainMenuView.m */,
+				5C731E8D194E006E0044DC4B /* MainMenuDelegate.h */,
 			);
 			name = "Main Menu (home)";
 			sourceTree = "<group>";

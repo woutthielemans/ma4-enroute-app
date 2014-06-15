@@ -15,10 +15,12 @@
 #import "User.h"
 #import "MenuViewController.h"
 #import "MenuDelegate.h"
+#import "MainMenuDelegate.h"
 
-@interface AssignmentViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, VolumeCheckerDelegate, MenuDelegate>
+@interface AssignmentViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, VolumeCheckerDelegate, MenuDelegate>
 
 @property (strong, nonatomic) Assignment *assignment;
+@property (weak ,nonatomic) id<MainMenuDelegate> delegate;
 @property (strong, nonatomic) AssignmentView *asView;
 @property (strong, nonatomic) UIButton *btnBack;
 @property (strong, nonatomic) UIButton *btnMenu;

@@ -18,10 +18,12 @@
 #import "Teacher.h"
 #import "TeacherFactory.h"
 #import "MenuViewController.h"
+#import "MainMenuDelegate.h"
 
 @interface MapViewController : UIViewController <MapDelegate, MenuDelegate, NSCoding>
 
 @property (strong, nonatomic) MapView *mapView;
+@property (weak ,nonatomic) id<MainMenuDelegate> delegate;
 @property (strong, nonatomic) NSMutableArray *qspots;
 @property (strong, nonatomic) UIButton *btnBack;
 @property (strong, nonatomic) UIButton *btnMenu;

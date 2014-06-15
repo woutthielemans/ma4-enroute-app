@@ -14,10 +14,12 @@
 #import "AssignmentViewController.h"
 #import "User.h"
 #import "MenuViewController.h"
+#import "MainMenuDelegate.h"
 
 @interface AssignmentsTableViewController : UITableViewController <MenuDelegate>
 
 @property (strong, nonatomic) NSMutableArray *assignments;
+@property (weak ,nonatomic) id<MainMenuDelegate> delegate;
 @property (strong, nonatomic) UIButton *btnBack;
 @property (strong, nonatomic) UIButton *btnMenu;
 @property (strong, nonatomic) UIImage *backarrow;

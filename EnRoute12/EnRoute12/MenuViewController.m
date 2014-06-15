@@ -34,6 +34,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.menuView.btnMenu addTarget:self action:@selector(menuTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.menuView.btnMap addTarget:self action:@selector(mapTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.menuView.btnNotifications addTarget:self action:@selector(notificationsTapped:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)menuTapped:(id)sender
+{
+    [self.delegate buttonMenuWasTapped];
+}
+
+- (void)mapTapped:(id)sender
+{
+    [self.delegate buttonMapWasTapped];
+}
+
+- (void)notificationsTapped:(id)sender
+{
+    [self.delegate buttonNotificationsWasTapped];
 }
 
 - (void)loadView
@@ -51,11 +69,7 @@
         btnframe.origin.y += 100;
         self.menuView.btnQuit.frame = btnframe;
         self.menuView.alpha = 0.f;
-    } completion:^(BOOL finished){
-        [self willMoveToParentViewController:nil];
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
-    }];
+    } completion:^(BOOL finished){}];
     [self.delegate menuDidQuit];
 }
 

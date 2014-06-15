@@ -145,11 +145,33 @@
     self.menuIsOut = NO;
 }
 
+- (void)buttonMenuWasTapped
+{
+    [self.menuVC willMoveToParentViewController:nil];
+    [self.menuVC.view removeFromSuperview];
+    [self.menuVC removeFromParentViewController];
+    [self menuDidQuit];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)buttonNotificationsWasTapped
+{
+    [self.menuVC willMoveToParentViewController:nil];
+    [self.menuVC.view removeFromSuperview];
+    [self.menuVC removeFromParentViewController];
+    [self menuDidQuit];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)loadView
 {
+    NSLog(@"[MapVC] Mapview loadview");
     CGRect bounds = [UIScreen mainScreen].bounds;
     self.mapView = [[MapView alloc] initWithFrame:bounds AndUser:self.user];
     self.view = self.mapView;
+    if(self.mapView == nil){
+        NSLog(@"[MapVC] self.mapview nil");
+    }
 }
 
 - (void)postTeacherLoc

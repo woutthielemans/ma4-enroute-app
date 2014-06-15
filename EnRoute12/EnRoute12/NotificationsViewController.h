@@ -11,10 +11,12 @@
 #import "Notification.h"
 #import "NotificationFactory.h"
 #import "NotificationsView.h"
+#import "MainMenuDelegate.h"
 
 @interface NotificationsViewController : UIViewController
 
 @property (strong, nonatomic) NSMutableDictionary *notifications;
+@property (weak ,nonatomic) id<MainMenuDelegate> delegate;
 @property (strong, nonatomic) NotificationsView *notificationView;
 
 @end

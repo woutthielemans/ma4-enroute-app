@@ -219,6 +219,33 @@
     self.menuIsOut = NO;
 }
 
+- (void)buttonMenuWasTapped
+{
+    [self.menuVC willMoveToParentViewController:nil];
+    [self.menuVC.view removeFromSuperview];
+    [self.menuVC removeFromParentViewController];
+    [self menuDidQuit];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)buttonMapWasTapped
+{
+    [self.menuVC willMoveToParentViewController:nil];
+    [self.menuVC.view removeFromSuperview];
+    [self.menuVC removeFromParentViewController];
+    [self menuDidQuit];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)buttonNotificationsWasTapped
+{
+    [self.menuVC willMoveToParentViewController:nil];
+    [self.menuVC.view removeFromSuperview];
+    [self.menuVC removeFromParentViewController];
+    [self menuDidQuit];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)showCamera:(id)camera{
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
