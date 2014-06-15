@@ -53,14 +53,16 @@
 - (void)saveSpotTapped:(id)sender{
     NSLog(@"[AddQuietSpotVC] Save spot tapped");
     
-    self.userlongitude = [NSNumber numberWithFloat:self.usercoor.longitude];
-    self.userlatitude = [NSNumber numberWithFloat:self.usercoor.latitude];
-    
-    QuietSpot *qspot = [QuietSpotFactory createQuietSpotWithTitle:self.addQuietSpotView.txtTitle.text Subtitle:self.addQuietSpotView.txtSubtitle.text Longitude:self.userlongitude andLatitude:self.userlatitude];
-    
-    NSLog(@"Saved spot with title:'%@' and subtitle:'%@' at coordinates:(%@,%@)",self.addQuietSpotView.txtTitle.text,self.addQuietSpotView.txtSubtitle.text,self.userlongitude,self.userlatitude);
-    
-    [self.delegate addQuietSpotViewController:self didSaveSpot:qspot];
+    if (![self.addQuietSpotView.txtTitle.text isEqualToString:@""] && ![self.addQuietSpotView.txtSubtitle.text isEqualToString:@""]) {
+        self.userlongitude = [NSNumber numberWithFloat:self.usercoor.longitude];
+        self.userlatitude = [NSNumber numberWithFloat:self.usercoor.latitude];
+        
+        QuietSpot *qspot = [QuietSpotFactory createQuietSpotWithTitle:self.addQuietSpotView.txtTitle.text Subtitle:self.addQuietSpotView.txtSubtitle.text Longitude:self.userlongitude andLatitude:self.userlatitude];
+        
+        NSLog(@"Saved spot with title:'%@' and subtitle:'%@' at coordinates:(%@,%@)",self.addQuietSpotView.txtTitle.text,self.addQuietSpotView.txtSubtitle.text,self.userlongitude,self.userlatitude);
+        
+        [self.delegate addQuietSpotViewController:self didSaveSpot:qspot];
+    }
 }
 
 - (UIBarButtonItem *) getBackButton

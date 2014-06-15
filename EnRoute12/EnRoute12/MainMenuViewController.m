@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.user = [UserFactory createUserWithUserType:@"STUDENT" AndGroupId:7];
     }
     return self;
 }
@@ -71,7 +72,7 @@
 {
     int curas = 0;
     Assignment *stilAssignment = self.cassignments[curas];
-    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:stilAssignment];
+    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:stilAssignment AndUser:self.user];
     [self.navigationController pushViewController:assignmentVC animated:YES];
 }
 
@@ -79,7 +80,7 @@
 {
     int curas = 2;
     Assignment *vriendAssignment = self.cassignments[curas];
-    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:vriendAssignment];
+    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:vriendAssignment AndUser:self.user];
     [self.navigationController pushViewController:assignmentVC animated:YES];
 }
 
@@ -87,19 +88,19 @@
 {
     int curas = 3;
     Assignment *groenAssignment = self.cassignments[curas];
-    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:groenAssignment];
+    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:groenAssignment AndUser:self.user];
     [self.navigationController pushViewController:assignmentVC animated:YES];
 }
 
 - (void)kaartTapped:(id)sender
 {
-    MapViewController *mapVC = [[MapViewController alloc] initWithNibName:nil bundle:nil];
+    MapViewController *mapVC = [[MapViewController alloc] initWithUser:self.user];
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 
 - (void)extraOpdrachtenTapped:(id)sender
 {
-    AssignmentsTableViewController *assignmentTVC = [[AssignmentsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    AssignmentsTableViewController *assignmentTVC = [[AssignmentsTableViewController alloc] initWithUser:self.user];
     [self.navigationController pushViewController:assignmentTVC animated:YES];
 }
 

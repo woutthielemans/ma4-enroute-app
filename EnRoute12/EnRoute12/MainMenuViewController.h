@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <AFNetworking.h>
+#import <QuartzCore/QuartzCore.h>
 #import "MainMenuView.h"
 #import "MapViewController.h"
 #import "AssignmentsTableViewController.h"
 #import "NotificationsViewController.h"
+#import "User.h"
+#import "UserFactory.h"
 
 @interface MainMenuViewController : UIViewController
 
 @property (strong, nonatomic) MainMenuView *mainMenuView;
 @property (strong, nonatomic) NSMutableArray *cassignments;
+@property (strong, nonatomic) User *user;
 
 @end

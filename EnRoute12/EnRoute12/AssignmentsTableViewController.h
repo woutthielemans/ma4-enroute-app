@@ -12,13 +12,17 @@
 #import "AssignmentFactory.h"
 #import "AssignmentTableViewCell.h"
 #import "AssignmentViewController.h"
+#import "User.h"
 
 @interface AssignmentsTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *assignments;
 @property (strong, nonatomic) UIButton *btnBack;
 @property (strong, nonatomic) UIButton *btnMenu;
-@property (strong, nonatomic) UIImage *backarrowmap;
-@property (strong, nonatomic) UIImage *menubuttonmap;
+@property (strong, nonatomic) UIImage *backarrow;
+@property (strong, nonatomic) UIImage *menubutton;
+@property (strong, nonatomic) User *user;
+
+- (id)initWithUser:(User *)user;
 
 @end

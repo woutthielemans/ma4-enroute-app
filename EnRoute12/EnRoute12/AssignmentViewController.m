@@ -24,9 +24,10 @@
     return self;
 }
 
-- (id)initWithAssignment:(Assignment *)assignment
+- (id)initWithAssignment:(Assignment *)assignment AndUser:(User *)user
 {
     self.assignment = assignment;
+    self.user = user;
     return [self initWithNibName:nil bundle:nil];
 }
 
@@ -47,6 +48,12 @@
     [self.asView.glistenbutton addTarget:self action:@selector(listenTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.asView.volumebutton addTarget:self action:@selector(volumeTapped:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+//    [self.asView animateIllustration];
 }
 
 - (UIBarButtonItem *) getBackButton
@@ -114,41 +121,65 @@
 
 -(void)uploadPhoto{
     NSLog(@"Uploading photo...");
-    UIImage *resizedImage = [self imageWithImage:self.asView.imageView.image scaledToSize:CGSizeMake(self.asView.imageView.image.size.width/2.5, self.asView.imageView.image.size.height/2.5)];
-    NSData *imageData = UIImageJPEGRepresentation(resizedImage, 0.4);
-    NSString *urlString = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/uploadphoto.php";
+//    UIImage *resizedImage = [self imageWithImage:self.asView.imageView.image scaledToSize:CGSizeMake(self.asView.imageView.image.size.width/2.5, self.asView.imageView.image.size.height/2.5)];
+//    NSData *imageData = UIImageJPEGRepresentation(resizedImage, 0.4);
+//    NSString *urlString = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/uploadphoto.php";
+//    
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    [request setURL:[NSURL URLWithString:urlString]];
+//    [request setHTTPMethod:@"POST"];
+//    
+//    NSString *boundary = @"---------------------------14737809831466499882746641449";
+//    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+//    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+//    
+//    NSMutableData *body = [NSMutableData data];
+//    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uploadedfile\"; filename=\"test.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[NSData dataWithData:imageData]];
+//    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [request setHTTPBody:body];
+//    
+//    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+//    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+//    
+//    NSLog(@"Image Return String: %@", returnString);
+    NSString *fileName = [NSString stringWithFormat:@"%i%ld%c%c.jpeg", self.user.groupid, (long)[[NSDate date] timeIntervalSince1970], arc4random_uniform(26) + 'a', arc4random_uniform(26) + 'a'];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:urlString]];
-    [request setHTTPMethod:@"POST"];
     
-    NSString *boundary = @"---------------------------14737809831466499882746641449";
-    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
-    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
-    NSMutableData *body = [NSMutableData data];
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uploadedfile\"; filename=\"test.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[NSData dataWithData:imageData]];
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [request setHTTPBody:body];
+    NSDictionary *params = @{@"group_id": [NSString stringWithFormat:@"%i", self.user.groupid],
+                             @"path": [NSString stringWithFormat:@"%@", fileName]};
     
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    [manager POST:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/api/photos" parameters:params
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         NSLog(@"JSON: %@", responseObject);
+     }
+          failure:
+     ^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+     }];
     
-    NSLog(@"Image Return String: %@", returnString);
-}
-
-- (UIImage*)imageWithImage:(UIImage*)image
-              scaledToSize:(CGSize)newSize;
-{
-    UIGraphicsBeginImageContext( newSize );
-    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    AFHTTPRequestOperationManager *fileManager = [AFHTTPRequestOperationManager manager];
+    fileManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
-    return newImage;
+    NSString *DataURLString = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/uploadphoto.php";
+    
+    UIImage *selectedImage = self.asView.imageView.image;
+    NSData *imageData = UIImageJPEGRepresentation(selectedImage, .4); // image size ca. 50 KB
+    [fileManager POST:DataURLString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:imageData name:@"upfile" fileName:fileName mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success %@", responseObject);
+        NSLog(@"Image = %@", selectedImage);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure %@, %@", error, operation.responseString);
+    }];
 }
 
 - (void)checkTapped:(id)sender
@@ -164,7 +195,7 @@
 
 - (void)volumeTapped:(id)sender
 {
-    self.volumeCheckerVC  =[[VolumeCheckerViewController alloc] initWithNibName:nil bundle:nil];
+    self.volumeCheckerVC  =[[VolumeCheckerViewController alloc] initWithUser:self.user];
     self.volumeCheckerVC.delegate = self;
     [self.navigationController pushViewController:self.volumeCheckerVC animated:YES];
 }

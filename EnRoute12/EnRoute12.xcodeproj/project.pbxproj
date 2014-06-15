@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C32C4BB194D19540038E99C /* TeacherFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4BA194D19540038E99C /* TeacherFactory.m */; };
 		5C38187B193CA2C000C39FBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C38187A193CA2C000C39FBC /* Foundation.framework */; };
 		5C38187D193CA2C000C39FBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C38187C193CA2C000C39FBC /* CoreGraphics.framework */; };
 		5C38187F193CA2C000C39FBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C38187E193CA2C000C39FBC /* UIKit.framework */; };
@@ -23,6 +24,7 @@
 		5C3818AC193D18AA00C39FBC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818AB193D18AA00C39FBC /* CoreLocation.framework */; };
 		5C3818AE193D18BB00C39FBC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818AD193D18BB00C39FBC /* AVFoundation.framework */; };
 		5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C39478C194C97EC00A47692 /* BudaSpot.m */; };
+		5C394791194CA77F00A47692 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C394790194CA77F00A47692 /* Teacher.m */; };
 		5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */; };
 		5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A6193E7DEE007D7B5D /* VolumeCheckerView.m */; };
 		5C8327AD193E7DF9007D7B5D /* QuietSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327AA193E7DF9007D7B5D /* QuietSpot.m */; };
@@ -36,6 +38,8 @@
 		5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D71940A3DC00870A8A /* AssignmentView.m */; };
 		5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D21943D13D00C715D1 /* MainMenuViewController.m */; };
 		5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D51943D1C100C715D1 /* MainMenuView.m */; };
+		5CBCBF30194CE58A00DE5837 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCBF2F194CE58A00DE5837 /* User.m */; };
+		5CBCBF33194CE59A00DE5837 /* UserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCBF32194CE59A00DE5837 /* UserFactory.m */; };
 		5CBE77B61945E6030046BCED /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE77B51945E6030046BCED /* CameraViewController.m */; };
 		5CE67E79194061A200F9FFCF /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E78194061A200F9FFCF /* Assignment.m */; };
 		5CE67E7C194061B300F9FFCF /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */; };
@@ -60,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C32C4B9194D19540038E99C /* TeacherFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherFactory.h; sourceTree = "<group>"; };
+		5C32C4BA194D19540038E99C /* TeacherFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherFactory.m; sourceTree = "<group>"; };
 		5C381877193CA2C000C39FBC /* EnRoute12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnRoute12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C38187A193CA2C000C39FBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5C38187C193CA2C000C39FBC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +87,9 @@
 		5C3818AD193D18BB00C39FBC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5C39478B194C97EC00A47692 /* BudaSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudaSpot.h; sourceTree = "<group>"; };
 		5C39478C194C97EC00A47692 /* BudaSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudaSpot.m; sourceTree = "<group>"; };
+		5C39478E194CA6D500A47692 /* MapDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapDelegate.h; sourceTree = "<group>"; };
+		5C39478F194CA77F00A47692 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		5C394790194CA77F00A47692 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		5C8327A3193E7DEE007D7B5D /* VolumeCheckerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerViewController.h; sourceTree = "<group>"; };
 		5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeCheckerViewController.m; sourceTree = "<group>"; };
 		5C8327A5193E7DEE007D7B5D /* VolumeCheckerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerView.h; sourceTree = "<group>"; };
@@ -108,6 +117,10 @@
 		5CA501D21943D13D00C715D1 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		5CA501D41943D1C100C715D1 /* MainMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuView.h; sourceTree = "<group>"; };
 		5CA501D51943D1C100C715D1 /* MainMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
+		5CBCBF2E194CE58A00DE5837 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		5CBCBF2F194CE58A00DE5837 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		5CBCBF31194CE59A00DE5837 /* UserFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFactory.h; sourceTree = "<group>"; };
+		5CBCBF32194CE59A00DE5837 /* UserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFactory.m; sourceTree = "<group>"; };
 		5CBE77B41945E6030046BCED /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		5CBE77B51945E6030046BCED /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		5CE090EA19492B4D002F68C7 /* VolumeCheckerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerDelegate.h; sourceTree = "<group>"; };
@@ -211,6 +224,7 @@
 				5C83279E193E7D19007D7B5D /* Map */,
 				5CFE540E19453AAD004D2E0B /* Camera */,
 				5C39478A194BB16700A47692 /* Notifications */,
+				5CBCBF34194CE5AE00DE5837 /* User */,
 			);
 			path = EnRoute12;
 			sourceTree = "<group>";
@@ -277,6 +291,11 @@
 				5C8327B9193E7E16007D7B5D /* MapView.m */,
 				5C39478B194C97EC00A47692 /* BudaSpot.h */,
 				5C39478C194C97EC00A47692 /* BudaSpot.m */,
+				5C39478F194CA77F00A47692 /* Teacher.h */,
+				5C394790194CA77F00A47692 /* Teacher.m */,
+				5C39478E194CA6D500A47692 /* MapDelegate.h */,
+				5C32C4B9194D19540038E99C /* TeacherFactory.h */,
+				5C32C4BA194D19540038E99C /* TeacherFactory.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -352,6 +371,17 @@
 				5CA501D51943D1C100C715D1 /* MainMenuView.m */,
 			);
 			name = "Main Menu (home)";
+			sourceTree = "<group>";
+		};
+		5CBCBF34194CE5AE00DE5837 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5CBCBF2E194CE58A00DE5837 /* User.h */,
+				5CBCBF2F194CE58A00DE5837 /* User.m */,
+				5CBCBF31194CE59A00DE5837 /* UserFactory.h */,
+				5CBCBF32194CE59A00DE5837 /* UserFactory.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		5CFE540E19453AAD004D2E0B /* Camera */ = {
@@ -497,12 +527,15 @@
 			files = (
 				5CFE540D19452A59004D2E0B /* AssignmentsTableViewController.m in Sources */,
 				5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */,
+				5CBCBF30194CE58A00DE5837 /* User.m in Sources */,
+				5CBCBF33194CE59A00DE5837 /* UserFactory.m in Sources */,
 				5C8367D51940A38000870A8A /* AssignmentViewController.m in Sources */,
 				5C8327AE193E7DF9007D7B5D /* QuietSpotFactory.m in Sources */,
 				5CFE541A19453B29004D2E0B /* Notification.m in Sources */,
 				5CFE541D19453B33004D2E0B /* NotificationFactory.m in Sources */,
 				5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */,
 				5CFE541419453B0C004D2E0B /* NotificationsViewController.m in Sources */,
+				5C394791194CA77F00A47692 /* Teacher.m in Sources */,
 				5C38188B193CA2C000C39FBC /* AppDelegate.m in Sources */,
 				5CBE77B61945E6030046BCED /* CameraViewController.m in Sources */,
 				5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */,
@@ -512,6 +545,7 @@
 				5C381887193CA2C000C39FBC /* main.m in Sources */,
 				5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */,
 				5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */,
+				5C32C4BB194D19540038E99C /* TeacherFactory.m in Sources */,
 				5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */,
 				5C8327BA193E7E16007D7B5D /* MapViewController.m in Sources */,
 				5C8327BB193E7E16007D7B5D /* MapView.m in Sources */,

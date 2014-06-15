@@ -40,6 +40,11 @@
     return self;
 }
 
+- (id)initWithUser:(User *)user{
+    self.user = user;
+    return [self initWithNibName:nil bundle:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -78,7 +83,7 @@
                 [self.audioRecorder prepareToRecord];
                 self.audioRecorder.meteringEnabled = YES;
                 [self.audioRecorder record];
-                self.levelTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo: nil repeats: YES];
+                self.levelTimer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(levelTimerCallback:) userInfo:nil repeats:YES];
             } else
                 NSLog(@"%@",[error description]);
         }

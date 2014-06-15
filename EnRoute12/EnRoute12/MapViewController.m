@@ -23,10 +23,18 @@
     return self;
 }
 
+- (id)initWithUser:(User *)user
+{
+    self.user = user;
+    return [self initWithNibName:nil bundle:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.mapView.delegate = self;
+    
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -97,8 +105,67 @@
 - (void)loadView
 {
     CGRect bounds = [UIScreen mainScreen].bounds;
-    self.mapView = [[MapView alloc] initWithFrame:bounds];
+    self.mapView = [[MapView alloc] initWithFrame:bounds AndUser:self.user];
     self.view = self.mapView;
+}
+
+- (void)postTeacherLoc
+{
+    NSLog(@"[MapVC] POST JSON with teacher's current location");
+    
+    NSDictionary *params = @{@"groupid":  [NSString stringWithFormat:@"%i", self.user.groupid],
+                             @"lon":  [NSString stringWithFormat:@"%f", self.mapView.teachercoor.latitude],
+                             @"lat":  [NSString stringWithFormat:@"%f", self.mapView.teachercoor.longitude]};
+    
+    NSLog(@"[MapVC] params for posting teacher position: %@",params);
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager POST:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/api/teacherlocation" parameters:params
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         NSLog(@"JSON: %@", responseObject);
+         
+     }
+          failure:
+     ^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+         NSLog(@"RESPONSE %@", operation.responseObject);
+     }];
+}
+
+- (void)getTeacherLoc
+{
+    NSLog(@"[MapVC] GET JSON with teacher's current location");
+    
+    NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/api/teacherlocation";
+    NSURL *url = [NSURL URLWithString:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *loadedData = (NSArray *)responseObject;
+        
+        for (NSDictionary *dict in loadedData) {
+            int groupid = [[dict objectForKey:@"group_id"] intValue];
+            NSString *longitudestring = [dict objectForKey:@"longitude"];
+            double longitude = [longitudestring doubleValue];
+            NSString *latitudestring = [dict objectForKey:@"latitude"];
+            double latitude = [latitudestring doubleValue];
+            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(longitude, latitude);
+            Teacher *teacher = [TeacherFactory createTeacherWithGroupId:groupid AndCoordinates:coordinate];
+            [self.mapView createAnnotationWithTeacher:teacher];
+            NSLog(@"[MapVC] Loaded JSON with teacher: latitude -> %f, longitude -> %f, group id -> %i",latitude,longitude,groupid);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error loading JSON");
+        UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"error accessing api for teacher location" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alerView show];
+    }];
+    [operation start];
 }
 
 - (void)didReceiveMemoryWarning

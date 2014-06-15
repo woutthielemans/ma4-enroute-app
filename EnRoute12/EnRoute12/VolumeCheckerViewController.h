@@ -19,6 +19,7 @@
 #import "AddQuietSpotView.h"
 #import "VolumeCheckerDelegate.h"
 #import "AssignmentViewController.h"
+#import "User.h"
 
 @interface VolumeCheckerViewController : UIViewController <AddQuietSpotViewDelegate, NSCoding>
 
@@ -35,7 +36,9 @@
 @property (strong, nonatomic) NSString *psubtitle;
 @property (strong, nonatomic) NSString *puserlongitude;
 @property (strong, nonatomic) NSString *puserlatitude;
+@property (strong, nonatomic) User *user;
 
+- (id)initWithUser:(User *)user;
 - (void)levelTimerCallback:(NSTimer *)timer;
 
 @end

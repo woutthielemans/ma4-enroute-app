@@ -24,11 +24,17 @@
     return self;
 }
 
+- (id)initWithUser:(User *)user
+{
+    self.user = user;
+    return [self initWithStyle:UITableViewStylePlain];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    [[self navigationController] setNavigationBarHidden:NO animated:NO];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -76,9 +82,9 @@
 {
     NSLog(@"[MapVC] Get back button");
     self.btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.backarrowmap = [UIImage imageNamed:@"backarrowmap"];
-    [self.btnBack setFrame:CGRectMake(20,20,self.backarrowmap.size.width,self.backarrowmap.size.height)];
-    [self.btnBack setImage:self.backarrowmap forState:UIControlStateNormal];
+    self.backarrow = [UIImage imageNamed:@"backarrow"];
+    [self.btnBack setFrame:CGRectMake(20,20,self.backarrow.size.width,self.backarrow.size.height)];
+    [self.btnBack setImage:self.backarrow forState:UIControlStateNormal];
     [self.btnBack addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnBack];
     return backBarButton;
@@ -92,9 +98,9 @@
 - (UIBarButtonItem *) getMenuButton
 {
     self.btnMenu = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.menubuttonmap = [UIImage imageNamed:@"menubuttonmap"];
-    [self.btnMenu setFrame:CGRectMake(self.view.frame.size.width - 20,20,self.menubuttonmap.size.width,self.menubuttonmap.size.height)];
-    [self.btnMenu setImage:self.menubuttonmap forState:UIControlStateNormal];
+    self.menubutton = [UIImage imageNamed:@"menubutton"];
+    [self.btnMenu setFrame:CGRectMake(self.view.frame.size.width - 20,20,self.menubutton.size.width,self.menubutton.size.height)];
+    [self.btnMenu setImage:self.menubutton forState:UIControlStateNormal];
     [self.btnMenu addTarget:self action:@selector(menuButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *menuBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.btnMenu];
     return menuBarButton;
@@ -104,6 +110,7 @@
 {
     NSLog(@"[MapVC] Menu button was tapped");
 }
+
 
 
 - (void)didReceiveMemoryWarning
@@ -147,7 +154,7 @@
 {
     Assignment *assigment = [self.assignments objectAtIndex:indexPath.row];
     
-    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:assigment];
+    AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:assigment AndUser:self.user];
     [self.navigationController pushViewController:assignmentVC animated:YES];
 }
 
