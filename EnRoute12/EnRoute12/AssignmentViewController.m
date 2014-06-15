@@ -219,30 +219,6 @@
 
 -(void)uploadPhoto{
     NSLog(@"Uploading photo...");
-//    UIImage *resizedImage = [self imageWithImage:self.asView.imageView.image scaledToSize:CGSizeMake(self.asView.imageView.image.size.width/2.5, self.asView.imageView.image.size.height/2.5)];
-//    NSData *imageData = UIImageJPEGRepresentation(resizedImage, 0.4);
-//    NSString *urlString = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/uploadphoto.php";
-//    
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-//    [request setURL:[NSURL URLWithString:urlString]];
-//    [request setHTTPMethod:@"POST"];
-//    
-//    NSString *boundary = @"---------------------------14737809831466499882746641449";
-//    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
-//    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
-//    
-//    NSMutableData *body = [NSMutableData data];
-//    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uploadedfile\"; filename=\"test.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-//    [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-//    [body appendData:[NSData dataWithData:imageData]];
-//    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//    [request setHTTPBody:body];
-//    
-//    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-//    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-//    
-//    NSLog(@"Image Return String: %@", returnString);
     NSString *fileName = [NSString stringWithFormat:@"%i%ld%c%c.jpeg", self.user.groupid, (long)[[NSDate date] timeIntervalSince1970], arc4random_uniform(26) + 'a', arc4random_uniform(26) + 'a'];
     
     

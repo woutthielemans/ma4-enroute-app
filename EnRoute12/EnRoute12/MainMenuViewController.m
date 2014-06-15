@@ -59,6 +59,14 @@
     [self.mainMenuView.btnGroen addTarget:self action:@selector(groeneStadTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.mainMenuView.btnKaart addTarget:self action:@selector(kaartTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.mainMenuView.btnOpdracht addTarget:self action:@selector(extraOpdrachtenTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isUserLoggedIn"] == NO) {
+        self.loginVC = [[LoginViewController alloc] initWithBounds:[UIScreen mainScreen].bounds];
+        [self presentViewController:self.loginVC animated:NO completion:^{}];
+    }
 }
 
 - (void)loadView

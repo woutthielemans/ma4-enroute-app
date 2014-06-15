@@ -15,11 +15,13 @@
 #import "NotificationsViewController.h"
 #import "User.h"
 #import "UserFactory.h"
+#import "LoginViewController.h"
 
 @interface MainMenuViewController : UIViewController
 
 @property (strong, nonatomic) MainMenuView *mainMenuView;
 @property (strong, nonatomic) NSMutableArray *cassignments;
 @property (strong, nonatomic) User *user;
+@property (strong, nonatomic) LoginViewController *loginVC;
 
 @end
