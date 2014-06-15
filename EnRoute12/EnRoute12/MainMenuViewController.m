@@ -73,7 +73,22 @@
     int curas = 0;
     Assignment *stilAssignment = self.cassignments[curas];
     AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:stilAssignment AndUser:self.user];
-    [self.navigationController pushViewController:assignmentVC animated:YES];
+    [UIView animateWithDuration:0.15f animations:^{
+        CGRect btnframe = self.mainMenuView.btnStil.frame;
+        btnframe.size.width -= 10.0f;
+        btnframe.size.height -= 10.0f;
+        btnframe.origin.x += 5;
+        btnframe.origin.y += 5;
+        self.mainMenuView.btnStil.frame = btnframe;
+    } completion:^(BOOL finished){
+        [self.navigationController pushViewController:assignmentVC animated:YES];
+        CGRect btnframe = self.mainMenuView.btnStil.frame;
+        btnframe.size.width += 10.0f;
+        btnframe.size.height += 10.0f;
+        btnframe.origin.x -= 5;
+        btnframe.origin.y -= 5;
+        self.mainMenuView.btnStil.frame = btnframe;
+    }];
 }
 
 - (void)vriendStadTapped:(id)sender
@@ -81,7 +96,22 @@
     int curas = 2;
     Assignment *vriendAssignment = self.cassignments[curas];
     AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:vriendAssignment AndUser:self.user];
-    [self.navigationController pushViewController:assignmentVC animated:YES];
+    [UIView animateWithDuration:0.15f animations:^{
+        CGRect btnframe = self.mainMenuView.btnVriend.frame;
+        btnframe.size.width -= 10.0f;
+        btnframe.size.height -= 10.0f;
+        btnframe.origin.x += 5;
+        btnframe.origin.y += 5;
+        self.mainMenuView.btnVriend.frame = btnframe;
+    } completion:^(BOOL finished){
+        [self.navigationController pushViewController:assignmentVC animated:YES];
+        CGRect btnframe = self.mainMenuView.btnVriend.frame;
+        btnframe.size.width += 10.0f;
+        btnframe.size.height += 10.0f;
+        btnframe.origin.x -= 5;
+        btnframe.origin.y -= 5;
+        self.mainMenuView.btnVriend.frame = btnframe;
+    }];
 }
 
 - (void)groeneStadTapped:(id)sender
@@ -89,19 +119,64 @@
     int curas = 3;
     Assignment *groenAssignment = self.cassignments[curas];
     AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:groenAssignment AndUser:self.user];
-    [self.navigationController pushViewController:assignmentVC animated:YES];
+    [UIView animateWithDuration:0.15f animations:^{
+        CGRect btnframe = self.mainMenuView.btnGroen.frame;
+        btnframe.size.width -= 10.0f;
+        btnframe.size.height -= 10.0f;
+        btnframe.origin.x += 5;
+        btnframe.origin.y += 5;
+        self.mainMenuView.btnGroen.frame = btnframe;
+    } completion:^(BOOL finished){
+        [self.navigationController pushViewController:assignmentVC animated:YES];
+        CGRect btnframe = self.mainMenuView.btnGroen.frame;
+        btnframe.size.width += 10.0f;
+        btnframe.size.height += 10.0f;
+        btnframe.origin.x -= 5;
+        btnframe.origin.y -= 5;
+        self.mainMenuView.btnGroen.frame = btnframe;
+    }];
 }
 
 - (void)kaartTapped:(id)sender
 {
     MapViewController *mapVC = [[MapViewController alloc] initWithUser:self.user];
-    [self.navigationController pushViewController:mapVC animated:YES];
+    [UIView animateWithDuration:0.15f animations:^{
+        CGRect btnframe = self.mainMenuView.btnKaart.frame;
+        btnframe.size.width -= 10.0f;
+        btnframe.size.height -= 10.0f;
+        btnframe.origin.x += 5;
+        btnframe.origin.y += 5;
+        self.mainMenuView.btnKaart.frame = btnframe;
+    } completion:^(BOOL finished){
+        [self.navigationController pushViewController:mapVC animated:YES];
+        CGRect btnframe = self.mainMenuView.btnKaart.frame;
+        btnframe.size.width += 10.0f;
+        btnframe.size.height += 10.0f;
+        btnframe.origin.x -= 5;
+        btnframe.origin.y -= 5;
+        self.mainMenuView.btnKaart.frame = btnframe;
+    }];
 }
 
 - (void)extraOpdrachtenTapped:(id)sender
 {
     AssignmentsTableViewController *assignmentTVC = [[AssignmentsTableViewController alloc] initWithUser:self.user];
-    [self.navigationController pushViewController:assignmentTVC animated:YES];
+    [UIView animateWithDuration:0.15f animations:^{
+        CGRect btnframe = self.mainMenuView.btnOpdracht.frame;
+        btnframe.size.width -= 10.0f;
+        btnframe.size.height -= 10.0f;
+        btnframe.origin.x += 5;
+        btnframe.origin.y += 5;
+        self.mainMenuView.btnOpdracht.frame = btnframe;
+    } completion:^(BOOL finished){
+        [self.navigationController pushViewController:assignmentTVC animated:YES];
+        CGRect btnframe = self.mainMenuView.btnOpdracht.frame;
+        btnframe.size.width += 10.0f;
+        btnframe.size.height += 10.0f;
+        btnframe.origin.x -= 5;
+        btnframe.origin.y -= 5;
+        self.mainMenuView.btnOpdracht.frame = btnframe;
+    }];
 }
 
 - (void)didReceiveMemoryWarning

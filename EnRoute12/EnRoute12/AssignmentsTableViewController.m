@@ -37,10 +37,17 @@
     [[self navigationController] setNavigationBarHidden:NO animated:NO];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.frame = CGRectMake(0, -100, self.tableView.frame.size.width, self.navigationController.navigationBar.frame.size.height);
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationItem.leftBarButtonItem = [self getBackButton];
     self.navigationItem.rightBarButtonItem = [self getMenuButton];
+    
+    [UIView animateWithDuration:0.7f animations:^{
+        CGRect navframe = self.navigationController.navigationBar.frame;
+        navframe.origin.y += 120;
+        self.navigationController.navigationBar.frame = navframe;
+    } completion:^(BOOL finished){}];
     
     NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/api/standardassignments";
     NSURL *url = [NSURL URLWithString:path];
@@ -92,7 +99,11 @@
 
 - (void)backButtonTapped
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [UIView animateWithDuration:0.4f animations:^{
+        CGRect navframe = self.navigationController.navigationBar.frame;
+        navframe.origin.y -= 100;
+        self.navigationController.navigationBar.frame = navframe;
+    } completion:^(BOOL finished){[self.navigationController popViewControllerAnimated:YES];}];
 }
 
 - (UIBarButtonItem *) getMenuButton

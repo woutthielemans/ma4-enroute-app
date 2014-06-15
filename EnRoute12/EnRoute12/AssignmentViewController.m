@@ -43,6 +43,15 @@
     self.navigationItem.leftBarButtonItem = [self getBackButton];
     self.navigationItem.rightBarButtonItem = [self getMenuButton];
     
+    if (self.asView.assignment.type == 1) {
+        self.navigationController.navigationBar.frame = CGRectMake(0, -100, self.asView.frame.size.width, self.navigationController.navigationBar.frame.size.height);
+        [UIView animateWithDuration:0.7f animations:^{
+            CGRect navframe = self.navigationController.navigationBar.frame;
+            navframe.origin.y += 120;
+            self.navigationController.navigationBar.frame = navframe;
+        } completion:^(BOOL finished){}];
+    }
+    
     [self.asView.gphotobutton addTarget:self action:@selector(showCamera:) forControlEvents:UIControlEventTouchUpInside];
     [self.asView.gcheckbutton addTarget:self action:@selector(checkTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.asView.glistenbutton addTarget:self action:@selector(listenTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -70,10 +79,99 @@
 
 - (void)backButtonTapped
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if(self.asView.assignment.categoryid == 1 && self.asView.assignment.type == 2){
+        [UIView animateWithDuration:0.4f animations:^{
+            CGRect frame = self.asView.gphotobutton.frame;
+            frame.origin.y += 80;
+            self.self.asView.gphotobutton.frame = frame;
+            CGRect illframe = self.asView.illImageView.frame;
+            illframe.size.width -= 100.0f;
+            illframe.size.height -= 100.0f;
+            illframe.origin.x += 50;
+            illframe.origin.y += 50;
+            self.asView.illImageView.frame = illframe;
+            self.asView.illImageView.alpha = 0.f;
+        } completion:^(BOOL finished){[self.navigationController popViewControllerAnimated:YES];}];
+    }else if(self.asView.assignment.categoryid == 2 && self.asView.assignment.type == 2){
+        [UIView animateWithDuration:0.4f animations:^{
+            CGRect frame = self.asView.glistenbutton.frame;
+            frame.origin.y += 80;
+            self.self.asView.glistenbutton.frame = frame;
+            CGRect illframe = self.asView.illImageView.frame;
+            illframe.size.width -= 100.0f;
+            illframe.size.height -= 100.0f;
+            illframe.origin.x += 50;
+            illframe.origin.y += 50;
+            self.asView.illImageView.frame = illframe;
+            self.asView.illImageView.alpha = 0.f;
+        } completion:^(BOOL finished){[self.navigationController popViewControllerAnimated:YES];}];
+    }else if(self.asView.assignment.categoryid == 3 && self.asView.assignment.type == 2){
+        [UIView animateWithDuration:0.4f animations:^{
+            CGRect frame = self.asView.gcheckbutton.frame;
+            frame.origin.y += 80;
+            self.self.asView.gcheckbutton.frame = frame;
+            CGRect illframe = self.asView.illImageView.frame;
+            illframe.size.width -= 100.0f;
+            illframe.size.height -= 100.0f;
+            illframe.origin.x += 50;
+            illframe.origin.y += 50;
+            self.asView.illImageView.frame = illframe;
+            self.asView.illImageView.alpha = 0.f;
+        } completion:^(BOOL finished){[self.navigationController popViewControllerAnimated:YES];}];
+    }else if(self.asView.assignment.type == 1){
+        if (self.asView.assignment.identifier == 1) {
+            [UIView animateWithDuration:0.4f animations:^{
+                CGRect frame = self.asView.volumebutton.frame;
+                frame.origin.y += 80;
+                self.self.asView.volumebutton.frame = frame;
+                CGRect illframe = self.asView.illImageView.frame;
+                illframe.size.width -= 100.0f;
+                illframe.size.height -= 100.0f;
+                illframe.origin.x += 50;
+                illframe.origin.y += 50;
+                self.asView.illImageView.frame = illframe;
+                self.asView.illImageView.alpha = 0.f;
+                CGRect navframe = self.navigationController.navigationBar.frame;
+                navframe.origin.y -= 100;
+                self.navigationController.navigationBar.frame = navframe;
+            } completion:^(BOOL finished){[self.navigationController popViewControllerAnimated:YES];}];
+        }else if (self.asView.assignment.identifier == 3) {
+            [UIView animateWithDuration:0.4f animations:^{
+                CGRect frame = self.asView.quotebutton.frame;
+                frame.origin.y += 80;
+                self.self.asView.quotebutton.frame = frame;
+                CGRect illframe = self.asView.illImageView.frame;
+                illframe.size.width -= 100.0f;
+                illframe.size.height -= 100.0f;
+                illframe.origin.x += 50;
+                illframe.origin.y += 50;
+                self.asView.illImageView.frame = illframe;
+                self.asView.illImageView.alpha = 0.f;
+                CGRect navframe = self.navigationController.navigationBar.frame;
+                navframe.origin.y -= 100;
+                self.navigationController.navigationBar.frame = navframe;
+            } completion:^(BOOL finished){[self.navigationController popViewControllerAnimated:YES];}];
+        }else if (self.asView.assignment.identifier == 4) {
+            [UIView animateWithDuration:0.4f animations:^{
+                CGRect frame = self.asView.greenbutton.frame;
+                frame.origin.y += 80;
+                self.self.asView.greenbutton.frame = frame;
+                CGRect illframe = self.asView.illImageView.frame;
+                illframe.size.width -= 100.0f;
+                illframe.size.height -= 100.0f;
+                illframe.origin.x += 50;
+                illframe.origin.y += 50;
+                self.asView.illImageView.frame = illframe;
+                self.asView.illImageView.alpha = 0.f;
+                CGRect navframe = self.navigationController.navigationBar.frame;
+                navframe.origin.y -= 100;
+                self.navigationController.navigationBar.frame = navframe;
+            } completion:^(BOOL finished){[self.navigationController popViewControllerAnimated:YES];}];
+        }
+    }
 }
 
-- (UIBarButtonItem *) getMenuButton
+- (UIBarButtonItem *)getMenuButton
 {
     self.btnMenu = [UIButton buttonWithType:UIButtonTypeCustom];
     self.menubutton = [UIImage imageNamed:@"menubutton"];
