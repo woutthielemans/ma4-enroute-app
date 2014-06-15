@@ -18,16 +18,16 @@
         self.backgroundColor = [UIColor colorWithRed:171/255.0f green:219/255.0f blue:221/255.0f alpha:1];
         self.illustration = assignment.illustration;
         self.illImageView = [[UIImageView alloc] initWithImage:self.illustration];
-        self.illImageView.frame = CGRectMake(0, 0, 0, 0);
+        self.illImageView.frame = CGRectMake(0, 0, self.frame.size.width*0.7, self.frame.size.width*0.7);
         self.illImageView.alpha = 0;
         self.illImageView.center = CGPointMake(self.frame.size.width/2, 170);
         [self addSubview:self.illImageView];
         
-        [UIView animateWithDuration:1.0f animations:^{
-            CGRect frame = self.illImageView.frame;
-            frame.size.width += 100.0f;
-            frame.size.width += self.frame.size.width*0.6;
-            self.illImageView.frame = frame;
+        [UIView animateWithDuration:2.0f animations:^{
+//            CGRect frame = self.illImageView.frame;
+//            frame.size.width += 100.0f;
+//            frame.size.width += self.frame.size.width*0.6;
+//            self.illImageView.frame = frame;
             self.illImageView.alpha = 1.0f;
         }
         completion:^(BOOL finished){

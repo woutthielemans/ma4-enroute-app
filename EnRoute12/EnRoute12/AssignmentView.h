@@ -24,6 +24,6 @@
 @property (nonatomic, strong) UIImageView *loadedPhoto;
 
 - (id)initWithFrame:(CGRect)frame andAssignment:(Assignment *)assignment;
-- (void)animateIllustration;
+//- (void)animateIllustration;
 
 @end
