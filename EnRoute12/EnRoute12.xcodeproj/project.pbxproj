@@ -10,6 +10,12 @@
 		5C32C4BB194D19540038E99C /* TeacherFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4BA194D19540038E99C /* TeacherFactory.m */; };
 		5C32C4C2194D67AA0038E99C /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4C0194D67AA0038E99C /* LoginView.m */; };
 		5C32C4C3194D67AA0038E99C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4C1194D67AA0038E99C /* LoginViewController.m */; };
+		5C32C4C7194D6B460038E99C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4C6194D6B460038E99C /* MenuViewController.m */; };
+		5C32C4CA194D6B510038E99C /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4C9194D6B510038E99C /* MenuView.m */; };
+		5C32C4CE194DA91F0038E99C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4CD194DA91F0038E99C /* UIImage+ImageEffects.m */; };
+		5C32C4D4194DC9830038E99C /* NotificationBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4D3194DC9830038E99C /* NotificationBadgeView.m */; };
+		5C32C4D7194DC9940038E99C /* NotificationBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4D6194DC9940038E99C /* NotificationBadge.m */; };
+		5C32C4DA194DC9C80038E99C /* NotificatonBadgeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4D9194DC9C80038E99C /* NotificatonBadgeFactory.m */; };
 		5C38187B193CA2C000C39FBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C38187A193CA2C000C39FBC /* Foundation.framework */; };
 		5C38187D193CA2C000C39FBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C38187C193CA2C000C39FBC /* CoreGraphics.framework */; };
 		5C38187F193CA2C000C39FBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C38187E193CA2C000C39FBC /* UIKit.framework */; };
@@ -72,6 +78,18 @@
 		5C32C4BF194D67AA0038E99C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5C32C4C0194D67AA0038E99C /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		5C32C4C1194D67AA0038E99C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5C32C4C5194D6B460038E99C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		5C32C4C6194D6B460038E99C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		5C32C4C8194D6B510038E99C /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		5C32C4C9194D6B510038E99C /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		5C32C4CC194DA91F0038E99C /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		5C32C4CD194DA91F0038E99C /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		5C32C4D2194DC9830038E99C /* NotificationBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationBadgeView.h; sourceTree = "<group>"; };
+		5C32C4D3194DC9830038E99C /* NotificationBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationBadgeView.m; sourceTree = "<group>"; };
+		5C32C4D5194DC9940038E99C /* NotificationBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationBadge.h; sourceTree = "<group>"; };
+		5C32C4D6194DC9940038E99C /* NotificationBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationBadge.m; sourceTree = "<group>"; };
+		5C32C4D8194DC9C80038E99C /* NotificatonBadgeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificatonBadgeFactory.h; sourceTree = "<group>"; };
+		5C32C4D9194DC9C80038E99C /* NotificatonBadgeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificatonBadgeFactory.m; sourceTree = "<group>"; };
 		5C381877193CA2C000C39FBC /* EnRoute12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnRoute12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C38187A193CA2C000C39FBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5C38187C193CA2C000C39FBC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,6 +109,7 @@
 		5C3818A9193D189B00C39FBC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5C3818AB193D18AA00C39FBC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5C3818AD193D18BB00C39FBC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5C3915AA194DD40B001D37C3 /* MenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuDelegate.h; sourceTree = "<group>"; };
 		5C39478B194C97EC00A47692 /* BudaSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudaSpot.h; sourceTree = "<group>"; };
 		5C39478C194C97EC00A47692 /* BudaSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudaSpot.m; sourceTree = "<group>"; };
 		5C39478E194CA6D500A47692 /* MapDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapDelegate.h; sourceTree = "<group>"; };
@@ -202,6 +221,40 @@
 			name = "Log in";
 			sourceTree = "<group>";
 		};
+		5C32C4C4194D6B170038E99C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				5C32C4C5194D6B460038E99C /* MenuViewController.h */,
+				5C32C4C6194D6B460038E99C /* MenuViewController.m */,
+				5C32C4C8194D6B510038E99C /* MenuView.h */,
+				5C32C4C9194D6B510038E99C /* MenuView.m */,
+				5C3915AA194DD40B001D37C3 /* MenuDelegate.h */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		5C32C4CB194DA89F0038E99C /* UIImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				5C32C4CC194DA91F0038E99C /* UIImage+ImageEffects.h */,
+				5C32C4CD194DA91F0038E99C /* UIImage+ImageEffects.m */,
+			);
+			name = UIImageEffects;
+			sourceTree = "<group>";
+		};
+		5C32C4DB194DC9D50038E99C /* Badge Factory */ = {
+			isa = PBXGroup;
+			children = (
+				5C32C4D2194DC9830038E99C /* NotificationBadgeView.h */,
+				5C32C4D3194DC9830038E99C /* NotificationBadgeView.m */,
+				5C32C4D5194DC9940038E99C /* NotificationBadge.h */,
+				5C32C4D6194DC9940038E99C /* NotificationBadge.m */,
+				5C32C4D8194DC9C80038E99C /* NotificatonBadgeFactory.h */,
+				5C32C4D9194DC9C80038E99C /* NotificatonBadgeFactory.m */,
+			);
+			name = "Badge Factory";
+			sourceTree = "<group>";
+		};
 		5C38186E193CA2C000C39FBC = {
 			isa = PBXGroup;
 			children = (
@@ -246,18 +299,17 @@
 				5C38188C193CA2C000C39FBC /* Images.xcassets */,
 				5C381881193CA2C000C39FBC /* Supporting Files */,
 				5CA501D71943D1C600C715D1 /* Main Menu (home) */,
-				5C381913193E4C4000C39FBC /* Assigments */,
+				5C381913193E4C4000C39FBC /* Assigments Tableview */,
 				5C8367D219406D8800870A8A /* Assignment */,
 				5C8327BD193E7E3D007D7B5D /* Volume app */,
-				5C8327A2193E7DA4007D7B5D /* Quiet Spots */,
-				5C8327A0193E7D87007D7B5D /* Add Quiet Spot */,
-				5C83279F193E7D7C007D7B5D /* VolumeChecker */,
 				5C83279E193E7D19007D7B5D /* Map */,
 				5C32C4BC194D663A0038E99C /* Teacher */,
 				5CFE540E19453AAD004D2E0B /* Camera */,
 				5C39478A194BB16700A47692 /* Notifications */,
 				5CBCBF34194CE5AE00DE5837 /* User */,
 				5C32C4BD194D67940038E99C /* Log in */,
+				5C32C4C4194D6B170038E99C /* Menu */,
+				5C32C4CB194DA89F0038E99C /* UIImageEffects */,
 			);
 			path = EnRoute12;
 			sourceTree = "<group>";
@@ -291,13 +343,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5C381913193E4C4000C39FBC /* Assigments */ = {
+		5C381913193E4C4000C39FBC /* Assigments Tableview */ = {
 			isa = PBXGroup;
 			children = (
 				5CFE540B19452A59004D2E0B /* AssignmentsTableViewController.h */,
 				5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */,
 			);
-			name = Assigments;
+			name = "Assigments Tableview";
 			sourceTree = "<group>";
 		};
 		5C39478A194BB16700A47692 /* Notifications */ = {
@@ -311,6 +363,7 @@
 				5CFE541919453B29004D2E0B /* Notification.m */,
 				5CFE541B19453B33004D2E0B /* NotificationFactory.h */,
 				5CFE541C19453B33004D2E0B /* NotificationFactory.m */,
+				5C32C4DB194DC9D50038E99C /* Badge Factory */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -367,6 +420,9 @@
 		5C8327BD193E7E3D007D7B5D /* Volume app */ = {
 			isa = PBXGroup;
 			children = (
+				5C8327A2193E7DA4007D7B5D /* Quiet Spots */,
+				5C8327A0193E7D87007D7B5D /* Add Quiet Spot */,
+				5C83279F193E7D7C007D7B5D /* VolumeChecker */,
 			);
 			name = "Volume app";
 			sourceTree = "<group>";
@@ -554,6 +610,8 @@
 				5CFE540D19452A59004D2E0B /* AssignmentsTableViewController.m in Sources */,
 				5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */,
 				5CBCBF30194CE58A00DE5837 /* User.m in Sources */,
+				5C32C4C7194D6B460038E99C /* MenuViewController.m in Sources */,
+				5C32C4D7194DC9940038E99C /* NotificationBadge.m in Sources */,
 				5CBCBF33194CE59A00DE5837 /* UserFactory.m in Sources */,
 				5C8367D51940A38000870A8A /* AssignmentViewController.m in Sources */,
 				5C8327AE193E7DF9007D7B5D /* QuietSpotFactory.m in Sources */,
@@ -566,15 +624,19 @@
 				5CBE77B61945E6030046BCED /* CameraViewController.m in Sources */,
 				5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */,
 				5CE67E79194061A200F9FFCF /* Assignment.m in Sources */,
+				5C32C4CE194DA91F0038E99C /* UIImage+ImageEffects.m in Sources */,
 				5C8327B4193E7E03007D7B5D /* AddQuietSpotViewController.m in Sources */,
+				5C32C4CA194D6B510038E99C /* MenuView.m in Sources */,
 				5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */,
 				5C381887193CA2C000C39FBC /* main.m in Sources */,
 				5C32C4C2194D67AA0038E99C /* LoginView.m in Sources */,
 				5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */,
 				5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */,
 				5C32C4BB194D19540038E99C /* TeacherFactory.m in Sources */,
+				5C32C4DA194DC9C80038E99C /* NotificatonBadgeFactory.m in Sources */,
 				5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */,
 				5C8327BA193E7E16007D7B5D /* MapViewController.m in Sources */,
+				5C32C4D4194DC9830038E99C /* NotificationBadgeView.m in Sources */,
 				5C8327BB193E7E16007D7B5D /* MapView.m in Sources */,
 				5C8327AD193E7DF9007D7B5D /* QuietSpot.m in Sources */,
 				5CFE541719453B1A004D2E0B /* NotificationsView.m in Sources */,

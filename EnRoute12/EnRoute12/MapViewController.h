@@ -17,8 +17,9 @@
 #import "User.h"
 #import "Teacher.h"
 #import "TeacherFactory.h"
+#import "MenuViewController.h"
 
-@interface MapViewController : UIViewController <MapDelegate, NSCoding>
+@interface MapViewController : UIViewController <MapDelegate, MenuDelegate, NSCoding>
 
 @property (strong, nonatomic) MapView *mapView;
 @property (strong, nonatomic) NSMutableArray *qspots;
@@ -27,6 +28,8 @@
 @property (strong, nonatomic) UIImage *backarrowmap;
 @property (strong, nonatomic) UIImage *menubuttonmap;
 @property (strong, nonatomic) User *user;
+@property (nonatomic) BOOL menuIsOut;
+@property (strong, nonatomic) MenuViewController *menuVC;
 
 - (id)initWithUser:(User *)user;
 

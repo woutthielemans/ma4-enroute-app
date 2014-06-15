@@ -81,7 +81,7 @@
     int curas = 0;
     Assignment *stilAssignment = self.cassignments[curas];
     AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:stilAssignment AndUser:self.user];
-    [UIView animateWithDuration:0.15f animations:^{
+    [UIView animateWithDuration:0.1f animations:^{
         CGRect btnframe = self.mainMenuView.btnStil.frame;
         btnframe.size.width -= 10.0f;
         btnframe.size.height -= 10.0f;
@@ -104,7 +104,7 @@
     int curas = 2;
     Assignment *vriendAssignment = self.cassignments[curas];
     AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:vriendAssignment AndUser:self.user];
-    [UIView animateWithDuration:0.15f animations:^{
+    [UIView animateWithDuration:0.1f animations:^{
         CGRect btnframe = self.mainMenuView.btnVriend.frame;
         btnframe.size.width -= 10.0f;
         btnframe.size.height -= 10.0f;
@@ -127,7 +127,7 @@
     int curas = 3;
     Assignment *groenAssignment = self.cassignments[curas];
     AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:groenAssignment AndUser:self.user];
-    [UIView animateWithDuration:0.15f animations:^{
+    [UIView animateWithDuration:0.1f animations:^{
         CGRect btnframe = self.mainMenuView.btnGroen.frame;
         btnframe.size.width -= 10.0f;
         btnframe.size.height -= 10.0f;
@@ -148,7 +148,7 @@
 - (void)kaartTapped:(id)sender
 {
     MapViewController *mapVC = [[MapViewController alloc] initWithUser:self.user];
-    [UIView animateWithDuration:0.15f animations:^{
+    [UIView animateWithDuration:0.1f animations:^{
         CGRect btnframe = self.mainMenuView.btnKaart.frame;
         btnframe.size.width -= 10.0f;
         btnframe.size.height -= 10.0f;
@@ -169,7 +169,7 @@
 - (void)extraOpdrachtenTapped:(id)sender
 {
     AssignmentsTableViewController *assignmentTVC = [[AssignmentsTableViewController alloc] initWithUser:self.user];
-    [UIView animateWithDuration:0.15f animations:^{
+    [UIView animateWithDuration:0.1f animations:^{
         CGRect btnframe = self.mainMenuView.btnOpdracht.frame;
         btnframe.size.width -= 10.0f;
         btnframe.size.height -= 10.0f;

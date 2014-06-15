@@ -20,6 +20,7 @@
 #import "VolumeCheckerDelegate.h"
 #import "AssignmentViewController.h"
 #import "User.h"
+#import "MenuViewController.h"
 
 @interface VolumeCheckerViewController : UIViewController <AddQuietSpotViewDelegate, NSCoding>
 

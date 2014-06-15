@@ -213,7 +213,8 @@
 
 - (void)menuButtonTapped
 {
-    NSLog(@"[MapVC] Menu button was tapped");
+    MenuViewController *menuVC = [[MenuViewController alloc] init];
+    [self presentViewController:menuVC animated:YES completion:^{}];
 }
 
 - (void)uploadSpot

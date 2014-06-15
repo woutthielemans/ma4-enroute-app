@@ -13,8 +13,9 @@
 #import "AssignmentTableViewCell.h"
 #import "AssignmentViewController.h"
 #import "User.h"
+#import "MenuViewController.h"
 
-@interface AssignmentsTableViewController : UITableViewController
+@interface AssignmentsTableViewController : UITableViewController <MenuDelegate>
 
 @property (strong, nonatomic) NSMutableArray *assignments;
 @property (strong, nonatomic) UIButton *btnBack;
@@ -22,6 +23,8 @@
 @property (strong, nonatomic) UIImage *backarrow;
 @property (strong, nonatomic) UIImage *menubutton;
 @property (strong, nonatomic) User *user;
+@property (strong, nonatomic) MenuViewController *menuVC;
+@property (nonatomic) BOOL menuIsOut;
 
 - (id)initWithUser:(User *)user;
 

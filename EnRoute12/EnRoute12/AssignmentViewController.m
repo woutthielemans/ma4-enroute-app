@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
         self.title = [NSString stringWithFormat:@"%@",self.assignment.title];
+        self.menuIsOut = NO;
     }
     return self;
 }
@@ -184,7 +185,38 @@
 
 - (void)menuButtonTapped
 {
-    NSLog(@"[MapVC] Menu button was tapped");
+    NSLog(@"[AssignmentVC] Menu is out: %hhd",self.menuIsOut);
+    if (self.menuIsOut == NO) {
+        
+        [UIView animateWithDuration:0.4f animations:^{
+            CGRect navframe = self.navigationController.navigationBar.frame;
+            navframe.origin.y -= 100;
+            self.navigationController.navigationBar.frame = navframe;
+        } completion:^(BOOL finished){}];
+        
+        UIGraphicsBeginImageContext(self.asView.bounds.size);
+        [self.asView.window.layer renderInContext:UIGraphicsGetCurrentContext()];
+        UIImage *screenshot=UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.menuVC = [[MenuViewController alloc] initWithScreenshot:screenshot AndCurrentPage:@"Assignment"];
+        [self addChildViewController:self.menuVC];
+        self.menuVC.delegate = self;
+        self.menuVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [self.view addSubview:self.menuVC.view];
+        [self.menuVC didMoveToParentViewController:self];
+        self.menuIsOut = YES;
+    }
+}
+
+- (void)menuDidQuit
+{
+    [UIView animateWithDuration:0.7f animations:^{
+        CGRect navframe = self.navigationController.navigationBar.frame;
+        navframe.origin.y += 100;
+        self.navigationController.navigationBar.frame = navframe;
+    } completion:^(BOOL finished){}];
+    self.menuIsOut = NO;
 }
 
 - (void)showCamera:(id)camera{

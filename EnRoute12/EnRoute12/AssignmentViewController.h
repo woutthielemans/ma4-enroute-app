@@ -13,8 +13,10 @@
 #import "VolumeCheckerViewController.h"
 #import "VolumeCheckerDelegate.h"
 #import "User.h"
+#import "MenuViewController.h"
+#import "MenuDelegate.h"
 
-@interface AssignmentViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, VolumeCheckerDelegate>
+@interface AssignmentViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, VolumeCheckerDelegate, MenuDelegate>
 
 @property (strong, nonatomic) Assignment *assignment;
 @property (strong, nonatomic) AssignmentView *asView;
@@ -25,6 +27,8 @@
 @property (strong, nonatomic) VolumeCheckerViewController *volumeCheckerVC;
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) UIImage *uploadImage;
+@property (nonatomic) BOOL menuIsOut;
+@property (strong, nonatomic) MenuViewController *menuVC;
 
 - (id)initWithAssignment:(Assignment *)assignment AndUser:(User *)user;
 
