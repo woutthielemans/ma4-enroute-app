@@ -20,6 +20,7 @@
         self.page = page;
         self.effectimage = [self.screenshot applyLightEffect];
         self.image = self.effectimage;
+        UIFont *font = [UIFont fontWithName:PLUTO_SANS_REGULAR size:20];
         
         UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
         imageView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
@@ -41,7 +42,7 @@
         self.btnMenu.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2  + 30 - 80);
         [self.btnMenu setTitle:@"MENU" forState:UIControlStateNormal];
         [self.btnMenu setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        self.btnMenu.titleLabel.font = [UIFont systemFontOfSize:21];
+        self.btnMenu.titleLabel.font = font;
         self.btnMenu.alpha = 0.8f;
         [self addSubview:self.btnMenu];
         
@@ -50,7 +51,7 @@
         self.btnMap.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2 + 30);
         [self.btnMap setTitle:@"KAART" forState:UIControlStateNormal];
         [self.btnMap setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        self.btnMap.titleLabel.font = [UIFont systemFontOfSize:21];
+        self.btnMap.titleLabel.font = font;
         if ([self.page isEqualToString:@"Map"]){
             self.btnMap.alpha = 0.2f;
         }else{
@@ -63,7 +64,7 @@
         self.btnNotifications.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2 + 30 + 80);
         [self.btnNotifications setTitle:@"MELDINGEN" forState:UIControlStateNormal];
         [self.btnNotifications setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        self.btnNotifications.titleLabel.font = [UIFont systemFontOfSize:21];
+        self.btnNotifications.titleLabel.font = font;
         if ([self.page isEqualToString:@"Notifications"]){
             self.btnNotifications.alpha = 0.2f;
         }else{

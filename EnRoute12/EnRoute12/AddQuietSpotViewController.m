@@ -60,8 +60,8 @@
         QuietSpot *qspot = [QuietSpotFactory createQuietSpotWithTitle:self.addQuietSpotView.txtTitle.text Subtitle:self.addQuietSpotView.txtSubtitle.text Longitude:self.userlongitude andLatitude:self.userlatitude];
         
         NSLog(@"Saved spot with title:'%@' and subtitle:'%@' at coordinates:(%@,%@)",self.addQuietSpotView.txtTitle.text,self.addQuietSpotView.txtSubtitle.text,self.userlongitude,self.userlatitude);
-        
         [self.delegate addQuietSpotViewController:self didSaveSpot:qspot];
+        [self dismissViewControllerAnimated:YES completion:^{}];
     }
 }
 

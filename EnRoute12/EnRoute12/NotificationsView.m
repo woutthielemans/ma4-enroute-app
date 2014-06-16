@@ -10,11 +10,12 @@
 
 @implementation NotificationsView
 
-- (id)initWithFrame:(CGRect)frame AndNotifications:(NSMutableDictionary *)notifications
+- (id)initWithFrame:(CGRect)frame Notifications:(NSMutableDictionary *)notifications AndUser:(User *)user
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor purpleColor];
     }
     return self;
 }

@@ -16,7 +16,12 @@
     if (self) {
         // Initialization code
         self.assignment = assignment;
-        self.backgroundColor = [UIColor colorWithRed:171/255.0f green:219/255.0f blue:221/255.0f alpha:1];
+        if (self.assignment.type == 1) {
+            self.backgroundColor = [UIColor colorWithRed:171/255.0f green:219/255.0f blue:221/255.0f alpha:1];
+        }else{
+            self.backgroundColor = [UIColor whiteColor];
+        }
+        
         self.illustration = assignment.illustration;
         self.illImageView = [[UIImageView alloc] initWithImage:self.illustration];
         self.illImageView.frame = CGRectMake(0, 0, self.frame.size.width*0.2, self.frame.size.width*0.2);
@@ -36,14 +41,16 @@
         completion:^(BOOL finished){}];
         
         self.text = assignment.text;
+        UIFont *font = [UIFont fontWithName:PLUTO_SANS_LIGHT size:12];
         
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
         style.lineSpacing = 4.0;
         
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.text];
+        [attributedString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, attributedString.length)];
         [attributedString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, attributedString.length)];
         
-        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 240, frame.size.width-30, self.frame.size.height)];
+        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 230, frame.size.width-30, self.frame.size.height)];
         textView.backgroundColor = [UIColor clearColor];
         textView.attributedText = attributedString;
         textView.editable = NO;

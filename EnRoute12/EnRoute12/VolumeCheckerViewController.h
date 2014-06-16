@@ -21,8 +21,10 @@
 #import "AssignmentViewController.h"
 #import "User.h"
 #import "MenuViewController.h"
+#import "MenuDelegate.h"
+#import "NotificationsViewController.h"
 
-@interface VolumeCheckerViewController : UIViewController <AddQuietSpotViewDelegate, NSCoding>
+@interface VolumeCheckerViewController : UIViewController <AddQuietSpotViewDelegate, NSCoding, MenuDelegate>
 
 @property (weak, nonatomic) id<VolumeCheckerDelegate> delegate;
 @property (strong, nonatomic) VolumeCheckerView *volumeCheckerView;
@@ -38,6 +40,8 @@
 @property (strong, nonatomic) NSString *puserlongitude;
 @property (strong, nonatomic) NSString *puserlatitude;
 @property (strong, nonatomic) User *user;
+@property (nonatomic) BOOL menuIsOut;
+@property (strong, nonatomic) MenuViewController *menuVC;
 
 - (id)initWithUser:(User *)user;
 - (void)levelTimerCallback:(NSTimer *)timer;

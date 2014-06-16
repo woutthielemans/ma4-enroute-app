@@ -19,14 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Listen";
-        [[self navigationController] setNavigationBarHidden:NO animated:NO];
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                      forBarMetrics:UIBarMetricsDefault];
-        self.navigationController.navigationBar.shadowImage = [UIImage new];
-        self.navigationController.navigationBar.translucent = YES;
-        self.navigationItem.leftBarButtonItem = [self getBackButton];
-        self.navigationItem.rightBarButtonItem = [self getMenuButton];
+        self.menuIsOut = NO;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(listening)
@@ -49,6 +42,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[self navigationController] setNavigationBarHidden:NO animated:NO];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationItem.leftBarButtonItem = [self getBackButton];
+    self.navigationItem.rightBarButtonItem = [self getMenuButton];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:PLUTO_SANS_LIGHT size:21],
+      NSFontAttributeName, nil]];
+    self.title = @"Zoek de rust op";
     
 //    [self.volumeCheckerView.btnListen addTarget:self action:@selector(listening:) forControlEvents:UIControlEventTouchDown];
 //    [self.volumeCheckerView.btnListen  addTarget:self action:@selector(stopListening:) forControlEvents:UIControlEventTouchUpInside];
@@ -171,12 +176,12 @@
          [addQuietSpotViewController dismissViewControllerAnimated:NO completion:^{
              NSLog(@"addQuietSpotVC dismissed");
              [self.delegate spotSavedShowMap];
-             // TODO viewcontroller met succes -> show map?
          }];
          
      }
           failure:
      ^(AFHTTPRequestOperation *operation, NSError *error) {
+         [self.delegate spotSavedShowMap];
          NSLog(@"Error: %@", error);
          NSLog(@"RESPONSE STRING %@", operation.responseString);
      }];
@@ -200,7 +205,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (UIBarButtonItem *) getMenuButton
+- (UIBarButtonItem *)getMenuButton
 {
     self.btnMenu = [UIButton buttonWithType:UIButtonTypeCustom];
     self.menubutton = [UIImage imageNamed:@"menubutton"];
@@ -213,8 +218,75 @@
 
 - (void)menuButtonTapped
 {
-    MenuViewController *menuVC = [[MenuViewController alloc] init];
-    [self presentViewController:menuVC animated:YES completion:^{}];
+    NSLog(@"[AssignmentVC] Menu is out: %hhd",self.menuIsOut);
+    if (self.menuIsOut == NO) {
+        
+        [UIView animateWithDuration:0.4f animations:^{
+            CGRect navframe = self.navigationController.navigationBar.frame;
+            navframe.origin.y -= 100;
+            self.navigationController.navigationBar.frame = navframe;
+        } completion:^(BOOL finished){}];
+        
+        UIGraphicsBeginImageContext(self.volumeCheckerView.bounds.size);
+        [self.volumeCheckerView.window.layer renderInContext:UIGraphicsGetCurrentContext()];
+        UIImage *screenshot=UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.menuVC = [[MenuViewController alloc] initWithScreenshot:screenshot AndCurrentPage:@"VolumeChecker"];
+        [self addChildViewController:self.menuVC];
+        self.menuVC.delegate = self;
+        self.menuVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [self.view addSubview:self.menuVC.view];
+        [self.menuVC didMoveToParentViewController:self];
+        self.menuIsOut = YES;
+    }
+}
+
+- (void)menuDidQuit
+{
+    [UIView animateWithDuration:0.7f animations:^{
+        CGRect navframe = self.navigationController.navigationBar.frame;
+        navframe.origin.y += 100;
+        self.navigationController.navigationBar.frame = navframe;
+    } completion:^(BOOL finished){}];
+    self.menuIsOut = NO;
+}
+
+- (void)buttonMenuWasTapped
+{
+    [self.menuVC willMoveToParentViewController:nil];
+    [self.menuVC.view removeFromSuperview];
+    [self.menuVC removeFromParentViewController];
+    [self menuDidQuit];
+    //    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissAll];
+}
+
+- (void)buttonMapWasTapped
+{
+    [self.menuVC willMoveToParentViewController:nil];
+    [self.menuVC.view removeFromSuperview];
+    [self.menuVC removeFromParentViewController];
+    [self menuDidQuit];
+    MapViewController *mapVC = [[MapViewController alloc] initWithUser:self.user];
+    [self.navigationController pushViewController:mapVC animated:YES];
+}
+
+- (void)buttonNotificationsWasTapped
+{
+    [self.menuVC willMoveToParentViewController:nil];
+    [self.menuVC.view removeFromSuperview];
+    [self.menuVC removeFromParentViewController];
+    [self menuDidQuit];
+    NotificationsViewController *notVC = [[NotificationsViewController alloc] initWithUser:self.user];
+    [self.navigationController pushViewController:notVC animated:YES];
+}
+
+- (void)dismissAll
+{
+    NSMutableArray *controllers = [self.navigationController.viewControllers mutableCopy];
+    [controllers removeObjectsInRange:NSMakeRange(1, controllers.count-1)];
+    self.navigationController.viewControllers = controllers;
 }
 
 - (void)uploadSpot

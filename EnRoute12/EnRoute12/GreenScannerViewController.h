@@ -10,7 +10,6 @@
 #import <AFNetworking.h>
 #import "GreenScannerView.h"
 #import "User.h"
-#import "MenuViewController.h"
 
 @interface GreenScannerViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSCoding>
 
@@ -18,10 +17,8 @@
 @property (strong, nonatomic) UIImagePickerController *picker;
 @property (strong, nonatomic) NSTimer *updateTimer;
 @property (strong, nonatomic) User *user;
-@property (strong, nonatomic) UIButton *btnBack;
-@property (strong, nonatomic) UIButton *btnMenu;
-@property (strong, nonatomic) UIImage *backarrow;
-@property (strong, nonatomic) UIImage *menubutton;
+@property (nonatomic) float xPos;
+@property (nonatomic) float yPos;
 
 - (id)initWithUser:(User *)user;
 

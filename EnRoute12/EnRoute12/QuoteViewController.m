@@ -56,6 +56,16 @@
 - (void)shareButtonTapped:(id)sender
 {
     NSLog(@"[QuoteVC] Share this on facebook");
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        NSLog(@"Facebook available");
+        
+        SLComposeViewController *composeVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [composeVC addImage:self.quoteView.imageView.image];
+        [composeVC addURL:[NSURL URLWithString:@"http://student.howest.be/mathias.lambrecht/20132014/MAIV/ENROUTE/"]];
+        [self presentViewController:composeVC animated:YES completion:^{}];
+    }else{
+        NSLog(@"Facebook unavailable");
+    }
 }
 
 - (void)useButtonTapped:(id)sender
@@ -86,7 +96,7 @@
         self.picker.showsCameraControls = NO;
         self.picker.allowsEditing = NO;
         self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-        CGAffineTransform translate = CGAffineTransformMakeTranslation(0, 0);
+        CGAffineTransform translate = CGAffineTransformMakeTranslation(0, 71);
         self.picker.cameraViewTransform = translate;
         CGAffineTransform scale = CGAffineTransformScale(translate, 1.333333, 1.333333);
         self.picker.cameraViewTransform = scale;

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface NotificationsView : UIView
 
-- (id)initWithFrame:(CGRect)frame AndNotifications:(NSMutableDictionary *)notifications;
+- (id)initWithFrame:(CGRect)frame Notifications:(NSMutableDictionary *)notifications AndUser:(User *)user;
 
 @end

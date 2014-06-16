@@ -21,9 +21,22 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.user = [UserFactory createUserWithUserType:@"STUDENT" AndGroupId:7];
+        self.user = [UserFactory createUserWithUserType:@"STUDENT" AndGroupId:3];
+//        [self enumerateFonts];
     }
     return self;
+}
+
+- (void)enumerateFonts{
+    
+    NSLog(@"-- Start enumerating fonts --");
+    for (NSString *fontFamilyStrings in [UIFont familyNames]) {
+        NSLog(@"-- Font Family: %@", fontFamilyStrings);
+        for (NSString *fontStrings in [UIFont fontNamesForFamilyName:fontFamilyStrings]) {
+            NSLog(@"-- Font: %@", fontStrings);
+        }
+    }
+    NSLog(@"-- End enumerating fonts --");
 }
 
 - (void)viewDidLoad

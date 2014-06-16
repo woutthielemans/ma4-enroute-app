@@ -16,7 +16,7 @@
     if (self) {
         
         NSString *quotetext = [quote.quotetext uppercaseString];
-        UIFont *font = [UIFont fontWithName:@"Helvetica" size:40];
+        UIFont *font = [UIFont fontWithName:PLUTO_SANS_BOLD size:40];
         
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
         style.lineSpacing = 5.0;

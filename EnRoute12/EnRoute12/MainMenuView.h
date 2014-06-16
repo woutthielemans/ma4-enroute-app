@@ -16,5 +16,6 @@
 @property (strong, nonatomic) UIButton *btnGroen;
 @property (strong, nonatomic) UIButton *btnKaart;
 @property (strong, nonatomic) UIButton *btnOpdracht;
+@property (strong, nonatomic) NSTimer *timerButton;
 
 @end

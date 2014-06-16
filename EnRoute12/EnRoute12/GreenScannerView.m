@@ -16,6 +16,11 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor blackColor];
+        int i;
+        for (i = 1; i < 9; i++) {
+            NSLog(@"Created succes rectangle #%i",i);
+        }
+        
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width, 0, self.frame.size.width, self.frame.size.height)];
         [self addSubview:self.imageView];
         

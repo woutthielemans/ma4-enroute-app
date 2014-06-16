@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[self navigationController] setNavigationBarHidden:NO animated:NO];
         self.title = [NSString stringWithFormat:@"%@",self.assignment.title];
         self.menuIsOut = NO;
     }
@@ -43,6 +44,10 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationItem.leftBarButtonItem = [self getBackButton];
     self.navigationItem.rightBarButtonItem = [self getMenuButton];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:PLUTO_SANS_LIGHT size:18],
+      NSFontAttributeName, nil]];
     
     if (self.asView.assignment.type == 1) {
         self.navigationController.navigationBar.frame = CGRectMake(0, -100, self.asView.frame.size.width, self.navigationController.navigationBar.frame.size.height);
@@ -226,7 +231,8 @@
     [self.menuVC.view removeFromSuperview];
     [self.menuVC removeFromParentViewController];
     [self menuDidQuit];
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissAll];
 }
 
 - (void)buttonMapWasTapped
@@ -235,7 +241,8 @@
     [self.menuVC.view removeFromSuperview];
     [self.menuVC removeFromParentViewController];
     [self menuDidQuit];
-    [self.navigationController popViewControllerAnimated:YES];
+    MapViewController *mapVC = [[MapViewController alloc] initWithUser:self.user];
+    [self.navigationController pushViewController:mapVC animated:YES];
 }
 
 - (void)buttonNotificationsWasTapped
@@ -244,76 +251,21 @@
     [self.menuVC.view removeFromSuperview];
     [self.menuVC removeFromParentViewController];
     [self menuDidQuit];
-    [self.navigationController popViewControllerAnimated:YES];
+    NotificationsViewController *notVC = [[NotificationsViewController alloc] initWithUser:self.user];
+    [self.navigationController pushViewController:notVC animated:YES];
 }
 
-- (void)showCamera:(id)camera{
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        NSLog(@"Camera available");
-        NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        imagePicker.mediaTypes = availableMediaTypes;
-    }else{
-        NSLog(@"Camera not available");
-        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    [self presentViewController:imagePicker animated:YES completion:^{}];
-    imagePicker.delegate = self;
-}
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    //    self.view.scrollView.hidden = YES;
-    UIImage *picture = [info objectForKey:UIImagePickerControllerOriginalImage];
-    self.asView.imageView.image = picture;
-    [picker dismissViewControllerAnimated:YES completion:^{
-        [self uploadPhoto];
-        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(deletePhoto:) userInfo:nil repeats:NO];
-    }];
-}
-
-- (void)deletePhoto:(id)sender
+- (void)dismissAll
 {
-    self.asView.imageView.image = nil;
+    NSMutableArray *controllers = [self.navigationController.viewControllers mutableCopy];
+    [controllers removeObjectsInRange:NSMakeRange(1, controllers.count-1)];
+    self.navigationController.viewControllers = controllers;
 }
 
--(void)uploadPhoto{
-    NSLog(@"Uploading photo...");
-    NSString *fileName = [NSString stringWithFormat:@"%i%ld%c%c.jpeg", self.user.groupid, (long)[[NSDate date] timeIntervalSince1970], arc4random_uniform(26) + 'a', arc4random_uniform(26) + 'a'];
-    
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    
-    NSDictionary *params = @{@"group_id": [NSString stringWithFormat:@"%i", self.user.groupid],
-                             @"path": [NSString stringWithFormat:@"%@", fileName]};
-    
-    [manager POST:@"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/api/photos" parameters:params
-          success:^(AFHTTPRequestOperation *operation, id responseObject)
-     {
-         NSLog(@"JSON: %@", responseObject);
-     }
-          failure:
-     ^(AFHTTPRequestOperation *operation, NSError *error) {
-         NSLog(@"Error: %@", error);
-     }];
-    
-    AFHTTPRequestOperationManager *fileManager = [AFHTTPRequestOperationManager manager];
-    fileManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    
-    NSString *DataURLString = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/uploadphoto.php";
-    
-    UIImage *selectedImage = self.asView.imageView.image;
-    NSData *imageData = UIImageJPEGRepresentation(selectedImage, .4); // image size ca. 50 KB
-    [fileManager POST:DataURLString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:imageData name:@"upfile" fileName:fileName mimeType:@"image/jpeg"];
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success %@", responseObject);
-        NSLog(@"Image = %@", selectedImage);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failure %@, %@", error, operation.responseString);
-    }];
+- (void)showCamera:(id)sender
+{
+    CameraViewController *cameraVC = [[CameraViewController alloc] initWithUser:self.user];
+    [self.navigationController pushViewController:cameraVC animated:NO];
 }
 
 - (void)checkTapped:(id)sender

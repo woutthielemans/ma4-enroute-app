@@ -13,4 +13,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #define PLUTO_SANS_LIGHT @"PlutoSansLight"
+    #define PLUTO_SANS_REGULAR @"PlutoSansRegular"
+    #define PLUTO_SANS_BOLD @"PlutoSansBold"
 #endif

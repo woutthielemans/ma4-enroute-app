@@ -35,6 +35,8 @@
 {
     [super viewDidLoad];
     
+    self.tableView.separatorColor = [UIColor clearColor];
+    
     [[self navigationController] setNavigationBarHidden:NO animated:NO];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -43,6 +45,11 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationItem.leftBarButtonItem = [self getBackButton];
     self.navigationItem.rightBarButtonItem = [self getMenuButton];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:PLUTO_SANS_LIGHT size:18],
+      NSFontAttributeName, nil]];
+    
     
     [UIView animateWithDuration:0.7f animations:^{
         CGRect navframe = self.navigationController.navigationBar.frame;
@@ -160,7 +167,8 @@
     [self.menuVC.view removeFromSuperview];
     [self.menuVC removeFromParentViewController];
     [self menuDidQuit];
-    [self.navigationController popViewControllerAnimated:YES];
+    //    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissAll];
 }
 
 - (void)buttonMapWasTapped
@@ -169,7 +177,8 @@
     [self.menuVC.view removeFromSuperview];
     [self.menuVC removeFromParentViewController];
     [self menuDidQuit];
-    [self.navigationController popViewControllerAnimated:YES];
+    MapViewController *mapVC = [[MapViewController alloc] initWithUser:self.user];
+    [self.navigationController pushViewController:mapVC animated:YES];
 }
 
 - (void)buttonNotificationsWasTapped
@@ -178,7 +187,15 @@
     [self.menuVC.view removeFromSuperview];
     [self.menuVC removeFromParentViewController];
     [self menuDidQuit];
-    [self.navigationController popViewControllerAnimated:YES];
+    NotificationsViewController *notVC = [[NotificationsViewController alloc] initWithUser:self.user];
+    [self.navigationController pushViewController:notVC animated:YES];
+}
+
+- (void)dismissAll
+{
+    NSMutableArray *controllers = [self.navigationController.viewControllers mutableCopy];
+    [controllers removeObjectsInRange:NSMakeRange(1, controllers.count-1)];
+    self.navigationController.viewControllers = controllers;
 }
 
 - (void)didReceiveMemoryWarning
@@ -203,7 +220,6 @@
     return self.assignments.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AssignmentCell" forIndexPath:indexPath];
@@ -212,18 +228,32 @@
     Assignment *acell = [self.assignments objectAtIndex:indexPath.row];
     NSLog(@"%@",acell);
     
+    if(indexPath.row != self.assignments.count-1){
+        UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(0, 44, 320, 2)];
+        line.backgroundColor = [UIColor clearColor];
+        [cell addSubview:line];
+    }
+    
     cell.textLabel.text = acell.title;
+    cell.textLabel.font = [UIFont fontWithName:PLUTO_SANS_LIGHT size:18];
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.alpha = 0.3f;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    cell.backgroundColor = [UIColor colorWithRed:171/255.0f green:219/255.0f blue:221/255.0f alpha:(0.1f*(indexPath.row+1))];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Assignment *assigment = [self.assignments objectAtIndex:indexPath.row];
-    
     AssignmentViewController *assignmentVC = [[AssignmentViewController alloc] initWithAssignment:assigment AndUser:self.user];
     [self.navigationController pushViewController:assignmentVC animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 
 /*

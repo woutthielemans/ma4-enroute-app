@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AFNetworking.h>
+#import <Social/Social.h>
 #import "QuoteView.h"
 #import "User.h"
 #import "Quote.h"

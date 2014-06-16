@@ -95,7 +95,10 @@
         CGRect navframe = self.navigationController.navigationBar.frame;
         navframe.origin.y -= 100;
         self.navigationController.navigationBar.frame = navframe;
-    } completion:^(BOOL finished){[self.navigationController popViewControllerAnimated:YES];}];
+    } completion:^(BOOL finished){
+//        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissAll];
+    }];
 }
 
 - (UIBarButtonItem *) getMenuButton
@@ -151,7 +154,8 @@
     [self.menuVC.view removeFromSuperview];
     [self.menuVC removeFromParentViewController];
     [self menuDidQuit];
-    [self.navigationController popViewControllerAnimated:YES];
+    //    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissAll];
 }
 
 - (void)buttonNotificationsWasTapped
@@ -160,7 +164,15 @@
     [self.menuVC.view removeFromSuperview];
     [self.menuVC removeFromParentViewController];
     [self menuDidQuit];
-    [self.navigationController popViewControllerAnimated:YES];
+    NotificationsViewController *notVC = [[NotificationsViewController alloc] initWithUser:self.user];
+    [self.navigationController pushViewController:notVC animated:YES];
+}
+
+- (void)dismissAll
+{
+    NSMutableArray *controllers = [self.navigationController.viewControllers mutableCopy];
+    [controllers removeObjectsInRange:NSMakeRange(1, controllers.count-1)];
+    self.navigationController.viewControllers = controllers;
 }
 
 - (void)loadView
