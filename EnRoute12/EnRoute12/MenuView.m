@@ -53,6 +53,7 @@
         [self.btnMap setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.btnMap.titleLabel.font = font;
         if ([self.page isEqualToString:@"Map"]){
+            self.btnMap.userInteractionEnabled = NO;
             self.btnMap.alpha = 0.2f;
         }else{
              self.btnMap.alpha = 0.8f;
@@ -66,6 +67,7 @@
         [self.btnNotifications setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.btnNotifications.titleLabel.font = font;
         if ([self.page isEqualToString:@"Notifications"]){
+            self.btnNotifications.userInteractionEnabled = NO;
             self.btnNotifications.alpha = 0.2f;
         }else{
             self.btnNotifications.alpha = 0.8f;

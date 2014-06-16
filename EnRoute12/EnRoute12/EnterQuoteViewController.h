@@ -17,6 +17,7 @@
 #import "MainMenuDelegate.h"
 #import "MapViewController.h"
 #import "NotificationsViewController.h"
+#import "NotificationsTableViewController.h"
 
 @interface EnterQuoteViewController : UIViewController <MenuDelegate>
 

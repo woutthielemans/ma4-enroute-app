@@ -35,8 +35,8 @@
         tfbgimageview.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
         [self addSubview:tfbgimageview];
         
-        self.txtCode = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 155, 35)];
-        self.txtCode.center = CGPointMake(self.frame.size.height/2 - self.txtCode.frame.size.width/2, self.frame.size.height/2);
+        self.txtCode = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, tfbgimageview.frame.size.width, 35)];
+        self.txtCode.center = CGPointMake(tfbgimageview.frame.origin.x + tfbgimageview.frame.size.width/2, self.frame.size.height/2);
         self.txtCode.backgroundColor = [UIColor clearColor];
         self.txtCode.textAlignment = NSTextAlignmentCenter;
         self.txtCode.secureTextEntry = YES;

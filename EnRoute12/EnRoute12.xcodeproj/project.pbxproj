@@ -39,6 +39,8 @@
 		5C3818AE193D18BB00C39FBC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3818AD193D18BB00C39FBC /* AVFoundation.framework */; };
 		5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C39478C194C97EC00A47692 /* BudaSpot.m */; };
 		5C394791194CA77F00A47692 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C394790194CA77F00A47692 /* Teacher.m */; };
+		5C46359B194F447400A01A75 /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C46359A194F447400A01A75 /* NotificationTableViewCell.m */; };
+		5C46359E194F513A00A01A75 /* NotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C46359D194F513A00A01A75 /* NotificationTableViewController.m */; };
 		5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */; };
 		5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A6193E7DEE007D7B5D /* VolumeCheckerView.m */; };
 		5C8327AD193E7DF9007D7B5D /* QuietSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327AA193E7DF9007D7B5D /* QuietSpot.m */; };
@@ -141,6 +143,10 @@
 		5C39478E194CA6D500A47692 /* MapDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapDelegate.h; sourceTree = "<group>"; };
 		5C39478F194CA77F00A47692 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		5C394790194CA77F00A47692 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		5C463599194F447400A01A75 /* NotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewCell.h; sourceTree = "<group>"; };
+		5C46359A194F447400A01A75 /* NotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewCell.m; sourceTree = "<group>"; };
+		5C46359C194F513A00A01A75 /* NotificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewController.h; sourceTree = "<group>"; };
+		5C46359D194F513A00A01A75 /* NotificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewController.m; sourceTree = "<group>"; };
 		5C731E8C194DF62E0044DC4B /* AssignmentsTVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssignmentsTVCDelegate.h; sourceTree = "<group>"; };
 		5C731E8D194E006E0044DC4B /* MainMenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuDelegate.h; sourceTree = "<group>"; };
 		5C8327A3193E7DEE007D7B5D /* VolumeCheckerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerViewController.h; sourceTree = "<group>"; };
@@ -426,8 +432,12 @@
 		5C39478A194BB16700A47692 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				5C46359C194F513A00A01A75 /* NotificationTableViewController.h */,
+				5C46359D194F513A00A01A75 /* NotificationTableViewController.m */,
 				5CFE541219453B0C004D2E0B /* NotificationsViewController.h */,
 				5CFE541319453B0C004D2E0B /* NotificationsViewController.m */,
+				5C463599194F447400A01A75 /* NotificationTableViewCell.h */,
+				5C46359A194F447400A01A75 /* NotificationTableViewCell.m */,
 				5CFE541519453B1A004D2E0B /* NotificationsView.h */,
 				5CFE541619453B1A004D2E0B /* NotificationsView.m */,
 				5CFE541819453B29004D2E0B /* Notification.h */,
@@ -711,6 +721,7 @@
 				5C8327AE193E7DF9007D7B5D /* QuietSpotFactory.m in Sources */,
 				5CAEED33194E82F000912E00 /* GreenScannerView.m in Sources */,
 				5CFE541A19453B29004D2E0B /* Notification.m in Sources */,
+				5C46359B194F447400A01A75 /* NotificationTableViewCell.m in Sources */,
 				5CFE541D19453B33004D2E0B /* NotificationFactory.m in Sources */,
 				5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */,
 				5CFE541419453B0C004D2E0B /* NotificationsViewController.m in Sources */,
@@ -721,6 +732,7 @@
 				5CE67E79194061A200F9FFCF /* Assignment.m in Sources */,
 				5C32C4CE194DA91F0038E99C /* UIImage+ImageEffects.m in Sources */,
 				5C8327B4193E7E03007D7B5D /* AddQuietSpotViewController.m in Sources */,
+				5C46359E194F513A00A01A75 /* NotificationTableViewController.m in Sources */,
 				5CAEED2C194E554000912E00 /* QuoteCameraOverlayView.m in Sources */,
 				5C32C4CA194D6B510038E99C /* MenuView.m in Sources */,
 				5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */,

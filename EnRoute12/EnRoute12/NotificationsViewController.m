@@ -41,6 +41,10 @@
             [alerView show];
         }];
         [operation start];
+        
+        for (Notification *notfn in self.notifications) {
+            NSLog(@"[NotificationVC] Notificaion title: %@ and hour: %@",notfn.title,notfn.hour);
+        }
     }
     return self;
 }
@@ -120,7 +124,7 @@
         UIImage *screenshot=UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        self.menuVC = [[MenuViewController alloc] initWithScreenshot:screenshot AndCurrentPage:@"Quote"];
+        self.menuVC = [[MenuViewController alloc] initWithScreenshot:screenshot AndCurrentPage:@"Notifications"];
         [self addChildViewController:self.menuVC];
         self.menuVC.delegate = self;
         self.menuVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -158,16 +162,6 @@
     [self menuDidQuit];
     MapViewController *mapVC = [[MapViewController alloc] initWithUser:self.user];
     [self.navigationController pushViewController:mapVC animated:YES];
-}
-
-- (void)buttonNotificationsWasTapped
-{
-    [self.menuVC willMoveToParentViewController:nil];
-    [self.menuVC.view removeFromSuperview];
-    [self.menuVC removeFromParentViewController];
-    [self menuDidQuit];
-    NotificationsViewController *notVC = [[NotificationsViewController alloc] initWithUser:self.user];
-    [self.navigationController pushViewController:notVC animated:YES];
 }
 
 - (void)dismissAll

@@ -16,12 +16,6 @@
     if (self) {
         // Initialization code
         
-        self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.1 target: self selector:@selector(animateButton1:) userInfo:nil repeats:NO];
-        self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.3 target: self selector:@selector(animateButton2:) userInfo:nil repeats:NO];
-        self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.5 target: self selector:@selector(animateButton3:) userInfo:nil repeats:NO];
-        self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.7 target: self selector:@selector(animateButton4:) userInfo:nil repeats:NO];
-        self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.9 target: self selector:@selector(animateButton5:) userInfo:nil repeats:NO];
-        
         // Logo
         UIImage *logo = [UIImage imageNamed:@"hmi_homelogo"];
         UIImageView *logoImageView = [[UIImageView alloc] initWithImage:logo];
@@ -72,6 +66,15 @@
         
     }
     return self;
+}
+
+- (void)startanimtimers
+{
+    self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.1 target: self selector:@selector(animateButton1:) userInfo:nil repeats:NO];
+    self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.3 target: self selector:@selector(animateButton2:) userInfo:nil repeats:NO];
+    self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.5 target: self selector:@selector(animateButton3:) userInfo:nil repeats:NO];
+    self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.7 target: self selector:@selector(animateButton4:) userInfo:nil repeats:NO];
+    self.timerButton = [NSTimer scheduledTimerWithTimeInterval:0.9 target: self selector:@selector(animateButton5:) userInfo:nil repeats:NO];
 }
 
 - (void)animateButton1:(NSTimer *)timer

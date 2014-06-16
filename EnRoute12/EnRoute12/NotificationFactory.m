@@ -22,4 +22,12 @@
     return notification;
 }
 
++ (Notification *)createNotificationWithIdentifier:(int)identifier Title:(NSString *)title AndHour:(NSString *)hour
+{
+    Notification *notification = [[Notification alloc] init];
+    notification.identifier = identifier;
+    notification.hour = hour;
+    return notification;
+}
+
 @end

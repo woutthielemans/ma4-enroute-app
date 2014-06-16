@@ -12,6 +12,7 @@
 
 @property (nonatomic) int identifier;
 @property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *hour;
 @property (strong, nonatomic) NSString *subtitle;
 @property (nonatomic) int groupid;
 @property (strong, nonatomic) NSDate *time;

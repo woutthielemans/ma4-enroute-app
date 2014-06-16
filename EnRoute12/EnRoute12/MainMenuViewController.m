@@ -48,7 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.mainMenuView startanimtimers];
     NSString *path = @"http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/api/creativeassignments";
     NSURL *url = [NSURL URLWithString:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

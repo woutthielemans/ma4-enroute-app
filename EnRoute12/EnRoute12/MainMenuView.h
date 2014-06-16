@@ -18,4 +18,6 @@
 @property (strong, nonatomic) UIButton *btnOpdracht;
 @property (strong, nonatomic) NSTimer *timerButton;
 
+- (void)startanimtimers;
+
 @end

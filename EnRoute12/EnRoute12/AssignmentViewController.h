@@ -19,6 +19,7 @@
 #import "EnterQuoteViewController.h"
 #import "GreenScannerViewController.h"
 #import "CameraViewController.h"
+#import "NotificationsTableViewController.h"
 
 @interface AssignmentViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, VolumeCheckerDelegate, MenuDelegate>
 

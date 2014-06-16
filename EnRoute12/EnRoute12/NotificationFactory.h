@@ -12,6 +12,7 @@
 @interface NotificationFactory : NSObject
 
 + (Notification *)createNotificationWithIdentifier:(int)identifier Title:(NSString *)title Subtitle:(NSString *)subtitle GroupId:(int)groupid Time:(NSDate *)time AndText:(NSString *)text;
++ (Notification *)createNotificationWithIdentifier:(int)identifier Title:(NSString *)title AndHour:(NSString *)hour;
 
 
 @end
