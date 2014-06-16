@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C15BE4D194E3480005557EC /* EnterQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C15BE4C194E3480005557EC /* EnterQuoteViewController.m */; };
+		5C15BE50194E348F005557EC /* EnterQuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C15BE4F194E348F005557EC /* EnterQuoteView.m */; };
+		5C15BE54194E3712005557EC /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C15BE53194E3712005557EC /* Quote.m */; };
+		5C15BE57194E3721005557EC /* QuoteFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C15BE56194E3721005557EC /* QuoteFactory.m */; };
+		5C15BE5A194E37C8005557EC /* QuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C15BE59194E37C8005557EC /* QuoteView.m */; };
+		5C15BE5D194E37D7005557EC /* QuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C15BE5C194E37D7005557EC /* QuoteViewController.m */; };
 		5C32C4BB194D19540038E99C /* TeacherFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4BA194D19540038E99C /* TeacherFactory.m */; };
 		5C32C4C2194D67AA0038E99C /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4C0194D67AA0038E99C /* LoginView.m */; };
 		5C32C4C3194D67AA0038E99C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C4C1194D67AA0038E99C /* LoginViewController.m */; };
@@ -46,6 +52,9 @@
 		5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8367D71940A3DC00870A8A /* AssignmentView.m */; };
 		5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D21943D13D00C715D1 /* MainMenuViewController.m */; };
 		5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA501D51943D1C100C715D1 /* MainMenuView.m */; };
+		5CAEED2C194E554000912E00 /* QuoteCameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAEED2B194E554000912E00 /* QuoteCameraOverlayView.m */; };
+		5CAEED30194E82DD00912E00 /* GreenScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAEED2F194E82DD00912E00 /* GreenScannerViewController.m */; };
+		5CAEED33194E82F000912E00 /* GreenScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAEED32194E82F000912E00 /* GreenScannerView.m */; };
 		5CBCBF30194CE58A00DE5837 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCBF2F194CE58A00DE5837 /* User.m */; };
 		5CBCBF33194CE59A00DE5837 /* UserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCBF32194CE59A00DE5837 /* UserFactory.m */; };
 		5CBE77B61945E6030046BCED /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE77B51945E6030046BCED /* CameraViewController.m */; };
@@ -72,6 +81,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C15BE4B194E3480005557EC /* EnterQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterQuoteViewController.h; sourceTree = "<group>"; };
+		5C15BE4C194E3480005557EC /* EnterQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterQuoteViewController.m; sourceTree = "<group>"; };
+		5C15BE4E194E348F005557EC /* EnterQuoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterQuoteView.h; sourceTree = "<group>"; };
+		5C15BE4F194E348F005557EC /* EnterQuoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterQuoteView.m; sourceTree = "<group>"; };
+		5C15BE52194E3712005557EC /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
+		5C15BE53194E3712005557EC /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
+		5C15BE55194E3721005557EC /* QuoteFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteFactory.h; sourceTree = "<group>"; };
+		5C15BE56194E3721005557EC /* QuoteFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteFactory.m; sourceTree = "<group>"; };
+		5C15BE58194E37C8005557EC /* QuoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteView.h; sourceTree = "<group>"; };
+		5C15BE59194E37C8005557EC /* QuoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteView.m; sourceTree = "<group>"; };
+		5C15BE5B194E37D7005557EC /* QuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteViewController.h; sourceTree = "<group>"; };
+		5C15BE5C194E37D7005557EC /* QuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteViewController.m; sourceTree = "<group>"; };
 		5C32C4B9194D19540038E99C /* TeacherFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherFactory.h; sourceTree = "<group>"; };
 		5C32C4BA194D19540038E99C /* TeacherFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherFactory.m; sourceTree = "<group>"; };
 		5C32C4BE194D67AA0038E99C /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -144,6 +165,12 @@
 		5CA501D21943D13D00C715D1 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		5CA501D41943D1C100C715D1 /* MainMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuView.h; sourceTree = "<group>"; };
 		5CA501D51943D1C100C715D1 /* MainMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
+		5CAEED2A194E554000912E00 /* QuoteCameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteCameraOverlayView.h; sourceTree = "<group>"; };
+		5CAEED2B194E554000912E00 /* QuoteCameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteCameraOverlayView.m; sourceTree = "<group>"; };
+		5CAEED2E194E82DD00912E00 /* GreenScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenScannerViewController.h; sourceTree = "<group>"; };
+		5CAEED2F194E82DD00912E00 /* GreenScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenScannerViewController.m; sourceTree = "<group>"; };
+		5CAEED31194E82F000912E00 /* GreenScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenScannerView.h; sourceTree = "<group>"; };
+		5CAEED32194E82F000912E00 /* GreenScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenScannerView.m; sourceTree = "<group>"; };
 		5CBCBF2E194CE58A00DE5837 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		5CBCBF2F194CE58A00DE5837 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		5CBCBF31194CE59A00DE5837 /* UserFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFactory.h; sourceTree = "<group>"; };
@@ -201,6 +228,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C15BE51194E349A005557EC /* Quote */ = {
+			isa = PBXGroup;
+			children = (
+				5C15BE4B194E3480005557EC /* EnterQuoteViewController.h */,
+				5C15BE4C194E3480005557EC /* EnterQuoteViewController.m */,
+				5C15BE4E194E348F005557EC /* EnterQuoteView.h */,
+				5C15BE4F194E348F005557EC /* EnterQuoteView.m */,
+				5C15BE5B194E37D7005557EC /* QuoteViewController.h */,
+				5C15BE5C194E37D7005557EC /* QuoteViewController.m */,
+				5C15BE58194E37C8005557EC /* QuoteView.h */,
+				5C15BE59194E37C8005557EC /* QuoteView.m */,
+				5C15BE52194E3712005557EC /* Quote.h */,
+				5C15BE53194E3712005557EC /* Quote.m */,
+				5C15BE55194E3721005557EC /* QuoteFactory.h */,
+				5C15BE56194E3721005557EC /* QuoteFactory.m */,
+				5CAEED2A194E554000912E00 /* QuoteCameraOverlayView.h */,
+				5CAEED2B194E554000912E00 /* QuoteCameraOverlayView.m */,
+			);
+			name = Quote;
+			sourceTree = "<group>";
+		};
 		5C32C4BC194D663A0038E99C /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,9 +349,7 @@
 				5C38188C193CA2C000C39FBC /* Images.xcassets */,
 				5C381881193CA2C000C39FBC /* Supporting Files */,
 				5CA501D71943D1C600C715D1 /* Main Menu (home) */,
-				5C381913193E4C4000C39FBC /* Assigments Tableview */,
-				5C8367D219406D8800870A8A /* Assignment */,
-				5C8327BD193E7E3D007D7B5D /* Volume app */,
+				5C381913193E4C4000C39FBC /* Assigments */,
 				5C83279E193E7D19007D7B5D /* Map */,
 				5C32C4BC194D663A0038E99C /* Teacher */,
 				5CFE540E19453AAD004D2E0B /* Camera */,
@@ -345,14 +391,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5C381913193E4C4000C39FBC /* Assigments Tableview */ = {
+		5C381913193E4C4000C39FBC /* Assigments */ = {
 			isa = PBXGroup;
 			children = (
 				5CFE540B19452A59004D2E0B /* AssignmentsTableViewController.h */,
 				5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */,
 				5C731E8C194DF62E0044DC4B /* AssignmentsTVCDelegate.h */,
+				5C8367D219406D8800870A8A /* Assignment */,
+				5C8327BD193E7E3D007D7B5D /* Volume app */,
 			);
-			name = "Assigments Tableview";
+			name = Assigments;
 			sourceTree = "<group>";
 		};
 		5C39478A194BB16700A47692 /* Notifications */ = {
@@ -423,9 +471,11 @@
 		5C8327BD193E7E3D007D7B5D /* Volume app */ = {
 			isa = PBXGroup;
 			children = (
+				5C15BE51194E349A005557EC /* Quote */,
 				5C8327A2193E7DA4007D7B5D /* Quiet Spots */,
 				5C8327A0193E7D87007D7B5D /* Add Quiet Spot */,
 				5C83279F193E7D7C007D7B5D /* VolumeChecker */,
+				5CAEED34194E82F900912E00 /* Green Scanner */,
 			);
 			name = "Volume app";
 			sourceTree = "<group>";
@@ -457,6 +507,17 @@
 				5C731E8D194E006E0044DC4B /* MainMenuDelegate.h */,
 			);
 			name = "Main Menu (home)";
+			sourceTree = "<group>";
+		};
+		5CAEED34194E82F900912E00 /* Green Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				5CAEED2E194E82DD00912E00 /* GreenScannerViewController.h */,
+				5CAEED2F194E82DD00912E00 /* GreenScannerViewController.m */,
+				5CAEED31194E82F000912E00 /* GreenScannerView.h */,
+				5CAEED32194E82F000912E00 /* GreenScannerView.m */,
+			);
+			name = "Green Scanner";
 			sourceTree = "<group>";
 		};
 		5CBCBF34194CE5AE00DE5837 /* User */ = {
@@ -611,14 +672,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C15BE57194E3721005557EC /* QuoteFactory.m in Sources */,
 				5CFE540D19452A59004D2E0B /* AssignmentsTableViewController.m in Sources */,
 				5C8367D81940A3DC00870A8A /* AssignmentView.m in Sources */,
 				5CBCBF30194CE58A00DE5837 /* User.m in Sources */,
 				5C32C4C7194D6B460038E99C /* MenuViewController.m in Sources */,
+				5C15BE4D194E3480005557EC /* EnterQuoteViewController.m in Sources */,
 				5C32C4D7194DC9940038E99C /* NotificationBadge.m in Sources */,
+				5C15BE5A194E37C8005557EC /* QuoteView.m in Sources */,
 				5CBCBF33194CE59A00DE5837 /* UserFactory.m in Sources */,
 				5C8367D51940A38000870A8A /* AssignmentViewController.m in Sources */,
+				5C15BE54194E3712005557EC /* Quote.m in Sources */,
+				5CAEED30194E82DD00912E00 /* GreenScannerViewController.m in Sources */,
 				5C8327AE193E7DF9007D7B5D /* QuietSpotFactory.m in Sources */,
+				5CAEED33194E82F000912E00 /* GreenScannerView.m in Sources */,
 				5CFE541A19453B29004D2E0B /* Notification.m in Sources */,
 				5CFE541D19453B33004D2E0B /* NotificationFactory.m in Sources */,
 				5CA501D31943D13D00C715D1 /* MainMenuViewController.m in Sources */,
@@ -630,10 +697,13 @@
 				5CE67E79194061A200F9FFCF /* Assignment.m in Sources */,
 				5C32C4CE194DA91F0038E99C /* UIImage+ImageEffects.m in Sources */,
 				5C8327B4193E7E03007D7B5D /* AddQuietSpotViewController.m in Sources */,
+				5CAEED2C194E554000912E00 /* QuoteCameraOverlayView.m in Sources */,
 				5C32C4CA194D6B510038E99C /* MenuView.m in Sources */,
 				5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */,
+				5C15BE50194E348F005557EC /* EnterQuoteView.m in Sources */,
 				5C381887193CA2C000C39FBC /* main.m in Sources */,
 				5C32C4C2194D67AA0038E99C /* LoginView.m in Sources */,
+				5C15BE5D194E37D7005557EC /* QuoteViewController.m in Sources */,
 				5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */,
 				5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */,
 				5C32C4BB194D19540038E99C /* TeacherFactory.m in Sources */,

@@ -134,32 +134,6 @@
     return self;
 }
 
-//- (void)animateIllustration
-//{
-//    NSLog(@"ANIMATE");
-//    self.illImageView = [[UIImageView alloc] initWithImage:self.illustration];
-//    self.illImageView.frame = CGRectMake(0, 0, 10, 10);
-//    self.illImageView.alpha = 0;
-//    self.illImageView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-//    [self addSubview:self.illImageView];
-//    [UIView animateWithDuration:0.85 animations:^{
-//        CGRect frame = self.illImageView.frame;
-//        frame.size.width += self.frame.size.width*0.7;
-//        frame.size.height += self.frame.size.height*0.7;
-//        self.illImageView.frame = frame;
-//        self.illImageView.alpha = 1.0f;
-//    }
-//                     completion:^(BOOL finished){
-//                         [UIView animateWithDuration:0.3 animations:^{
-//                             CGRect frame = self.illImageView.frame;
-//                             frame.size.width -= self.frame.size.width*0.1;
-//                             frame.size.height -= self.frame.size.height*0.1;
-//                             self.illImageView.frame = frame;
-//                         }];
-//                     }];
-//}
-
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

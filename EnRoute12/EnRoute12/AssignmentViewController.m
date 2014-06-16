@@ -56,7 +56,8 @@
     [self.asView.gphotobutton addTarget:self action:@selector(showCamera:) forControlEvents:UIControlEventTouchUpInside];
     [self.asView.gcheckbutton addTarget:self action:@selector(checkTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.asView.glistenbutton addTarget:self action:@selector(listenTapped:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self.asView.quotebutton addTarget:self action:@selector(quoteTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.asView.greenbutton addTarget:self action:@selector(greenTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.asView.volumebutton addTarget:self action:@selector(volumeTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -331,6 +332,20 @@
     self.volumeCheckerVC  =[[VolumeCheckerViewController alloc] initWithUser:self.user];
     self.volumeCheckerVC.delegate = self;
     [self.navigationController pushViewController:self.volumeCheckerVC animated:YES];
+}
+
+- (void)quoteTapped:(id)sender
+{
+    self.enterquoteVC = [[EnterQuoteViewController alloc] initWithUser:self.user];
+//    self.enterquoteVC.delegate = self;
+    [self.navigationController pushViewController:self.enterquoteVC animated:YES];
+}
+
+- (void)greenTapped:(id)sender
+{
+    self.greenscannerVC = [[GreenScannerViewController alloc] initWithUser:self.user];
+    //    self.enterquoteVC.delegate = self;
+    [self.navigationController pushViewController:self.greenscannerVC animated:YES];
 }
 
 - (void)spotSavedShowMap

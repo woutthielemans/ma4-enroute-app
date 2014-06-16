@@ -16,6 +16,8 @@
 #import "MenuViewController.h"
 #import "MenuDelegate.h"
 #import "MainMenuDelegate.h"
+#import "EnterQuoteViewController.h"
+#import "GreenScannerViewController.h"
 
 @interface AssignmentViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, VolumeCheckerDelegate, MenuDelegate>
 
@@ -31,6 +33,8 @@
 @property (strong, nonatomic) UIImage *uploadImage;
 @property (nonatomic) BOOL menuIsOut;
 @property (strong, nonatomic) MenuViewController *menuVC;
+@property (strong, nonatomic) EnterQuoteViewController *enterquoteVC;
+@property (strong, nonatomic) GreenScannerViewController *greenscannerVC;
 
 - (id)initWithAssignment:(Assignment *)assignment AndUser:(User *)user;
 
