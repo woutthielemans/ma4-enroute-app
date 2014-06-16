@@ -20,15 +20,25 @@
     if (self) {
         // Custom initialization
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(listening)
+                                                 selector:@selector(scanGreen)
                                                      name:@"StartListeningForDBs"
                                                    object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(stopListening)
+                                                 selector:@selector(stopScanningGreen)
                                                      name:@"StopListeningForDBs"
                                                    object:nil];
     }
     return self;
+}
+
+- (void)scanGreen
+{
+    
+}
+
+- (void)stopScanningGreen
+{
+    
 }
 
 - (id)initWithUser:(User *)user

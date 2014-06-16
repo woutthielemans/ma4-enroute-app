@@ -22,11 +22,11 @@
         self.menuIsOut = NO;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(listening:)
+                                                 selector:@selector(listening)
                                                      name:@"StartListeningForDBs"
                                                    object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(stopListening:)
+                                                 selector:@selector(stopListening)
                                                      name:@"StopListeningForDBs"
                                                    object:nil];
     }

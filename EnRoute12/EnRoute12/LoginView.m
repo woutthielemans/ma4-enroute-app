@@ -192,6 +192,10 @@
     }completion:^(BOOL finished){}];
 }
 
+- (void)btnErrorAnim
+{
+    
+}
 
 
 //

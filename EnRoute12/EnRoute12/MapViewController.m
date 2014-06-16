@@ -245,6 +245,11 @@
     [operation start];
 }
 
+- (void)buttonMapWasTapped
+{
+    NSLog(@"Button map tapped");
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

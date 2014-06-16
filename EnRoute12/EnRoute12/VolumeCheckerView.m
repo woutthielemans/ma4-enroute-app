@@ -37,7 +37,7 @@
         self.cell.lifetimeRange = 2;
         self.cell.velocity = 50;
         self.cell.velocityRange = 20;
-        self.cell.name = @"smokeCell";
+        self.cell.name = @"emitCell";
         self.cell.emissionRange = M_PI*2;
         self.cell.alphaSpeed = -0.2;
         

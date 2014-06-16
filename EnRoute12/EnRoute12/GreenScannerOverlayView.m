@@ -81,7 +81,7 @@
     self.levelTimer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(greenLevelCallback:) userInfo:nil repeats:YES];
 }
 
-- (void)levelTimerCallback:(NSTimer *)timer
+- (void)greenLevelCallback:(NSTimer *)timer
 {
 //    [self.audioRecorder updateMeters];
     //do something
