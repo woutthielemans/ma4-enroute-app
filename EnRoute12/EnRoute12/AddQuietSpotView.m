@@ -27,10 +27,11 @@
         self.txtSubtitle.backgroundColor = [UIColor colorWithRed:249/255.0f green:249/255.0f blue:249/255.0f alpha:1];
         [self addSubview:self.txtSubtitle];
         
-        self.btnSave = [UIButton buttonWithType:UIButtonTypeSystem];
-        [self.btnSave setTitle:@"Save Spot" forState:UIControlStateNormal];
-        self.btnSave.frame = CGRectMake(0, 0, self.frame.size.width - 30, 44);
+        UIImage *gobutton = [UIImage imageNamed:@"go"];
+        self.btnSave = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.btnSave.frame = CGRectMake(0, 0, gobutton.size.width, gobutton.size.height);
         self.btnSave.center = CGPointMake(self.frame.size.width/2, self.txtSubtitle.center.y + self.txtSubtitle.frame.size.height + 15);
+        [self.btnSave setBackgroundImage:gobutton forState:UIControlStateNormal];
         [self addSubview:self.btnSave];
     }
     return self;

@@ -195,6 +195,7 @@
 		5CEE6A2D194EE19600A090A8 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
 		5CEE6A2E194EE19600A090A8 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		5CEE6A30194EFB1C00A090A8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		5CEE6A32194F20AF00A090A8 /* LoginDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginDelegate.h; sourceTree = "<group>"; };
 		5CFE53F619448E34004D2E0B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5CFE540B19452A59004D2E0B /* AssignmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentsTableViewController.h; sourceTree = "<group>"; };
 		5CFE540C19452A59004D2E0B /* AssignmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentsTableViewController.m; sourceTree = "<group>"; };
@@ -279,6 +280,7 @@
 				5C32C4C1194D67AA0038E99C /* LoginViewController.m */,
 				5C32C4BE194D67AA0038E99C /* LoginView.h */,
 				5C32C4C0194D67AA0038E99C /* LoginView.m */,
+				5CEE6A32194F20AF00A090A8 /* LoginDelegate.h */,
 			);
 			name = "Log in";
 			sourceTree = "<group>";

@@ -20,12 +20,6 @@
         self.txtQuote = [[UITextField alloc] initWithFrame:CGRectMake(15, 100, self.frame.size.width - 30, 44)];
         self.txtQuote.backgroundColor = [UIColor colorWithRed:249/255.0f green:249/255.0f blue:249/255.0f alpha:1];
         [self addSubview:self.txtQuote];
-//        
-//        self.btnSave = [UIButton buttonWithType:UIButtonTypeSystem];
-//        [self.btnSave setTitle:@"Save Spot" forState:UIControlStateNormal];
-//        self.btnSave.frame = CGRectMake(0, 0, self.frame.size.width - 30, 44);
-//        self.btnSave.center = CGPointMake(self.frame.size.width/2, self.txtQuote.center.y + self.txtQuote.frame.size.height + 15);
-//        [self addSubview:self.btnSave];
         
         UIImage *gobutton = [UIImage imageNamed:@"go"];
         self.btnSave = [UIButton buttonWithType:UIButtonTypeCustom];

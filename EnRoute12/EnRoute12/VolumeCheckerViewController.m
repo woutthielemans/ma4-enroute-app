@@ -111,7 +111,7 @@
 //	NSLog(@"Average input: %f Peak input: %f", [self.audioRecorder averagePowerForChannel:0], [self.audioRecorder peakPowerForChannel:0]);
 //    if ([self.audioRecorder averagePowerForChannel:0] > -45) {
     // THIS IS THE TEST VALUE !!!! CHANGE TO -45 FOR LAUNCH
-    if ([self.audioRecorder averagePowerForChannel:0] > 0) {
+    if ([self.audioRecorder averagePowerForChannel:0] > -45) {
         [self.volumeCheckerView stopAndResetTimer];
         NSLog(@"Not quiet enough, timer stopped: %f", [self.audioRecorder averagePowerForChannel:0]);
         if(self.acceptTimer){

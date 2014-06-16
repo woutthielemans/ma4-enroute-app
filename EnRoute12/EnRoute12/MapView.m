@@ -16,6 +16,7 @@
     if (self) {
         // Initialization code
         self.user = user;
+        NSLog(@"User is of type: %@, and is part of group: %i",self.user.usertype,self.user.groupid);
         self.mapView = [[MKMapView alloc] initWithFrame:frame];
         
         self.mapView.delegate = self;

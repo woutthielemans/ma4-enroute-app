@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginView.h"
+#import "LoginDelegate.h"
 
 @interface LoginViewController : UIViewController
 
 @property (strong, nonatomic) LoginView *loginView;
+@property (weak, nonatomic) id<LoginDelegate> delegate;
 @property (nonatomic) CGRect bounds;
+@property (nonatomic) int selectedgroup;
 
 - (instancetype)initWithBounds:(CGRect)bounds;
 

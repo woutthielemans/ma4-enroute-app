@@ -21,10 +21,16 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.user = [UserFactory createUserWithUserType:@"STUDENT" AndGroupId:3];
 //        [self enumerateFonts];
     }
     return self;
+}
+
+- (void)userLoggedInWithType:(NSString *)type AndGroup:(int)group
+{
+    self.type = type;
+    self.group = group;
+    self.user = [UserFactory createUserWithUserType:type AndGroupId:group];
 }
 
 - (void)enumerateFonts{
@@ -80,6 +86,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isUserLoggedIn"] == NO) {
         self.loginVC = [[LoginViewController alloc] initWithBounds:[UIScreen mainScreen].bounds];
+        self.loginVC.delegate = self;
         [self presentViewController:self.loginVC animated:NO completion:^{}];
     }
 }

@@ -79,6 +79,7 @@
 - (void)showCamera
 {
     self.picker = [[UIImagePickerController alloc]init];
+    self.curcameraisfront = YES;
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         NSLog(@"[OverviewVC] Camera device available");

@@ -19,7 +19,7 @@
 #import "LoginViewController.h"
 #import "MainMenuDelegate.h"
 
-@interface MainMenuViewController : UIViewController <MainMenuDelegate>
+@interface MainMenuViewController : UIViewController <MainMenuDelegate, LoginDelegate>
 
 @property (strong, nonatomic) MainMenuView *mainMenuView;
 @property (strong, nonatomic) NSMutableArray *cassignments;
@@ -28,5 +28,7 @@
 @property (strong, nonatomic) AssignmentsTableViewController *assignmentTVC;
 @property (strong, nonatomic) AssignmentViewController *assignmentVC;
 @property (strong, nonatomic) MapViewController *mapVC;
+@property (strong, nonatomic) NSString *type;
+@property (nonatomic) int group;
 
 @end
