@@ -1,0 +1,23 @@
+@font-face
+{
+    font-family: 'condlight';
+    src: url('fonts/plutosanscondlight-webfont.eot');
+    src: url('fonts/plutosanscondlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/plutosanscondlight-webfont.woff') format('woff'),
+         url('fonts/plutosanscondlight-webfont.ttf') format('truetype'),
+         url('fonts/plutosanscondlight-webfont.svg#pluto_sanscond_light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'medium';
+    src: url('fonts/plutosansmedium-webfont.eot');
+    src: url('fonts/plutosansmedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/plutosansmedium-webfont.woff') format('woff'),
+         url('fonts/plutosansmedium-webfont.ttf') format('truetype'),
+         url('fonts/plutosansmedium-webfont.svg#pluto_sansmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

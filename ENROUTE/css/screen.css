@@ -1,0 +1,352 @@
+/* line 17, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'condlight';
+  src: url("fonts/plutosanscondlight-webfont.eot");
+  src: url("fonts/plutosanscondlight-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/plutosanscondlight-webfont.woff") format("woff"), url("fonts/plutosanscondlight-webfont.ttf") format("truetype"), url("fonts/plutosanscondlight-webfont.svg#pluto_sanscond_light") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'medium';
+  src: url("fonts/plutosansmedium-webfont.eot");
+  src: url("fonts/plutosansmedium-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/plutosansmedium-webfont.woff") format("woff"), url("fonts/plutosansmedium-webfont.ttf") format("truetype"), url("fonts/plutosansmedium-webfont.svg#pluto_sansmedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 10, ../_scss/screen.scss */
+html, body, #container {
+  widows: 100%;
+  height: 100%;
+}
+
+/* line 16, ../_scss/screen.scss */
+body {
+  color: white;
+}
+
+/* line 21, ../_scss/screen.scss */
+h1, h2, #btndiscover {
+  display: block;
+}
+
+/* line 26, ../_scss/screen.scss */
+h1, #btndiscover, hgroup, #centerparagraph {
+  margin: 0 auto;
+}
+
+/* line 31, ../_scss/screen.scss */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 37, ../_scss/screen.scss */
+h2, #btndiscover, #centerparagraph {
+  text-align: center;
+}
+
+/* line 42, ../_scss/screen.scss */
+#btndiscover, h1, #church, #tower {
+  background-repeat: no-repeat;
+}
+
+/* line 47, ../_scss/screen.scss */
+.invisible {
+  display: none;
+}
+
+/* line 52, ../_scss/screen.scss */
+body {
+  font-size: 62.5%;
+  font-family: 'condlight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #abddc4;
+}
+
+/* line 59, ../_scss/screen.scss */
+#container {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 65, ../_scss/screen.scss */
+.corner {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 3px solid white;
+}
+
+/* line 73, ../_scss/screen.scss */
+.topleft {
+  left: 10px;
+  top: 10px;
+}
+
+/* line 79, ../_scss/screen.scss */
+.topright {
+  right: 10px;
+  top: 10px;
+}
+
+/* line 85, ../_scss/screen.scss */
+.bottomleft {
+  bottom: 10px;
+  left: 10px;
+}
+
+/* line 91, ../_scss/screen.scss */
+.bottomright {
+  right: 10px;
+  bottom: 10px;
+}
+
+/* line 97, ../_scss/screen.scss */
+#frame {
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  position: absolute;
+  padding: 10px;
+  border: 3px solid white;
+  z-index: -99;
+}
+
+/* line 109, ../_scss/screen.scss */
+#church {
+  bottom: 25px;
+  left: 10%;
+  position: absolute;
+  width: 204px;
+  height: 433px;
+  background-image: url("../images/church.png");
+}
+
+/* line 119, ../_scss/screen.scss */
+#tower {
+  right: 10%;
+  bottom: 25px;
+  position: absolute;
+  width: 144px;
+  height: 444px;
+  background-image: url("../images/tower.png");
+}
+
+/* line 129, ../_scss/screen.scss */
+#btngarden, #btnmap {
+  font-family: "medium";
+  position: absolute;
+  left: 85px;
+  top: 85px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.8em;
+}
+
+/* line 140, ../_scss/screen.scss */
+#headerhome {
+  padding-top: 175px;
+  margin-bottom: 75px;
+}
+/* line 145, ../_scss/screen.scss */
+#headerhome hgroup {
+  width: 80%;
+}
+/* line 149, ../_scss/screen.scss */
+#headerhome hgroup h1 {
+  width: 135px;
+  height: 194px;
+  background-image: url("../images/logo.png");
+  margin-bottom: 25px;
+}
+/* line 157, ../_scss/screen.scss */
+#headerhome hgroup h2 {
+  font-size: 3em;
+  line-height: 1.4em;
+  letter-spacing: 0.05em;
+}
+
+/* line 166, ../_scss/screen.scss */
+#centerparagraph {
+  width: 80%;
+  font-family: "condlight";
+  font-size: 1.8em;
+  line-height: 1.2em;
+  letter-spacing: 0.05em;
+  margin-bottom: 35px;
+}
+
+/* line 176, ../_scss/screen.scss */
+#btndiscover {
+  font-family: "medium";
+  background-image: url("../images/btnframe.png");
+  width: 269px;
+  height: 60px;
+  padding-top: 22px;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* line 188, ../_scss/screen.scss */
+#mapbox {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  bottom: 28px;
+  right: 28px;
+}
+
+@media screen and (max-width: 850px) {
+  /* line 199, ../_scss/screen.scss */
+  #church, #tower {
+    display: none;
+  }
+}
+@media screen and (max-height: 460px) {
+  /* line 207, ../_scss/screen.scss */
+  #headerhome {
+    padding-top: 50px;
+    margin-bottom: 25px;
+  }
+  /* line 212, ../_scss/screen.scss */
+  #headerhome h1 {
+    width: 68px !important;
+    height: 97px !important;
+    background-image: url("../images/logomobile.png") !important;
+  }
+  /* line 219, ../_scss/screen.scss */
+  #headerhome h2 {
+    font-size: 1.5em !important;
+    letter-spacing: 0em !important;
+  }
+
+  /* line 226, ../_scss/screen.scss */
+  #centerparagraph {
+    font-size: 1.2em !important;
+  }
+
+  /* line 231, ../_scss/screen.scss */
+  #btndiscover {
+    padding-top: 16px;
+    font-size: 1.4em !important;
+    background-image: url("../images/btnframemobile.png") !important;
+    width: 202px !important;
+    height: 45px !important;
+  }
+
+  /* line 241, ../_scss/screen.scss */
+  .corner {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* line 247, ../_scss/screen.scss */
+  #frame {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  /* line 255, ../_scss/screen.scss */
+  .topleft {
+    left: 5px;
+    top: 5px;
+  }
+
+  /* line 261, ../_scss/screen.scss */
+  .topright {
+    right: 5px;
+    top: 5px;
+  }
+
+  /* line 267, ../_scss/screen.scss */
+  .bottomleft {
+    bottom: 5px;
+    left: 5px;
+  }
+
+  /* line 273, ../_scss/screen.scss */
+  .bottomright {
+    right: 5px;
+    bottom: 5px;
+  }
+
+  /* line 279, ../_scss/screen.scss */
+  #church, #tower {
+    bottom: 15px !important;
+  }
+}
+@media screen and (max-height: 760px) {
+  /* line 287, ../_scss/screen.scss */
+  #btndiscover {
+    padding-bottom: 30px;
+  }
+}

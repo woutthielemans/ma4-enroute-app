@@ -78,6 +78,14 @@
 - (void)listening/*:(id)sender*/
 {
     NSLog(@"[VolumeCheckerVC] Listen button pushed");
+    self.levelTimer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(greenLevelCallback:) userInfo:nil repeats:YES];
+}
+
+- (void)levelTimerCallback:(NSTimer *)timer
+{
+//    [self.audioRecorder updateMeters];
+    //do something
+    NSLog(@"doing something");
 }
 
 - (void)stopListening/*:(id)sender*/

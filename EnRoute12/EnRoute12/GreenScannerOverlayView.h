@@ -12,5 +12,6 @@
 
 @property (nonatomic) float xPos;
 @property (nonatomic) float yPos;
+@property (strong, nonatomic) NSTimer *levelTimer;
 
 @end
