@@ -13,7 +13,7 @@ class PhotosDAO
 
         public function getPhotos(){
             $sql = "SELECT * 
-                    FROM `ndip_photos`";
+                    FROM `er_uploadedphotos`";
             $stmt = $this->pdo->prepare($sql);
             if($stmt->execute())
             {
@@ -27,7 +27,7 @@ class PhotosDAO
 
         public function getPhoto($id){
             $sql = "SELECT * 
-                    FROM `ndip_photos`
+                    FROM `er_uploadedphotos`
                     WHERE `id` = :id";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(":id",$id);
@@ -41,27 +41,14 @@ class PhotosDAO
             return array();
         }
 
-        public function getPhotosCoors(){
-            $sql = "SELECT `x_coor`,`y_coor`
-                    FROM `ndip_photos`";
-            $stmt = $this->pdo->prepare($sql);
-            if($stmt->execute())
-            {
-                $photos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                if(!empty($photos)){
-                    return $photos;
-                }
-            }
-            return array();
-        }
-
-        public function insertPhoto($name)
+        public function insertPhoto($group_id,$photopath)
         {
-            $sql = "INSERT INTO `ndip_photos`(name)
-                    VALUES(:name)";
+            $sql = "INSERT INTO `er_uploadedphotos`(group_id,photopath)
+                    VALUES(:group_id,:photopath)";
 
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(":name",$name);
+            $stmt->bindValue(":group_id",$group_id);
+            $stmt->bindValue(":photopath",$photopath);
             $stmt->execute();
 
             return true;
@@ -70,7 +57,7 @@ class PhotosDAO
         public function getPhotosByAmount()
         {
             $sql = "SELECT id, COUNT(*) AS NumberOfPhotos
-                            FROM `ndip_photos`";
+                            FROM `er_uploadedphotos`";
             $stmt = $this->pdo->prepare($sql);
             if($stmt->execute())
             {

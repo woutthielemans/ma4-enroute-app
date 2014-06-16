@@ -19,7 +19,7 @@
 #import "TeacherFactory.h"
 #import "MenuViewController.h"
 #import "MainMenuDelegate.h"
-#import "NotificationsTableViewController.h"
+//#import "NotificationsTableViewController.h"
 
 @interface MapViewController : UIViewController <MapDelegate, MenuDelegate, NSCoding>
 

@@ -55,16 +55,16 @@ class SpotsDAO
             return array();
         }
 
-        public function insertSpot($title,$subtitle,$x_coor,$y_coor)
+        public function insertSpot($title,$subtitle,$longitude,$latitude)
         {
-            $sql = "INSERT INTO `er_spots`(title,subtitle,x_coor,y_coor)
-                    VALUES(:title,:subtitle,:x_coor,:y_coor)";
+            $sql = "INSERT INTO `er_spots`(title,subtitle,longitude,latitude)
+                    VALUES(:title,:subtitle,:longitude,:latitude)";
 
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(":title",$title);
             $stmt->bindValue(":subtitle",$subtitle);
-            $stmt->bindValue(":x_coor",$x_coor);
-            $stmt->bindValue(":y_coor",$y_coor);
+            $stmt->bindValue(":longitude",$longitude);
+            $stmt->bindValue(":latitude",$latitude);
             $stmt->execute();
 
             return true;

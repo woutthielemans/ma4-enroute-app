@@ -15,7 +15,7 @@
 #import "User.h"
 #import "MenuViewController.h"
 #import "MainMenuDelegate.h"
-#import "NotificationsTableViewController.h"
+//#import "NotificationsTableViewController.h"
 
 @interface AssignmentsTableViewController : UITableViewController <MenuDelegate>
 

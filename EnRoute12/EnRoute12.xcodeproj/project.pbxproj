@@ -41,6 +41,7 @@
 		5C394791194CA77F00A47692 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C394790194CA77F00A47692 /* Teacher.m */; };
 		5C46359B194F447400A01A75 /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C46359A194F447400A01A75 /* NotificationTableViewCell.m */; };
 		5C46359E194F513A00A01A75 /* NotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C46359D194F513A00A01A75 /* NotificationTableViewController.m */; };
+		5C4635A1194F580200A01A75 /* GreenScannerOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4635A0194F580200A01A75 /* GreenScannerOverlayView.m */; };
 		5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A4193E7DEE007D7B5D /* VolumeCheckerViewController.m */; };
 		5C8327A8193E7DEE007D7B5D /* VolumeCheckerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327A6193E7DEE007D7B5D /* VolumeCheckerView.m */; };
 		5C8327AD193E7DF9007D7B5D /* QuietSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8327AA193E7DF9007D7B5D /* QuietSpot.m */; };
@@ -147,6 +148,8 @@
 		5C46359A194F447400A01A75 /* NotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewCell.m; sourceTree = "<group>"; };
 		5C46359C194F513A00A01A75 /* NotificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewController.h; sourceTree = "<group>"; };
 		5C46359D194F513A00A01A75 /* NotificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewController.m; sourceTree = "<group>"; };
+		5C46359F194F580200A01A75 /* GreenScannerOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenScannerOverlayView.h; sourceTree = "<group>"; };
+		5C4635A0194F580200A01A75 /* GreenScannerOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenScannerOverlayView.m; sourceTree = "<group>"; };
 		5C731E8C194DF62E0044DC4B /* AssignmentsTVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssignmentsTVCDelegate.h; sourceTree = "<group>"; };
 		5C731E8D194E006E0044DC4B /* MainMenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuDelegate.h; sourceTree = "<group>"; };
 		5C8327A3193E7DEE007D7B5D /* VolumeCheckerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerViewController.h; sourceTree = "<group>"; };
@@ -544,6 +547,8 @@
 				5CAEED2F194E82DD00912E00 /* GreenScannerViewController.m */,
 				5CAEED31194E82F000912E00 /* GreenScannerView.h */,
 				5CAEED32194E82F000912E00 /* GreenScannerView.m */,
+				5C46359F194F580200A01A75 /* GreenScannerOverlayView.h */,
+				5C4635A0194F580200A01A75 /* GreenScannerOverlayView.m */,
 			);
 			name = "Green Scanner";
 			sourceTree = "<group>";
@@ -743,6 +748,7 @@
 				5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */,
 				5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */,
 				5C32C4BB194D19540038E99C /* TeacherFactory.m in Sources */,
+				5C4635A1194F580200A01A75 /* GreenScannerOverlayView.m in Sources */,
 				5C32C4DA194DC9C80038E99C /* NotificatonBadgeFactory.m in Sources */,
 				5CA501D61943D1C100C715D1 /* MainMenuView.m in Sources */,
 				5C8327BA193E7E16007D7B5D /* MapViewController.m in Sources */,
