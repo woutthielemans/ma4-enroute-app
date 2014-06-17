@@ -60,6 +60,8 @@
 		5CAEED33194E82F000912E00 /* GreenScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAEED32194E82F000912E00 /* GreenScannerView.m */; };
 		5CBCBF30194CE58A00DE5837 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCBF2F194CE58A00DE5837 /* User.m */; };
 		5CBCBF33194CE59A00DE5837 /* UserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCBF32194CE59A00DE5837 /* UserFactory.m */; };
+		5CBEC151194F906E005A655C /* AddNotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEC150194F906E005A655C /* AddNotViewController.m */; };
+		5CBEC154194F907C005A655C /* AddNotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEC153194F907C005A655C /* AddNotView.m */; };
 		5CE67E79194061A200F9FFCF /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E78194061A200F9FFCF /* Assignment.m */; };
 		5CE67E7C194061B300F9FFCF /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE67E7B194061B300F9FFCF /* AssignmentFactory.m */; };
 		5CEE6A24194EA83200A090A8 /* PlutoSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE6A21194EA83200A090A8 /* PlutoSansBold.otf */; };
@@ -189,6 +191,10 @@
 		5CBCBF2F194CE58A00DE5837 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		5CBCBF31194CE59A00DE5837 /* UserFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFactory.h; sourceTree = "<group>"; };
 		5CBCBF32194CE59A00DE5837 /* UserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFactory.m; sourceTree = "<group>"; };
+		5CBEC14F194F906E005A655C /* AddNotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNotViewController.h; sourceTree = "<group>"; };
+		5CBEC150194F906E005A655C /* AddNotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNotViewController.m; sourceTree = "<group>"; };
+		5CBEC152194F907C005A655C /* AddNotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNotView.h; sourceTree = "<group>"; };
+		5CBEC153194F907C005A655C /* AddNotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNotView.m; sourceTree = "<group>"; };
 		5CE090EA19492B4D002F68C7 /* VolumeCheckerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeCheckerDelegate.h; sourceTree = "<group>"; };
 		5CE67E77194061A200F9FFCF /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
 		5CE67E78194061A200F9FFCF /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
@@ -437,10 +443,10 @@
 			children = (
 				5C46359C194F513A00A01A75 /* NotificationTableViewController.h */,
 				5C46359D194F513A00A01A75 /* NotificationTableViewController.m */,
-				5CFE541219453B0C004D2E0B /* NotificationsViewController.h */,
-				5CFE541319453B0C004D2E0B /* NotificationsViewController.m */,
 				5C463599194F447400A01A75 /* NotificationTableViewCell.h */,
 				5C46359A194F447400A01A75 /* NotificationTableViewCell.m */,
+				5CFE541219453B0C004D2E0B /* NotificationsViewController.h */,
+				5CFE541319453B0C004D2E0B /* NotificationsViewController.m */,
 				5CFE541519453B1A004D2E0B /* NotificationsView.h */,
 				5CFE541619453B1A004D2E0B /* NotificationsView.m */,
 				5CFE541819453B29004D2E0B /* Notification.h */,
@@ -448,6 +454,10 @@
 				5CFE541B19453B33004D2E0B /* NotificationFactory.h */,
 				5CFE541C19453B33004D2E0B /* NotificationFactory.m */,
 				5C32C4DB194DC9D50038E99C /* Badge Factory */,
+				5CBEC14F194F906E005A655C /* AddNotViewController.h */,
+				5CBEC150194F906E005A655C /* AddNotViewController.m */,
+				5CBEC152194F907C005A655C /* AddNotView.h */,
+				5CBEC153194F907C005A655C /* AddNotView.m */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -742,9 +752,11 @@
 				5C32C4CA194D6B510038E99C /* MenuView.m in Sources */,
 				5C8327A7193E7DEE007D7B5D /* VolumeCheckerViewController.m in Sources */,
 				5C15BE50194E348F005557EC /* EnterQuoteView.m in Sources */,
+				5CBEC154194F907C005A655C /* AddNotView.m in Sources */,
 				5C381887193CA2C000C39FBC /* main.m in Sources */,
 				5C32C4C2194D67AA0038E99C /* LoginView.m in Sources */,
 				5C15BE5D194E37D7005557EC /* QuoteViewController.m in Sources */,
+				5CBEC151194F906E005A655C /* AddNotViewController.m in Sources */,
 				5C8367D119406D7800870A8A /* AssignmentTableViewCell.m in Sources */,
 				5C39478D194C97EC00A47692 /* BudaSpot.m in Sources */,
 				5C32C4BB194D19540038E99C /* TeacherFactory.m in Sources */,

@@ -55,7 +55,7 @@
 - (void)loadView
 {
     CGRect bounds = [UIScreen mainScreen].bounds;
-    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+//    [[self navigationController] setNavigationBarHidden:NO animated:NO];
     self.greenScannerView = [[GreenScannerView alloc] initWithFrame:bounds];
     self.view = self.greenScannerView;
     [self showCamera];

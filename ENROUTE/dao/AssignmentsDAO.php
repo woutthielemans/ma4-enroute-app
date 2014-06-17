@@ -32,9 +32,9 @@ class AssignmentsDAO
             $stmt = $this->pdo->prepare($sql);
             if($stmt->execute())
             {
-                $cassignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                if(!empty($cassignments)){
-                    return $cassignments;
+                $assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if(!empty($assignments)){
+                    return $assignments;
                 }
             }
             return array();
@@ -47,9 +47,9 @@ class AssignmentsDAO
             $stmt = $this->pdo->prepare($sql);
             if($stmt->execute())
             {
-                $sassignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                if(!empty($sassignments)){
-                    return $sassignments;
+                $assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if(!empty($assignments)){
+                    return $assignments;
                 }
             }
             return array();

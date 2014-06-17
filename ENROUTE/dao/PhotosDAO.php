@@ -13,7 +13,7 @@ class PhotosDAO
 
         public function getPhotos(){
             $sql = "SELECT * 
-                    FROM `er_uploadedphotos`";
+                    FROM `ndip_photos`";
             $stmt = $this->pdo->prepare($sql);
             if($stmt->execute())
             {
@@ -27,7 +27,7 @@ class PhotosDAO
 
         public function getPhoto($id){
             $sql = "SELECT * 
-                    FROM `er_uploadedphotos`
+                    FROM `ndip_photos`
                     WHERE `id` = :id";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(":id",$id);
@@ -41,14 +41,27 @@ class PhotosDAO
             return array();
         }
 
-        public function insertPhoto($group_id,$photopath)
+        public function getPhotosCoors(){
+            $sql = "SELECT `x_coor`,`y_coor`
+                    FROM `ndip_photos`";
+            $stmt = $this->pdo->prepare($sql);
+            if($stmt->execute())
+            {
+                $photos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if(!empty($photos)){
+                    return $photos;
+                }
+            }
+            return array();
+        }
+
+        public function insertPhoto($name)
         {
-            $sql = "INSERT INTO `er_uploadedphotos`(group_id,photopath)
-                    VALUES(:group_id,:photopath)";
+            $sql = "INSERT INTO `ndip_photos`(name)
+                    VALUES(:name)";
 
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(":group_id",$group_id);
-            $stmt->bindValue(":photopath",$photopath);
+            $stmt->bindValue(":name",$name);
             $stmt->execute();
 
             return true;
@@ -57,7 +70,7 @@ class PhotosDAO
         public function getPhotosByAmount()
         {
             $sql = "SELECT id, COUNT(*) AS NumberOfPhotos
-                            FROM `er_uploadedphotos`";
+                            FROM `ndip_photos`";
             $stmt = $this->pdo->prepare($sql);
             if($stmt->execute())
             {
@@ -69,4 +82,17 @@ class PhotosDAO
             }
             return false;
         }
+
+    public function getPhotosByCodeAndGroupId($code, $groupid)
+    {
+        $sql = 'SELECT * FROM er_uploadedphotos WHERE code = :code AND group_id = :groupid';
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":code", $code);
+        $stmt->bindValue(":groupid", $groupid);
+
+        if($stmt-> execute())
+        {
+           return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
 }

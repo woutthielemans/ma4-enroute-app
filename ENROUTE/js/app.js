@@ -80,7 +80,7 @@ function init()
     	}, 500);
 	});
 
-	$('#enroute #btndiscover').click(function(e)
+	$('#enroute #btnzentrijk').click(function(e)
 	{
 		e.preventDefault();
 

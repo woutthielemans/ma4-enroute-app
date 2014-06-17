@@ -16,6 +16,7 @@
 #import "MenuDelegate.h"
 #import "User.h"
 #import "MapViewController.h"
+#import "AddNotViewController.h"
 
 @interface NotificationsViewController : UIViewController <MenuDelegate>
 

@@ -11,6 +11,9 @@
 
 @interface NotificationsView : UIView
 
+@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) UIButton *addButton;
+
 - (id)initWithFrame:(CGRect)frame Notifications:(NSMutableDictionary *)notifications AndUser:(User *)user;
 
 @end

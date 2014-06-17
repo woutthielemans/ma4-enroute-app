@@ -26,12 +26,6 @@ class GridController extends AppController
     {
         $isArrGridPhotos = false;
 
-        if(!empty($_GET['action']) && $_GET['action'] == 'choose')
-        {
-            $this->choose();
-            exit;
-        }
-
         if(!empty($_GET['action']) && $_GET['action'] == 'login')
         {
             $this->login();
@@ -70,19 +64,14 @@ class GridController extends AppController
             $_SESSION['isLoggedIn'] = false;
             $_SESSION['washCount'] = 0;
 
-            header('Location:index.php?page=home');
+            header('Location:http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/index.php?page=home');
             exit();
         }
         else
         {
-            header('Location:index.php?page=grid&action=login');   
+            header('Location:http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/index.php?page=grid&action=login');   
             exit();
         }
-    }
-
-    public function choose()
-    {
-        require_once WWW_ROOT.'pages'.DS.'parts'.DS.'choose.php';
     }
 
     public function login()
@@ -135,13 +124,13 @@ class GridController extends AppController
 
                 $isArrGridPhotos = false;
 
-                header('Location:index.php?page=grid&action=showgrid');
+                header('Location:http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/index.php?page=grid&action=showgrid');
                 exit();
             }
         } 
         elseif(!empty($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'])
         {
-            header('Location:index.php?page=grid&action=showgrid');
+            header('Location:http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/index.php?page=grid&action=showgrid');
             exit();
         }
         else
@@ -177,7 +166,7 @@ class GridController extends AppController
         }
         else
         {
-            header('Location:index.php?page=grid&action=login');   
+            header('Location:http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/index.php?page=grid&action=login');   
             exit();
         }
     }
@@ -198,7 +187,7 @@ class GridController extends AppController
         }
         else
         {
-            header('Location:index.php?page=grid&action=login');   
+            header('Location:http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/index.php?page=grid&action=login');   
             exit();
         }
     }
@@ -251,7 +240,7 @@ class GridController extends AppController
             fclose($fp);
         }
 
-        header('Location:index.php?page=grid&action=showgrid');
+        header('Location:http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/index.php?page=grid&action=showgrid');
         exit();
     }
 
@@ -310,7 +299,7 @@ class GridController extends AppController
 
         $_SESSION['isWashable'] = $this->isWashable;
 
-        header('Location:index.php?page=grid&action=showgrid');
+        header('Location:http://student.howest.be/wout.thielemans/20132014/MAIV/ENROUTE/index.php?page=grid&action=showgrid');
         exit();
     }
 }

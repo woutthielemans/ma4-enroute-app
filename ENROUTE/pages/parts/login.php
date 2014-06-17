@@ -6,7 +6,7 @@
   <div class="frame"></div>
 
   <section id='loginsection'>
-     <a id="btngarden" href="http://localhost/zentrijk/index.php?page=home">home</a>
+     <a id="btngarden" href="index.php?page=home">home</a>
     <header id="headerhome">
         <hgroup>
           <h1 class="centercontent"><span class="invisible">Zentrijk</span></h1>

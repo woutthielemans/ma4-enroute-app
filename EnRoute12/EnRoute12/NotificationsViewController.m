@@ -37,7 +37,7 @@
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error loading JSON");
-            UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"error accessing api for assignments" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"error accessing api for notifications" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [alerView show];
         }];
         [operation start];
@@ -59,6 +59,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.notificationView.addButton addTarget:self action:@selector(addanot:) forControlEvents:UIControlEventTouchUpInside];
     [[self navigationController] setNavigationBarHidden:NO animated:NO];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -71,6 +72,12 @@
       [UIFont fontWithName:PLUTO_SANS_LIGHT size:21],
       NSFontAttributeName, nil]];
     self.title = @"Meldingen";
+}
+
+- (void)addanot:(id)sender
+{
+    AddNotViewController *addNot = [[AddNotViewController alloc] init];
+    [self.navigationController pushViewController:addNot animated:YES];
 }
 
 - (void)loadView
@@ -175,6 +182,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)buttonNotificationsWasTapped
+{
+    
 }
 
 /*

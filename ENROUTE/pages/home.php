@@ -6,9 +6,10 @@
     <div class="corner topright"></div>
     <div class="corner bottomleft"></div>
     <div class="corner bottomright"></div>
+    <div id="overlaybottom"></div>
 
     <section id='home'>
-      <a id="btngarden" href="http://localhost/zentrijk/index.php?page=grid">grid</a>
+      <a id="btngarden" href="index.php?page=grid">grid</a>
       <header id="headerhome">
         <hgroup>
           <h1 class="centercontent"><span class="invisible">Zentrijk</span></h1>
@@ -57,7 +58,10 @@
         <p>Aan de hand van enkele heel leuke opdrachten zullen we samen met de leerlingen het zengevoel van Kortrijk terugvinden. Met alle verzamelde foto’s van de opdrachten maken we samen een zengarden!</p>
       </div>
       <div class="clear"></div>
-      <a id="btndiscover" href="#zentrijk">Ontdek Zentrijk</a> 
+      <div id="btns">
+        <a id="btnzentrijk" href="#zentrijk">Ontdek Zentrijk</a>
+        <a id="btnchoose" href="index.php?page=grid&action=choose">Bekijk grids</a>
+      </div>
     </section>
 </div>
 
